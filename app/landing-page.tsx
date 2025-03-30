@@ -69,7 +69,7 @@ export default function LandingPage() {
 								className="text-lg md:text-xl max-w-3xl mx-auto text-emerald-800 font-medium drop-shadow-sm"
 								variants={paragraphVariants}
 							>
-								We're a collective of builders exploring how large language
+								We&apos;re a collective of builders exploring how large language
 								models (LLMs) can shape the way humans interact with technology.
 								<br />
 								Not through clicks — but through conversation, collaboration,
@@ -131,6 +131,7 @@ export default function LandingPage() {
 								"Reimagine the user interface from the prompt up",
 							].map((item, index) => (
 								<motion.li
+									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 									key={index}
 									className="flex flex-col items-center"
 									variants={itemVariants}
@@ -223,7 +224,7 @@ export default function LandingPage() {
 							className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight"
 							variants={titleVariants}
 						>
-							What We're Building
+							What We&apos;re Building
 						</motion.h3>
 
 						<motion.h4
@@ -243,6 +244,7 @@ export default function LandingPage() {
 								"Ambient Interfaces — the UI fades into experience",
 							].map((item, index) => (
 								<motion.li
+									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 									key={index}
 									className="flex flex-col items-center"
 									variants={itemVariants}
