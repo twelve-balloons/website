@@ -37,7 +37,7 @@ export default function LandingPage() {
 								The Future of Apps is Conversational
 							</h2>
 							<p className="text-lg md:text-xl max-w-3xl mx-auto text-emerald-800 font-medium drop-shadow-sm">
-								We're a collective of builders exploring how large language
+								We&apos;re a collective of builders exploring how large language
 								models (LLMs) can shape the way humans interact with technology.
 								<br />
 								Not through clicks — but through conversation, collaboration,
@@ -152,7 +152,7 @@ export default function LandingPage() {
 					{/* What We're Building Section */}
 					<section className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12 text-center">
 						<h3 className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight">
-							What We're Building
+							What We&apos;re Building
 						</h3>
 
 						<h4 className="text-xl font-bold mb-3">Live Experiments</h4>
