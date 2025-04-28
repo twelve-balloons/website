@@ -4,7 +4,13 @@ import type React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github, Calendar } from "lucide-react";
+import {
+	ExternalLink,
+	Github,
+	Calendar,
+	Newspaper,
+	Linkedin,
+} from "lucide-react";
 
 // Add these imports at the top of the file
 import { motion, useInView } from "framer-motion";
@@ -63,17 +69,15 @@ export default function LandingPage() {
 								className="text-4xl md:text-6xl font-black mb-6 text-emerald-900 drop-shadow-sm tracking-tight"
 								variants={titleVariants}
 							>
-								The Future of Apps is Conversational
+								The Future of Apps Is Conversational
 							</motion.h2>
 							<motion.p
 								className="text-lg md:text-xl max-w-3xl mx-auto text-emerald-800 font-medium drop-shadow-sm"
 								variants={paragraphVariants}
 							>
-								We&apos;re a collective of builders exploring how large language
-								models (LLMs) can shape the way humans interact with technology.
-								<br />
-								Not through clicks — but through conversation, collaboration,
-								and creativity.
+								We're a collective of builders rethinking how humans interact
+								with technology — not through clicks, but through conversation,
+								collaboration, and creativity.
 							</motion.p>
 						</div>
 					</AnimatedSection>
@@ -97,17 +101,18 @@ export default function LandingPage() {
 							className="text-lg mb-6 font-medium max-w-3xl mx-auto"
 							variants={paragraphVariants}
 						>
-							Twelve Balloons is a group of developers, designers, researchers,
-							and dreamers building toward the next UI paradigm — one where the
-							interface is not fixed, but generated.
+							We're developers, designers, researchers, and systems thinkers
+							exploring a new interface paradigm — one where the UI is
+							generated, not predefined.
 						</motion.p>
 						<motion.p
 							className="text-lg mb-6 font-medium max-w-3xl mx-auto"
 							variants={paragraphVariants}
 							transition={{ delay: 0.2 }}
 						>
-							We believe LLMs are not tools we control, but co-creators we work
-							with.
+							Our client work shapes real-world tools. But our boldest ideas
+							begin in-house: building our own agents, testing workflows, and
+							reimagining how humans and machines think together.
 						</motion.p>
 					</AnimatedSection>
 
@@ -125,10 +130,10 @@ export default function LandingPage() {
 						>
 							{[
 								"Let ideas fly — faster, lighter, bolder",
-								"Build open-source tools and prototypes",
-								"Share learning, patterns, and philosophies",
-								"Teach how to build with AI-first principles",
-								"Reimagine the user interface from the prompt up",
+								"Build open-source tools and experiments",
+								"Share patterns, practices, philosophies",
+								"Teach AI-native ways of working",
+								"Redesign the interface — from the prompt up",
 							].map((item, index) => (
 								<motion.li
 									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
@@ -144,7 +149,7 @@ export default function LandingPage() {
 					</AnimatedSection>
 
 					{/* Featured Projects Section */}
-					{/* <AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12">
+					<AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12">
 						<motion.h3
 							className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight text-center"
 							variants={titleVariants}
@@ -166,16 +171,14 @@ export default function LandingPage() {
 								}}
 								transition={{ type: "spring", stiffness: 300 }}
 							>
-								<h4 className="text-xl font-bold mb-2">
-									Conversational Canvas
-								</h4>
+								<h4 className="text-xl font-bold mb-2">Spotify Agent</h4>
 								<p className="mb-4 font-medium">
-									A design tool that generates UI components from natural
-									language descriptions.
+									A conversational UI that links natural language — voice or
+									text — to real-time music control via Spotify.
 								</p>
 								<div className="flex justify-between items-center mt-auto">
 									<span className="text-sm bg-amber-100 px-3 py-1 rounded-full font-bold">
-										Experimental
+										Prototype in progress
 									</span>
 									<Link
 										href="#"
@@ -197,14 +200,15 @@ export default function LandingPage() {
 								}}
 								transition={{ type: "spring", stiffness: 300 }}
 							>
-								<h4 className="text-xl font-bold mb-2">Intent Mapper</h4>
+								<h4 className="text-xl font-bold mb-2">Memory Core</h4>
 								<p className="mb-4 font-medium">
-									A tool that translates user intentions into dynamic interface
-									components.
+									A shared "brain" that enables LLMs to retain evolving goals,
+									context, and history across multiple users — like a collective
+									memory for teams.
 								</p>
 								<div className="flex justify-between items-center mt-auto">
 									<span className="text-sm bg-amber-100 px-3 py-1 rounded-full font-bold">
-										Experimental
+										Conceptual phase
 									</span>
 									<Link
 										href="#"
@@ -219,29 +223,45 @@ export default function LandingPage() {
 					</AnimatedSection>
 
 					{/* What We're Building Section */}
-					{/* <AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12 text-center">
+					<AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12 text-center">
 						<motion.h3
 							className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight"
 							variants={titleVariants}
 						>
-							What We&apos;re Building
+							What We're Building
 						</motion.h3>
 
 						<motion.h4
-							className="text-xl font-bold mb-3"
+							className="text-xl md:text-2xl font-bold mb-8 tracking-tight text-emerald-800"
 							variants={subtitleVariants}
 						>
 							Live Experiments
 						</motion.h4>
 						<motion.ul
-							className="space-y-3 text-lg mb-0 font-medium max-w-3xl mx-auto"
+							className="space-y-6 text-lg mb-0 font-medium max-w-3xl mx-auto"
 							variants={containerVariants}
 						>
 							{[
-								"Conversational Interfaces — where apps speak with you",
-								"Composable UI Agents — LLMs orchestrate UI from intent",
-								"Prompt-to-UI — design systems that respond to language",
-								"Ambient Interfaces — the UI fades into experience",
+								{
+									title: "Conversational interfaces",
+									description: "Apps that speak, listen, and respond",
+								},
+								{
+									title: "Composable UI agents",
+									description: "LLMs that assemble interfaces from intent",
+								},
+								{
+									title: "Prompt-to-UI systems",
+									description: "Design frameworks that respond to language",
+								},
+								{
+									title: "Ambient interfaces",
+									description: "UI that dissolves into experience",
+								},
+								{
+									title: "Programmable surfaces",
+									description: "Lightweight UI elements controlled by AI tools",
+								},
 							].map((item, index) => (
 								<motion.li
 									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
@@ -250,11 +270,14 @@ export default function LandingPage() {
 									variants={itemVariants}
 									custom={index}
 								>
-									<span className="font-bold mb-1">{item}</span>
+									<span className="font-bold mb-1">{item.title}</span>
+									<span className="text-emerald-700/80 text-base">
+										{item.description}
+									</span>
 								</motion.li>
 							))}
 						</motion.ul>
-					</AnimatedSection> */}
+					</AnimatedSection>
 
 					{/* Community Section */}
 					{/* <AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12 text-center">
@@ -269,12 +292,14 @@ export default function LandingPage() {
 							className="text-lg mb-6 font-medium max-w-3xl mx-auto"
 							variants={paragraphVariants}
 						>
-							Twelve Balloons is built around a growing community of thinkers and
-							builders exploring the future of human-computer interaction.
+							Twelve Balloons is a growing collective connected by a shared
+							curiosity about how humans and machines evolve together. We build
+							in the open, share what we learn, and believe creativity scales
+							faster when it's visible.
 						</motion.p>
 
 						<motion.div
-							className="grid md:grid-cols-2 gap-8 mb-8"
+							className="grid md:grid-cols-3 gap-8 mb-8"
 							variants={containerVariants}
 						>
 							<motion.div
@@ -292,7 +317,7 @@ export default function LandingPage() {
 								</div>
 								<h4 className="text-xl font-bold mb-2">Open Source</h4>
 								<p className="mb-4 font-medium">
-									Contribute to our projects and experiments on GitHub
+									Contribute to our projects and experiments on GitHub.
 								</p>
 								<Link
 									href="#"
@@ -317,7 +342,8 @@ export default function LandingPage() {
 								</div>
 								<h4 className="text-xl font-bold mb-2">Events</h4>
 								<p className="mb-4 font-medium">
-									Attend our virtual and in-person events and workshops
+									Join virtual sessions, demos, in-person events, and
+									experiments in progress.
 								</p>
 								<Link
 									href="#"
@@ -325,6 +351,42 @@ export default function LandingPage() {
 								>
 									<span>View Calendar</span>
 								</Link>
+							</motion.div>
+
+							<motion.div
+								className="bg-white/60 backdrop-blur-sm p-6 rounded-xl border border-emerald-100 flex flex-col items-center text-center"
+								variants={cardVariants}
+								custom={2}
+								whileHover={{
+									y: -5,
+									boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+								}}
+								transition={{ type: "spring", stiffness: 300 }}
+							>
+								<div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+									<Newspaper size={24} className="text-emerald-700" />
+								</div>
+								<h4 className="text-xl font-bold mb-2">News</h4>
+								<p className="mb-4 font-medium">
+									Follow insights, reflections, and updates on Substack and
+									LinkedIn.
+								</p>
+								<div className="flex gap-4 mt-auto">
+									<Link
+										href="#"
+										className="text-emerald-700 hover:text-emerald-900 font-bold"
+									>
+										<Newspaper size={24} />
+										<span className="sr-only">Substack</span>
+									</Link>
+									<Link
+										href="#"
+										className="text-emerald-700 hover:text-emerald-900 font-bold"
+									>
+										<Linkedin size={24} />
+										<span className="sr-only">LinkedIn</span>
+									</Link>
+								</div>
 							</motion.div>
 						</motion.div>
 					</AnimatedSection> */}
@@ -342,7 +404,7 @@ export default function LandingPage() {
 						<div className="flex flex-col md:flex-row justify-between items-center mb-4">
 							<div className="mb-4 md:mb-0 text-center md:text-left">
 								<h3 className="text-xl font-black tracking-tight">
-									Twelve Balloon
+									Twelve Balloons
 								</h3>
 								<p className="font-bold">Let ideas fly.</p>
 							</div>
