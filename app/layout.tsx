@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-	title: "Twelve Balloon - The Future of Apps is Conversational",
+	title: "Twelve Balloons - The Future of Apps is Conversational",
 	description:
 		"We're a collective of builders exploring how large language models (LLMs) can shape the way humans interact with technology.",
 };

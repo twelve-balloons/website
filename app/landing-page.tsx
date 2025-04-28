@@ -97,7 +97,7 @@ export default function LandingPage() {
 							className="text-lg mb-6 font-medium max-w-3xl mx-auto"
 							variants={paragraphVariants}
 						>
-							Twelve Balloon is a group of developers, designers, researchers,
+							Twelve Balloons is a group of developers, designers, researchers,
 							and dreamers building toward the next UI paradigm — one where the
 							interface is not fixed, but generated.
 						</motion.p>
@@ -144,7 +144,7 @@ export default function LandingPage() {
 					</AnimatedSection>
 
 					{/* Featured Projects Section */}
-					<AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12">
+					{/* <AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12">
 						<motion.h3
 							className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight text-center"
 							variants={titleVariants}
@@ -254,10 +254,10 @@ export default function LandingPage() {
 								</motion.li>
 							))}
 						</motion.ul>
-					</AnimatedSection>
+					</AnimatedSection> */}
 
 					{/* Community Section */}
-					<AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12 text-center">
+					{/* <AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12 text-center">
 						<motion.h3
 							className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight"
 							variants={titleVariants}
@@ -269,7 +269,7 @@ export default function LandingPage() {
 							className="text-lg mb-6 font-medium max-w-3xl mx-auto"
 							variants={paragraphVariants}
 						>
-							Twelve Balloon is built around a growing community of thinkers and
+							Twelve Balloons is built around a growing community of thinkers and
 							builders exploring the future of human-computer interaction.
 						</motion.p>
 
@@ -327,7 +327,7 @@ export default function LandingPage() {
 								</Link>
 							</motion.div>
 						</motion.div>
-					</AnimatedSection>
+					</AnimatedSection> */}
 				</div>
 
 				{/* Footer */}
