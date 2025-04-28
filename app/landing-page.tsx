@@ -219,7 +219,7 @@ export default function LandingPage() {
 					</AnimatedSection>
 
 					{/* What We're Building Section */}
-					<AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12 text-center">
+					{/* <AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12 text-center">
 						<motion.h3
 							className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight"
 							variants={titleVariants}
