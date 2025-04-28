@@ -69,9 +69,9 @@ export default function LandingPage() {
 								className="text-lg md:text-xl max-w-3xl mx-auto text-emerald-800 font-medium drop-shadow-sm"
 								variants={paragraphVariants}
 							>
-								We're a collective of builders rethinking how humans interact
-								with technology — not through clicks, but through conversation,
-								collaboration, and creativity.
+								We&apos;re a collective of builders rethinking how humans
+								interact with technology — not through clicks, but through
+								conversation, collaboration, and creativity.
 							</motion.p>
 						</div>
 					</AnimatedSection>
@@ -95,8 +95,8 @@ export default function LandingPage() {
 							className="text-lg mb-6 font-medium max-w-3xl mx-auto"
 							variants={paragraphVariants}
 						>
-							We're developers, designers, researchers, and systems thinkers
-							exploring a new interface paradigm — one where the UI is
+							We&apos;re developers, designers, researchers, and systems
+							thinkers exploring a new interface paradigm — one where the UI is
 							generated, not predefined.
 						</motion.p>
 						<motion.p
@@ -196,9 +196,9 @@ export default function LandingPage() {
 							>
 								<h4 className="text-xl font-bold mb-2">Memory Core</h4>
 								<p className="mb-4 font-medium">
-									A shared "brain" that enables LLMs to retain evolving goals,
-									context, and history across multiple users — like a collective
-									memory for teams.
+									A shared &quot;brain&quot; that enables LLMs to retain
+									evolving goals, context, and history across multiple users —
+									like a collective memory for teams.
 								</p>
 								<div className="flex justify-between items-center mt-auto">
 									<span className="text-sm bg-amber-100 px-3 py-1 rounded-full font-bold">
@@ -222,7 +222,7 @@ export default function LandingPage() {
 							className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight"
 							variants={titleVariants}
 						>
-							What We're Building
+							What We&apos;re Building
 						</motion.h3>
 
 						<motion.h4
