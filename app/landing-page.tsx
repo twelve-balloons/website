@@ -2,19 +2,13 @@
 
 import type React from "react";
 
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-	ExternalLink,
-	Github,
-	Calendar,
-	Newspaper,
-	Linkedin,
-} from "lucide-react";
 
 // Add these imports at the top of the file
 import { motion, useInView } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 // Replace the existing LandingPage component with this enhanced version
 export default function LandingPage() {
