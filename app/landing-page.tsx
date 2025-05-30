@@ -13,6 +13,7 @@ import { useRef, useEffect } from "react";
 // Replace the existing LandingPage component with this enhanced version
 export default function LandingPage() {
 	const [language, setLanguage] = useState<"en" | "de">("en");
+	const [showLanguageMenu, setShowLanguageMenu] = useState(false);
 
 	// Smooth scroll setup
 	useEffect(() => {
@@ -220,33 +221,104 @@ export default function LandingPage() {
 			<div className="relative z-10 min-h-screen flex flex-col px-6 md:px-16 lg:px-24">
 				{/* Header with fade in animation */}
 				<motion.header
-					className="pt-6 relative max-w-5xl mx-auto w-full"
+					className="pt-6 relative max-w-5xl mx-auto w-full flex items-center justify-center"
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					<h1 className="text-xl md:text-2xl font-black tracking-tight text-center">Twelve Balloons</h1>
-
-					{/* Language Toggle */}
-					<div className="absolute top-6 right-0 flex gap-2 bg-white/40 backdrop-blur-sm rounded-full p-1">
-						<button
-							onClick={() => setLanguage("en")}
-							className={`px-3 py-1 rounded-full text-sm font-bold transition-colors ${
-								language === "en" ? "bg-emerald-600 text-white" : "text-emerald-700 hover:bg-white/50"
-							}`}
-						>
-							EN
-						</button>
-						<button
-							onClick={() => setLanguage("de")}
-							className={`px-3 py-1 rounded-full text-sm font-bold transition-colors ${
-								language === "de" ? "bg-emerald-600 text-white" : "text-emerald-700 hover:bg-white/50"
-							}`}
-						>
-							DE
-						</button>
-					</div>
+					<h1 className="text-xl md:text-2xl font-black tracking-tight">Twelve Balloons</h1>
 				</motion.header>
+
+				{/* Floating Language Toggle - Mobile Friendly */}
+				<motion.div
+					className="fixed md:absolute md:top-6 top-6 right-6 z-20"
+					initial={{ opacity: 0, scale: 0.8 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.5, delay: 0.3 }}
+				>
+					<div className="relative">
+						{/* Mobile: Floating button */}
+						<div className="md:hidden">
+							<motion.button
+								onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+								className="w-9 h-9 bg-white/40 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-emerald-700 font-bold border border-white/20 text-xs"
+								whileTap={{ scale: 0.9 }}
+								whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 0.6)" }}
+							>
+								{language.toUpperCase()}
+							</motion.button>
+
+							{/* Animated language options */}
+							<motion.div
+								className="absolute top-12 right-0 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg border border-white/20 overflow-hidden"
+								initial={{ opacity: 0, y: -10, scale: 0.95 }}
+								animate={{
+									opacity: showLanguageMenu ? 1 : 0,
+									y: showLanguageMenu ? 0 : -10,
+									scale: showLanguageMenu ? 1 : 0.95,
+								}}
+								transition={{ duration: 0.2 }}
+								style={{ pointerEvents: showLanguageMenu ? "auto" : "none" }}
+							>
+								<button
+									onClick={() => {
+										setLanguage("en");
+										setShowLanguageMenu(false);
+									}}
+									className={`block w-full px-4 py-3 text-left font-bold transition-colors ${
+										language === "en" ? "bg-emerald-600 text-white" : "text-emerald-700 hover:bg-white/50"
+									}`}
+								>
+									English
+								</button>
+								<button
+									onClick={() => {
+										setLanguage("de");
+										setShowLanguageMenu(false);
+									}}
+									className={`block w-full px-4 py-3 text-left font-bold transition-colors ${
+										language === "de" ? "bg-emerald-600 text-white" : "text-emerald-700 hover:bg-white/50"
+									}`}
+								>
+									Deutsch
+								</button>
+							</motion.div>
+						</div>
+
+						{/* Desktop: Sliding toggle */}
+						<div className="hidden md:block relative bg-white/40 backdrop-blur-sm rounded-full p-1 shadow-lg border border-white/20">
+							{/* Sliding background */}
+							<motion.div
+								className="absolute top-1 bottom-1 bg-emerald-600 rounded-full shadow-sm"
+								animate={{
+									left: language === "en" ? "4px" : "50%",
+									width: language === "en" ? "calc(50% - 4px)" : "calc(50% - 4px)",
+								}}
+								transition={{ type: "spring", stiffness: 300, damping: 30 }}
+							/>
+
+							{/* Button container */}
+							<div className="relative flex">
+								<button
+									onClick={() => setLanguage("en")}
+									className={`relative z-10 px-3 py-1 rounded-full text-sm font-bold transition-colors ${
+										language === "en" ? "text-white" : "text-emerald-700 hover:text-emerald-800"
+									}`}
+								>
+									EN
+								</button>
+								<button
+									onClick={() => setLanguage("de")}
+									className={`relative z-10 px-3 py-1 rounded-full text-sm font-bold transition-colors ${
+										language === "de" ? "text-white" : "text-emerald-700 hover:text-emerald-800"
+									}`}
+								>
+									DE
+								</button>
+							</div>
+						</div>
+					</div>
+				</motion.div>
 
 				{/* Main Content - Split into separate boxes */}
 				<div className="flex-1 flex flex-col max-w-5xl mx-auto w-full py-12">
