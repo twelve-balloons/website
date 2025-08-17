@@ -4,7 +4,7 @@ import type React from "react";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Github, Calendar, Newspaper, Linkedin, Link2 } from "lucide-react";
+import { ExternalLink, Github, Calendar, Newspaper, Linkedin, Link2, Sparkles } from "lucide-react";
 
 // Add these imports at the top of the file
 import { motion, useInView } from "framer-motion";
@@ -33,6 +33,18 @@ export default function LandingPage() {
 				subtitle:
 					"We're a collective of builders rethinking how humans interact with technology — not through clicks, but through conversation, collaboration, and creativity.",
 			},
+			badgeGenerator: {
+				title: "AI Event Badge Generator",
+				description: "It started as a playful Twelve Balloons lab experiment: type a prompt and watch your badge come alive in that style, colours and motion shifting uniquely to your words.",
+				features: {
+					style: "Style generator → maps your text to colours, gradients, typography and textures",
+					physics: "Physics generator → sets how elements move, from drift to burst",
+					motion: "Motion generator → shapes animation curves and interactions",
+					animation: "Animation layer → merges it all into a seamless, live loop"
+				},
+				cta: "What's your badge's look?",
+				buttonText: "Try Badge Generator"
+			},
 			about: {
 				title: "About the Collective",
 				whoWeAre: "Who We Are",
@@ -59,11 +71,11 @@ export default function LandingPage() {
 						"A conversational UI that links natural language — voice or text — to real-time music control via Spotify.",
 					status: "Prototype in progress",
 				},
-				memory: {
-					title: "Memory Core",
+				badge: {
+					title: "AI Event Badge Generator",
 					description:
-						'A shared "brain" that enables LLMs to retain evolving goals, context, and history across multiple users — like a collective memory for teams.',
-					status: "Conceptual phase",
+						"Type a prompt and watch your badge come alive in that style. An API-based architecture for event-ready scenarios where organisers can generate badges at scale.",
+					status: "Live experiment",
 				},
 				viewProject: "View Project",
 			},
@@ -119,6 +131,18 @@ export default function LandingPage() {
 				subtitle:
 					"Wir sind ein Schweizer Kollektiv von Entwickler:innen, Designer:innen und Strateg:innen, das digitale Interaktionen neu denkt – durch Sprache, Zusammenarbeit und intuitive Systeme statt Klicks und klassische Interfaces.",
 			},
+			badgeGenerator: {
+				title: "KI Event-Badge-Generator",
+				description: "Es begann als spielerisches Twelve Balloons Labor-Experiment: Geben Sie einen Prompt ein und beobachten Sie, wie Ihr Badge zum Leben erwacht – Stil, Farben und Bewegungen passen sich einzigartig an Ihre Worte an.",
+				features: {
+					style: "Stilgenerator → bildet Ihren Text auf Farben, Verläufe, Typografie und Texturen ab",
+					physics: "Physikgenerator → bestimmt, wie sich Elemente bewegen, von Drift bis Burst",
+					motion: "Bewegungsgenerator → formt Animationskurven und Interaktionen",
+					animation: "Animationsebene → fügt alles zu einer nahtlosen, lebendigen Schleife zusammen"
+				},
+				cta: "Wie sieht Ihr Badge aus?",
+				buttonText: "Badge-Generator ausprobieren"
+			},
 			about: {
 				title: "Über uns – das Kollektiv",
 				whoWeAre: "Wer wir sind",
@@ -145,11 +169,11 @@ export default function LandingPage() {
 						"Ein sprachgesteuertes Interface, das natürliche Sprache – per Stimme oder Text – mit Spotify verbindet. Musiksteuerung in Echtzeit, ohne klassische App.",
 					status: "Prototyp in Entwicklung",
 				},
-				memory: {
-					title: "Memory Core",
+				badge: {
+					title: "KI Event-Badge-Generator",
 					description:
-						'Ein gemeinsames "Gedächtnis", das grossen Sprachmodellen erlaubt, Ziele, Kontexte und Verlauf über Teams hinweg zu behalten – wie ein kollektives Gehirn.',
-					status: "In der Konzeptphase",
+						"Geben Sie einen Prompt ein und beobachten Sie, wie Ihr Badge zum Leben erwacht. Eine API-basierte Architektur für Event-fähige Szenarien, in denen Organisatoren Badges in grossem Massstab generieren können.",
+					status: "Live-Experiment",
 				},
 				viewProject: "Projekt ansehen",
 			},
@@ -340,6 +364,80 @@ export default function LandingPage() {
 						</div>
 					</AnimatedSection>
 
+					{/* Badge Generator Section - NEW */}
+					<AnimatedSection className="bg-gradient-to-br from-purple-50/40 to-pink-50/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12 border border-purple-100/30">
+						<div className="text-center">
+							<motion.div
+								className="inline-flex items-center gap-2 bg-purple-100/60 text-purple-800 px-4 py-2 rounded-full mb-4 font-bold text-sm"
+								variants={titleVariants}
+							>
+								<Sparkles size={16} />
+								<span>NEW LAB EXPERIMENT</span>
+							</motion.div>
+							
+							<motion.h3 className="text-3xl md:text-4xl font-black mb-6 tracking-tight bg-gradient-to-r from-purple-900 to-pink-900 bg-clip-text text-transparent" variants={titleVariants}>
+								{currentContent.badgeGenerator.title}
+							</motion.h3>
+							
+							<motion.p className="text-lg font-medium max-w-3xl mx-auto mb-8" variants={paragraphVariants}>
+								{currentContent.badgeGenerator.description}
+							</motion.p>
+							
+							<motion.div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 max-w-4xl mx-auto" variants={containerVariants}>
+								<motion.div
+									className="bg-white/60 backdrop-blur-sm p-4 rounded-lg border border-purple-100"
+									variants={cardVariants}
+									custom={0}
+								>
+									<div className="text-2xl mb-2">🎨</div>
+									<p className="text-sm font-bold">{currentContent.badgeGenerator.features.style}</p>
+								</motion.div>
+								<motion.div
+									className="bg-white/60 backdrop-blur-sm p-4 rounded-lg border border-purple-100"
+									variants={cardVariants}
+									custom={1}
+								>
+									<div className="text-2xl mb-2">⚙️</div>
+									<p className="text-sm font-bold">{currentContent.badgeGenerator.features.physics}</p>
+								</motion.div>
+								<motion.div
+									className="bg-white/60 backdrop-blur-sm p-4 rounded-lg border border-purple-100"
+									variants={cardVariants}
+									custom={2}
+								>
+									<div className="text-2xl mb-2">💫</div>
+									<p className="text-sm font-bold">{currentContent.badgeGenerator.features.motion}</p>
+								</motion.div>
+								<motion.div
+									className="bg-white/60 backdrop-blur-sm p-4 rounded-lg border border-purple-100"
+									variants={cardVariants}
+									custom={3}
+								>
+									<div className="text-2xl mb-2">🎭</div>
+									<p className="text-sm font-bold">{currentContent.badgeGenerator.features.animation}</p>
+								</motion.div>
+							</motion.div>
+							
+							<motion.div className="space-y-4" variants={containerVariants}>
+								<motion.p className="text-xl font-bold text-purple-900" variants={paragraphVariants}>
+									{currentContent.badgeGenerator.cta}
+								</motion.p>
+								<motion.div variants={cardVariants} custom={5}>
+									<Link
+										href="https://badge.twelve-balloons.com/"
+										className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 rounded-full text-lg font-bold transition-all transform hover:scale-105 shadow-lg"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<Sparkles size={20} />
+										{currentContent.badgeGenerator.buttonText}
+										<ExternalLink size={16} />
+									</Link>
+								</motion.div>
+							</motion.div>
+						</div>
+					</AnimatedSection>
+
 					{/* About Section */}
 					<AnimatedSection className="bg-white/40 backdrop-blur-sm rounded-xl p-8 md:p-12 mb-12 text-center">
 						<motion.h3 className="text-2xl md:text-3xl font-extrabold mb-6 tracking-tight" variants={titleVariants}>
@@ -424,16 +522,21 @@ export default function LandingPage() {
 								whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
 								transition={{ type: "spring", stiffness: 300 }}
 							>
-								<h4 className="text-xl font-bold mb-2">{currentContent.projects.memory.title}</h4>
-								<p className="mb-4 font-medium">{currentContent.projects.memory.description}</p>
-								<div className="flex justify-between items-center mt-auto">
-									<span className="text-sm bg-amber-100 px-3 py-1 rounded-full font-bold">
-										{currentContent.projects.memory.status}
+								<h4 className="text-xl font-bold mb-2">{currentContent.projects.badge.title}</h4>
+								<p className="mb-4 font-medium">{currentContent.projects.badge.description}</p>
+								<div className="flex flex-col gap-3 mt-auto">
+									<span className="text-sm bg-green-100 px-3 py-1 rounded-full font-bold self-start text-green-700">
+										{currentContent.projects.badge.status}
 									</span>
-									<div className="text-gray-400 flex items-center gap-1 font-bold cursor-not-allowed">
-										<span>{currentContent.projects.viewProject}</span>
+									<Link
+										href="https://badge.twelve-balloons.com/"
+										className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 rounded-md text-sm font-bold transition-all text-center flex items-center justify-center gap-2"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Try it now
 										<ExternalLink size={14} />
-									</div>
+									</Link>
 								</div>
 							</motion.div>
 						</motion.div>
