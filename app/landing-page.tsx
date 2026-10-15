@@ -51,6 +51,7 @@ export default function LandingPage() {
 				exampleAlt: "Badges made with the generator, each in a different style",
 				promptPlaceholder: "Describe your badge style…",
 				openPrompt: "Open the Badge Generator and describe your badge style",
+				gallery: "See 30+ badges from the community",
 				buttonText: "Try the Badge Generator",
 			},
 			about: {
@@ -142,6 +143,7 @@ export default function LandingPage() {
 				exampleAlt: "Mit dem Generator erstellte Badges, jedes in einem anderen Stil",
 				promptPlaceholder: "Beschreiben Sie Ihren Badge-Stil…",
 				openPrompt: "Badge-Generator öffnen und Badge-Stil beschreiben",
+				gallery: "30+ Badges aus der Community ansehen",
 				buttonText: "Badge-Generator ausprobieren",
 			},
 			about: {
@@ -369,7 +371,7 @@ export default function LandingPage() {
 										<PrimaryButton href="https://badge.twelve-balloons.com/">{c.badgeGenerator.buttonText}</PrimaryButton>
 									</div>
 								</div>
-								<BadgeCycler alt={c.badgeGenerator.exampleAlt} placeholder={c.badgeGenerator.promptPlaceholder} openLabel={c.badgeGenerator.openPrompt} />
+								<BadgeCycler alt={c.badgeGenerator.exampleAlt} placeholder={c.badgeGenerator.promptPlaceholder} openLabel={c.badgeGenerator.openPrompt} galleryLabel={c.badgeGenerator.gallery} />
 							</div>
 
 							{/* Four steps of the pipeline, numbered instead of icons */}
@@ -566,9 +568,10 @@ function SecondaryButton({ href, children }: { href: string; children: React.Rea
 
 // Real badges from the generator, cut out with their cord (from the team's screen recordings).
 // Shown one at a time, crossfading, swinging gently on the cord like the balloons in the sky.
-const BADGE_EXAMPLES = ["/images/badges/badge-1.png", "/images/badges/badge-2.png", "/images/badges/badge-3.png", "/images/badges/badge-4.png", "/images/badges/badge-5.png"];
+// Order alternates light and dark so each change is visible: red, camo, white mosaic, green, pink, navy, orange.
+const BADGE_EXAMPLES = [1, 2, 6, 3, 7, 4, 5].map((n) => `/images/badges/badge-${n}.png`);
 
-function BadgeCycler({ alt, placeholder, openLabel }: { alt: string; placeholder: string; openLabel: string }) {
+function BadgeCycler({ alt, placeholder, openLabel, galleryLabel }: { alt: string; placeholder: string; openLabel: string; galleryLabel: string }) {
 	const reduce = useReducedMotion();
 	const [index, setIndex] = useState(0);
 	useEffect(() => {
@@ -603,6 +606,16 @@ function BadgeCycler({ alt, placeholder, openLabel }: { alt: string; placeholder
 				<span className="ml-auto flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-deep/10 text-deep transition-[transform,background-color] duration-200 ease-out group-hover:translate-x-0.5 group-hover:bg-balloon group-hover:text-ink">
 					<ArrowRight size={15} />
 				</span>
+			</a>
+			{/* The community gallery shows the range without adding page weight */}
+			<a
+				href="https://badge.twelve-balloons.com/imagine"
+				target="_blank"
+				rel="noopener noreferrer"
+				className={`group mt-3 inline-flex items-center gap-1 rounded-sm text-sm font-semibold text-deep underline-offset-4 hover:text-ink hover:underline ${focusRing}`}
+			>
+				{galleryLabel}
+				<ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
 			</a>
 		</figure>
 	);
