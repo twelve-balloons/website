@@ -73,11 +73,17 @@ export default function LandingPage() {
 					title: "Spotify Agent",
 					description:
 						"A conversational UI that links natural language (voice or text) to real-time music control via Spotify.",
-					status: "Prototype in progress",
+					status: "Working prototype",
+				},
+				kit: {
+					title: "Neumorphic UI kit",
+					description:
+						"An open v0 template we share with the community: music player, events, agenda and project cards in a soft neumorphic style, light and dark.",
+					status: "Open template",
 				},
 				liveStatus: "Live experiment",
-				viewPrototype: "View the prototype",
-				readPost: "Read the post",
+				useTemplate: "Use the template on v0",
+				readPost: "Read how it works",
 			},
 			building: {
 				title: "What We're Exploring",
@@ -155,11 +161,17 @@ export default function LandingPage() {
 					title: "Spotify Agent",
 					description:
 						"Ein sprachgesteuertes Interface, das natürliche Sprache (per Stimme oder Text) mit Spotify verbindet. Musiksteuerung in Echtzeit, ohne klassische App.",
-					status: "Prototyp in Entwicklung",
+					status: "Funktionierender Prototyp",
+				},
+				kit: {
+					title: "Neumorphic UI-Kit",
+					description:
+						"Eine offene v0-Vorlage, die wir mit der Community teilen: Musikplayer, Events, Agenda und Projektkarten im sanften Neumorphic-Stil, hell und dunkel.",
+					status: "Offene Vorlage",
 				},
 				liveStatus: "Live-Experiment",
-				viewPrototype: "Prototyp ansehen",
-				readPost: "Beitrag lesen",
+				useTemplate: "Vorlage auf v0 verwenden",
+				readPost: "Lesen, wie er funktioniert",
 			},
 			building: {
 				title: "Woran wir forschen",
@@ -364,26 +376,28 @@ export default function LandingPage() {
 							</div>
 						</motion.article>
 
-						{/* Experiment 2: Spotify Agent (prototype) */}
-						<motion.article
-							className="mt-12 border-t border-gold/50 pt-10 grid md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-end max-w-4xl mx-auto"
-							variants={itemVariants}
-						>
-							<div>
+						{/* Experiments 2 and 3: side by side. Buttons follow status (see DESIGN.md). */}
+						<div className="mt-12 border-t border-gold/50 grid md:grid-cols-2 md:divide-x divide-gold/50 max-w-4xl mx-auto">
+							<motion.article className="pt-10 md:pr-10 flex flex-col" variants={itemVariants}>
 								<StatusChip tone="progress">{c.projects.spotify.status}</StatusChip>
 								<h3 className="mt-4 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.spotify.title}</h3>
-								<p className="text-deep leading-relaxed">{c.projects.spotify.description}</p>
-							</div>
-							{/* Button follows status: prototype = one outline button + a quiet text link (orange is for live only) */}
-							<div className="flex flex-wrap items-center gap-x-6 gap-y-3 md:flex-col md:items-start">
-								<SecondaryButton href="https://v0.app/templates/neumorphic-design-system-ChCGgi8RVyO">
-									{c.projects.viewPrototype}
-								</SecondaryButton>
+								<p className="mb-6 text-deep leading-relaxed">{c.projects.spotify.description}</p>
 								<TextLink href="https://miketwelveballoons.substack.com/p/when-conversation-becomes-the-ui">
 									{c.projects.readPost}
 								</TextLink>
-							</div>
-						</motion.article>
+							</motion.article>
+
+							<motion.article className="pt-10 md:pl-10 flex flex-col border-t border-gold/50 mt-10 md:border-t-0 md:mt-0" variants={itemVariants}>
+								<StatusChip tone="open">{c.projects.kit.status}</StatusChip>
+								<h3 className="mt-4 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.kit.title}</h3>
+								<p className="mb-6 text-deep leading-relaxed">{c.projects.kit.description}</p>
+								<div className="mt-auto">
+									<SecondaryButton href="https://v0.app/templates/neumorphic-design-system-ChCGgi8RVyO">
+										{c.projects.useTemplate}
+									</SecondaryButton>
+								</div>
+							</motion.article>
+						</div>
 					</AnimatedSection>
 
 					{/* Exploring: research directions, not shipped experiments */}
@@ -551,10 +565,10 @@ function TextLink({ href, children }: { href: string; children: React.ReactNode 
 	);
 }
 
-function StatusChip({ tone, children, center }: { tone: "live" | "progress"; children: React.ReactNode; center?: boolean }) {
+function StatusChip({ tone, children, center }: { tone: "live" | "progress" | "open"; children: React.ReactNode; center?: boolean }) {
 	return (
 		<span className={`inline-flex items-center gap-2 ${center ? "" : "self-start"} rounded-full border border-gold/50 bg-paper px-3 py-1 text-xs font-semibold text-deep`}>
-			<span className={`h-2 w-2 rounded-full ${tone === "live" ? "bg-balloon" : "bg-sage"}`} />
+			<span className={`h-2 w-2 rounded-full ${tone === "live" ? "bg-balloon" : tone === "open" ? "bg-deep" : "bg-sage"}`} />
 			{children}
 		</span>
 	);

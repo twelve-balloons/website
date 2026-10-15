@@ -79,13 +79,14 @@ Plus a gentle top-to-bottom gradient. Pressed: the light flips and the button sc
 | Status | Main action | Extra links |
 |---|---|---|
 | Live | orange `PrimaryButton` ("Try …") | `TextLink` |
-| Prototype / in progress | outline `SecondaryButton` ("View the prototype") | `TextLink` ("Read the post") |
+| Prototype / in progress | `TextLink` ("Read how it works"), or an outline button if there is a demo to try | |
+| Open resource (template, repo) | outline `SecondaryButton` ("Use the template on v0") | `TextLink` |
 | Idea / research | no button | `TextLink` at most |
 One button per entry; further links are text links, never a second button.
 
 **Text link** (`TextLink`): `deep`, semibold, arrow that nudges right on hover, underline on hover.
 
-**Status chip** (`StatusChip`): paper pill with a dot. Orange dot = live, sage dot = in progress.
+**Status chip** (`StatusChip`): paper pill with a dot. Orange dot = live, sage dot = in progress, deep green dot = open resource.
 
 **Focus:** every interactive element shows `focusRing` (2 px `deep` outline, 2 px offset) on keyboard focus.
 
