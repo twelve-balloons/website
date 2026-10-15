@@ -83,22 +83,26 @@ function MeadowScrub({ reduce }: { reduce: boolean }) {
 		const video = videoRef.current;
 		if (!video || reduce) return;
 		let frame = 0;
-		let target = 0;
+		let target = scrollYProgress.get();
+		// One seek at a time: fast trackpad scrolling (Safari) would otherwise queue seeks
+		// that resolve late and show older frames. After each seek, catch up to the latest target.
 		const seek = () => {
 			frame = 0;
-			if (video.readyState >= 1 && Number.isFinite(video.duration)) {
-				video.currentTime = Math.min(target * video.duration, video.duration - 0.05);
-			}
+			if (video.readyState < 1 || !Number.isFinite(video.duration) || video.seeking) return;
+			const t = Math.min(target * video.duration, video.duration - 0.05);
+			if (Math.abs(video.currentTime - t) > 1 / 48) video.currentTime = t;
 		};
 		const unsubscribe = scrollYProgress.on("change", (p) => {
 			target = p;
 			if (!frame) frame = requestAnimationFrame(seek);
 		});
 		video.addEventListener("loadedmetadata", seek);
+		video.addEventListener("seeked", seek);
 		return () => {
 			unsubscribe();
 			cancelAnimationFrame(frame);
 			video.removeEventListener("loadedmetadata", seek);
+			video.removeEventListener("seeked", seek);
 		};
 	}, [reduce, scrollYProgress]);
 
