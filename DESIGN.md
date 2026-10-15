@@ -52,6 +52,7 @@ Rules:
 - Sticky header `h-16` (64 px): logo + wordmark, section anchors (desktop), language toggle.
 - Hero fills the first screen (`min-h-[92svh]`): balloons above, headline, subline, one primary CTA, one quiet text link.
 - Sections are `panel`s: `bg-paper/85 backdrop-blur-md rounded-2xl border-gold/30 p-8 md:p-12`, `mb-12` apart, `scroll-mt-24` for anchors.
+- **Feature row** (text + product image): text left, image right, columns about 60/40 (`3fr 2fr`), image centred in its column and about as tall as the text block. On phones the image comes first. One main action per row, placed at the end of the text.
 - **No cards inside panels.** Group inside a panel with hairlines (`divide-gold/50`) and space.
 - Spacing on a 4 px grid (Tailwind default scale).
 

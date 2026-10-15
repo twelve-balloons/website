@@ -361,17 +361,27 @@ export default function LandingPage() {
 
 						{/* Experiment 1: Badge Generator (live). Text left, one real badge right that changes style one by one. */}
 						<motion.article className="border-t border-gold/50 pt-10" variants={itemVariants}>
-							<div className="grid md:grid-cols-[1fr_auto] gap-10 items-center max-w-4xl mx-auto">
-								<div className="text-center md:text-left">
+							<div className="grid grid-cols-[minmax(0,1fr)] md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-x-10 gap-y-8 max-w-4xl mx-auto">
+								<div className="w-full min-w-0 text-center md:text-left md:py-4 max-w-xl mx-auto md:mx-0">
 									<StatusChip tone="live" center>{c.projects.liveStatus}</StatusChip>
 									<h3 className="mt-4 text-2xl md:text-3xl font-extrabold tracking-[-0.02em] text-ink">{c.badgeGenerator.title}</h3>
 									<p className="mt-4 text-lg text-deep leading-relaxed">{c.badgeGenerator.description}</p>
-									<p className="mt-6 text-xl font-bold text-ink">{c.badgeGenerator.cta}</p>
+									{/* The question labels the prompt field; the field is this entry's one main action */}
+									<p id="badge-prompt-label" className="mt-8 text-lg font-bold text-ink">{c.badgeGenerator.cta}</p>
+									<PromptLink placeholder={c.badgeGenerator.promptPlaceholder} label={c.badgeGenerator.openPrompt} />
 									<div className="mt-4">
-										<PrimaryButton href="https://badge.twelve-balloons.com/">{c.badgeGenerator.buttonText}</PrimaryButton>
+										<a
+											href="https://badge.twelve-balloons.com/imagine"
+											target="_blank"
+											rel="noopener noreferrer"
+											className={`group inline-flex items-center gap-1 rounded-sm text-sm font-semibold text-deep underline-offset-4 hover:text-ink hover:underline ${focusRing}`}
+										>
+											{c.badgeGenerator.gallery}
+											<ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+										</a>
 									</div>
 								</div>
-								<BadgeCycler alt={c.badgeGenerator.exampleAlt} placeholder={c.badgeGenerator.promptPlaceholder} openLabel={c.badgeGenerator.openPrompt} galleryLabel={c.badgeGenerator.gallery} />
+								<BadgeCycler alt={c.badgeGenerator.exampleAlt} />
 							</div>
 
 							{/* Four steps of the pipeline, numbered instead of icons */}
@@ -571,7 +581,7 @@ function SecondaryButton({ href, children }: { href: string; children: React.Rea
 // Order alternates light and dark so each change is visible: red, camo, white mosaic, green, pink, navy, orange.
 const BADGE_EXAMPLES = [1, 2, 6, 3, 7, 4, 5].map((n) => `/images/badges/badge-${n}.png`);
 
-function BadgeCycler({ alt, placeholder, openLabel, galleryLabel }: { alt: string; placeholder: string; openLabel: string; galleryLabel: string }) {
+function BadgeCycler({ alt }: { alt: string }) {
 	const reduce = useReducedMotion();
 	const [index, setIndex] = useState(0);
 	useEffect(() => {
@@ -580,44 +590,43 @@ function BadgeCycler({ alt, placeholder, openLabel, galleryLabel }: { alt: strin
 		return () => window.clearInterval(id);
 	}, [reduce]);
 	return (
-		<figure className="mx-auto flex flex-col items-center md:self-start md:-mt-[38px]">
-			<div className="badge-sway relative w-[190px] md:w-[210px] aspect-[440/742]">
+		// Feature-row pattern: text left (reading path ends at the prompt), badge right, centred in its
+		// 40 % column and about as tall as the text. On phones the badge comes first, hanging from the line.
+		<figure className="order-first md:order-none mx-auto -mt-10">
+			<div className="badge-sway relative w-[180px] md:w-[200px] aspect-[440/742]">
 				{BADGE_EXAMPLES.map((src, i) => (
 					<Image
 						key={src}
 						src={src}
 						alt={i === 0 ? alt : ""}
 						fill
-						sizes="210px"
-						className={`object-contain drop-shadow-[0_14px_18px_rgba(31,42,37,0.28)] transition-opacity duration-700 ease-out ${i === index ? "opacity-100" : "opacity-0"}`}
+						sizes="200px"
+						className={`object-contain drop-shadow-[0_12px_16px_rgba(31,42,37,0.26)] transition-opacity duration-700 ease-out ${i === index ? "opacity-100" : "opacity-0"}`}
 					/>
 				))}
 			</div>
-			{/* Looks and behaves like the generator's prompt field; opens the generator (it can't take a prompt via URL yet) */}
-			<a
-				href="https://badge.twelve-balloons.com/"
-				target="_blank"
-				rel="noopener noreferrer"
-				aria-label={openLabel}
-				className={`group mt-5 flex w-max max-w-[88vw] items-center gap-2 rounded-full border border-gold/60 bg-paper py-1.5 pl-4 pr-1.5 text-sm text-deep/70 shadow-[inset_0_1px_2px_rgba(31,42,37,0.06)] transition-[border-color,background-color,box-shadow] duration-200 ease-out hover:border-deep/40 hover:bg-white hover:shadow-[0_0_0_4px_rgba(232,155,82,0.18)] ${focusRing}`}
-			>
-				<span className="truncate">{placeholder}</span>
-				<span className="caret-blink inline-block h-4 w-px shrink-0 bg-deep" />
-				<span className="ml-auto flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-deep/10 text-deep transition-[transform,background-color] duration-200 ease-out group-hover:translate-x-0.5 group-hover:bg-balloon group-hover:text-ink">
-					<ArrowRight size={15} />
-				</span>
-			</a>
-			{/* The community gallery shows the range without adding page weight */}
-			<a
-				href="https://badge.twelve-balloons.com/imagine"
-				target="_blank"
-				rel="noopener noreferrer"
-				className={`group mt-3 inline-flex items-center gap-1 rounded-sm text-sm font-semibold text-deep underline-offset-4 hover:text-ink hover:underline ${focusRing}`}
-			>
-				{galleryLabel}
-				<ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
-			</a>
 		</figure>
+	);
+}
+
+// Looks and behaves like the generator's prompt field. It opens the generator, where the
+// prompt is typed (the generator can't receive a prompt via URL yet). Orange arrow = the live action.
+function PromptLink({ placeholder, label }: { placeholder: string; label: string }) {
+	return (
+		<a
+			href="https://badge.twelve-balloons.com/"
+			target="_blank"
+			rel="noopener noreferrer"
+			aria-label={label}
+			aria-describedby="badge-prompt-label"
+			className={`group mt-3 mx-auto md:mx-0 flex w-full max-w-sm items-center gap-2 rounded-full border border-gold/60 bg-white/70 py-1.5 pl-5 pr-1.5 text-base text-deep/70 shadow-[inset_0_1px_2px_rgba(31,42,37,0.06)] transition-[border-color,background-color,box-shadow] duration-200 ease-out hover:border-deep/40 hover:bg-white hover:shadow-[0_0_0_4px_rgba(232,155,82,0.18)] ${focusRing}`}
+		>
+			<span className="min-w-0 truncate">{placeholder}</span>
+			<span className="caret-blink inline-block h-5 w-px shrink-0 bg-deep" />
+			<span className="btn-lit ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-balloon-dark/60 text-ink transition-transform duration-150 ease-out group-hover:translate-x-0.5 group-active:scale-[0.97]">
+				<ArrowRight size={18} />
+			</span>
+		</a>
 	);
 }
 
