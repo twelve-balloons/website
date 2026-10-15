@@ -120,7 +120,7 @@ Rules:
 - Generated assets (Nano Banana / Veo, see `docs/nano-banana/`) keep the composition, trees and mountains; prompts are written as PRESERVE / CHANGE / NO.
 - Palette for anything added to the painting: muted orange, pale yellow, sage, dusty blue, cream. No purple, no saturated colours.
 - Social preview: `app/opengraph-image.jpg` (painting + balloons, 1200 × 630).
-- Product examples keep their own colours. Badges (`public/images/badges/`) are cut out with their cord, no background, soft drop shadow on paper; one at a time, crossfading every ~3 s and swinging ±1.6° on the cord (`.badge-sway`); reduced motion shows the first, still.
+- Product examples keep their own colours. Badges (`public/images/badges/`) are cut out with their cord, no background, layered shadow in ink colour (tight contact shadow + small mid shadow + large soft drop, all `drop-shadow` so the cord casts too); one at a time, crossfading every ~3 s and swinging ±1.6° on the cord (`.badge-sway`); reduced motion shows the first, still.
 
 ## 7. Copy
 

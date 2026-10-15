@@ -601,7 +601,7 @@ function BadgeCycler({ alt }: { alt: string }) {
 						alt={i === 0 ? alt : ""}
 						fill
 						sizes="200px"
-						className={`object-contain drop-shadow-[0_12px_16px_rgba(31,42,37,0.26)] transition-opacity duration-700 ease-out ${i === index ? "opacity-100" : "opacity-0"}`}
+						className={`object-contain [filter:drop-shadow(0_1px_1.5px_rgba(31,42,37,0.22))_drop-shadow(0_4px_6px_rgba(31,42,37,0.12))_drop-shadow(0_22px_28px_rgba(31,42,37,0.18))] transition-opacity duration-700 ease-out ${i === index ? "opacity-100" : "opacity-0"}`}
 					/>
 				))}
 			</div>
