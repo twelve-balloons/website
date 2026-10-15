@@ -46,8 +46,8 @@ export default function SkyBackground() {
 	return (
 		<div className="fixed inset-0 z-0 overflow-hidden bg-paper" aria-hidden="true">
 			<MeadowScrub reduce={!!reduce} />
-			{/* Balloon box: square of 90vh, centred, so the cluster stays in the sky on every screen */}
-			<div className="absolute left-1/2 top-[-3vh] aspect-square h-[90vh] -translate-x-1/2">
+			{/* Balloon box: starts below the header; square, phones min(64vh,145vw), from md min(82vh,120vw), so the cluster stays in the sky and clear of the hero text */}
+			<div className="absolute left-1/2 top-16 aspect-square h-[min(64vh,145vw)] md:h-[min(82vh,120vw)] -translate-x-1/2">
 				<motion.div className="absolute inset-0" style={reduce ? undefined : { x: sx, y: sy }}>
 					{BALLOONS.map((b) => (
 						<Balloon key={b.src} balloon={b} scrollY={scrollY} reduce={!!reduce} />
