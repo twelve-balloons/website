@@ -405,11 +405,16 @@ export default function LandingPage() {
 						<motion.h2 className={`${sectionTitle} text-center mb-8`} variants={itemVariants}>
 							{c.building.title}
 						</motion.h2>
-						<ul className="grid sm:grid-cols-2 gap-x-10 max-w-3xl mx-auto border-t border-gold/50">
+						{/* One topic per row: title left, description right; stacked on phones */}
+						<ul className="max-w-4xl mx-auto border-t border-gold/50">
 							{c.building.items.map((item) => (
-								<motion.li key={item.title} className="py-4 border-b border-gold/50" variants={itemVariants}>
+								<motion.li
+									key={item.title}
+									className="grid md:grid-cols-[17rem_1fr] gap-x-8 gap-y-1 py-4 border-b border-gold/50 md:items-baseline"
+									variants={itemVariants}
+								>
 									<p className="font-bold text-ink">{item.title}</p>
-									<p className="mt-1 text-deep">{item.description}</p>
+									<p className="text-deep">{item.description}</p>
 								</motion.li>
 							))}
 						</ul>
