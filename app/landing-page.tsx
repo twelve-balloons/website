@@ -48,6 +48,7 @@ export default function LandingPage() {
 					{ title: "Animation layer", text: "merges it all into a seamless, live loop" },
 				],
 				cta: "What's your badge's look?",
+				exampleAlt: "Badges made with the generator, each in a different style",
 				buttonText: "Try the Badge Generator",
 			},
 			about: {
@@ -136,6 +137,7 @@ export default function LandingPage() {
 					{ title: "Animationsebene", text: "fügt alles zu einer nahtlosen, lebendigen Schleife zusammen" },
 				],
 				cta: "Wie sieht Ihr Badge aus?",
+				exampleAlt: "Mit dem Generator erstellte Badges, jedes in einem anderen Stil",
 				buttonText: "Badge-Generator ausprobieren",
 			},
 			about: {
@@ -351,16 +353,23 @@ export default function LandingPage() {
 							</motion.p>
 						</div>
 
-						{/* Experiment 1: Badge Generator (live) */}
+						{/* Experiment 1: Badge Generator (live). Text left, one real badge right that changes style one by one. */}
 						<motion.article className="border-t border-gold/50 pt-10" variants={itemVariants}>
-							<div className="text-center">
-								<StatusChip tone="live" center>{c.projects.liveStatus}</StatusChip>
-								<h3 className="mt-4 text-2xl md:text-3xl font-extrabold tracking-[-0.02em] text-ink">{c.badgeGenerator.title}</h3>
-								<p className="mt-4 text-lg max-w-2xl mx-auto text-deep leading-relaxed">{c.badgeGenerator.description}</p>
+							<div className="grid md:grid-cols-[1fr_auto] gap-10 items-center max-w-4xl mx-auto">
+								<div className="text-center md:text-left">
+									<StatusChip tone="live" center>{c.projects.liveStatus}</StatusChip>
+									<h3 className="mt-4 text-2xl md:text-3xl font-extrabold tracking-[-0.02em] text-ink">{c.badgeGenerator.title}</h3>
+									<p className="mt-4 text-lg text-deep leading-relaxed">{c.badgeGenerator.description}</p>
+									<p className="mt-6 text-xl font-bold text-ink">{c.badgeGenerator.cta}</p>
+									<div className="mt-4">
+										<PrimaryButton href="https://badge.twelve-balloons.com/">{c.badgeGenerator.buttonText}</PrimaryButton>
+									</div>
+								</div>
+								<BadgeCycler alt={c.badgeGenerator.exampleAlt} />
 							</div>
 
 							{/* Four steps of the pipeline, numbered instead of icons */}
-							<ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-px my-10 max-w-4xl mx-auto text-left bg-gold/40 rounded-md overflow-hidden border border-gold/40">
+							<ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-px mt-10 max-w-4xl mx-auto text-left bg-gold/40 rounded-md overflow-hidden border border-gold/40">
 								{c.badgeGenerator.steps.map((step, i) => (
 									<li key={step.title} className="bg-paper/90 p-5">
 										<span className="font-mono text-xs text-deep/70">{String(i + 1).padStart(2, "0")}</span>
@@ -369,11 +378,6 @@ export default function LandingPage() {
 									</li>
 								))}
 							</ol>
-
-							<div className="text-center space-y-4">
-								<p className="text-xl font-bold text-ink">{c.badgeGenerator.cta}</p>
-								<PrimaryButton href="https://badge.twelve-balloons.com/">{c.badgeGenerator.buttonText}</PrimaryButton>
-							</div>
 						</motion.article>
 
 						{/* Experiments 2 and 3: side by side. Buttons follow status (see DESIGN.md). */}
@@ -533,7 +537,7 @@ function PrimaryButton({ href, children, size = "lg" }: { href: string; children
 			target="_blank"
 			rel="noopener noreferrer"
 			className={`btn-lit inline-flex items-center gap-2 rounded-full text-ink font-bold border border-balloon-dark/60 transition-transform duration-150 ease-out active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep ${
-				size === "lg" ? "px-7 py-3.5 text-base md:text-lg" : "px-5 py-2.5 text-sm"
+				size === "lg" ? "whitespace-nowrap px-5 sm:px-7 py-3.5 text-[15px] sm:text-base md:text-lg" : "whitespace-nowrap px-5 py-2.5 text-sm"
 			}`}
 		>
 			{children}
@@ -553,6 +557,33 @@ function SecondaryButton({ href, children }: { href: string; children: React.Rea
 			{children}
 			<ExternalLink size={13} />
 		</Link>
+	);
+}
+
+// Real badges from the generator (stills from the team's screen recordings), shown one by one.
+const BADGE_EXAMPLES = ["/images/badges/badge-1.jpg", "/images/badges/badge-2.jpg", "/images/badges/badge-3.jpg", "/images/badges/badge-4.jpg", "/images/badges/badge-5.jpg"];
+
+function BadgeCycler({ alt }: { alt: string }) {
+	const reduce = useReducedMotion();
+	const [index, setIndex] = useState(0);
+	useEffect(() => {
+		if (reduce) return;
+		const id = window.setInterval(() => setIndex((i) => (i + 1) % BADGE_EXAMPLES.length), 2800);
+		return () => window.clearInterval(id);
+	}, [reduce]);
+	return (
+		<figure className="relative mx-auto w-[200px] md:w-[220px] aspect-[2/3] rounded-md overflow-hidden border border-gold/40 shadow-[0_12px_32px_-12px_rgba(31,42,37,0.35)]">
+			{BADGE_EXAMPLES.map((src, i) => (
+				<Image
+					key={src}
+					src={src}
+					alt={i === 0 ? alt : ""}
+					fill
+					sizes="220px"
+					className={`object-cover transition-opacity duration-700 ease-out ${i === index ? "opacity-100" : "opacity-0"}`}
+				/>
+			))}
+		</figure>
 	);
 }
 
