@@ -75,6 +75,14 @@ Plus a gentle top-to-bottom gradient. Pressed: the light flips and the button sc
 
 **Secondary button** (`SecondaryButton`): outline `border-deep/25`, `rounded-full`, hover `bg-sage/20`. Never two primary buttons side by side.
 
+**Buttons follow status.** Orange means "you can use this right now":
+| Status | Main action | Extra links |
+|---|---|---|
+| Live | orange `PrimaryButton` ("Try …") | `TextLink` |
+| Prototype / in progress | outline `SecondaryButton` ("View the prototype") | `TextLink` ("Read the post") |
+| Idea / research | no button | `TextLink` at most |
+One button per entry; further links are text links, never a second button.
+
 **Text link** (`TextLink`): `deep`, semibold, arrow that nudges right on hover, underline on hover.
 
 **Status chip** (`StatusChip`): paper pill with a dot. Orange dot = live, sage dot = in progress.

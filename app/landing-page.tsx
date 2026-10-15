@@ -76,7 +76,7 @@ export default function LandingPage() {
 					status: "Prototype in progress",
 				},
 				liveStatus: "Live experiment",
-				viewPrototype: "View prototype",
+				viewPrototype: "View the prototype",
 				readPost: "Read the post",
 			},
 			building: {
@@ -374,13 +374,14 @@ export default function LandingPage() {
 								<h3 className="mt-4 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.spotify.title}</h3>
 								<p className="text-deep leading-relaxed">{c.projects.spotify.description}</p>
 							</div>
-							<div className="flex flex-wrap gap-3 md:flex-col md:items-stretch">
-								<SecondaryButton href="https://v0.dev/community/neumorphic-design-system-ChCGgi8RVyO">
+							{/* Button follows status: prototype = one outline button + a quiet text link (orange is for live only) */}
+							<div className="flex flex-wrap items-center gap-x-6 gap-y-3 md:flex-col md:items-start">
+								<SecondaryButton href="https://v0.app/templates/neumorphic-design-system-ChCGgi8RVyO">
 									{c.projects.viewPrototype}
 								</SecondaryButton>
-								<SecondaryButton href="https://miketwelveballoons.substack.com/p/when-conversation-becomes-the-ui">
+								<TextLink href="https://miketwelveballoons.substack.com/p/when-conversation-becomes-the-ui">
 									{c.projects.readPost}
-								</SecondaryButton>
+								</TextLink>
 							</div>
 						</motion.article>
 					</AnimatedSection>
