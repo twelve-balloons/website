@@ -1,0 +1,8 @@
+.last-video-op
+*.with-audio.mp4
+
+# Raw generation masters stay local (37 MB); the site uses the compressed
+# copies in public/media/. Regenerate or ask Mike for the originals.
+*.mp4
+*.png
+checks/
