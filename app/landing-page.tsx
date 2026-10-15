@@ -78,6 +78,7 @@ export default function LandingPage() {
 					description:
 						"A conversational UI that links natural language (voice or text) to real-time music control via Spotify.",
 					status: "Live prototype",
+					previewAlt: "The Spotify Agent: a search field and a track list with play buttons",
 					tryIt: "Try it with your Spotify",
 					premium: "Playback needs Spotify Premium.",
 				},
@@ -86,6 +87,7 @@ export default function LandingPage() {
 					description:
 						"An open v0 template we share with the community: music player, events, agenda and project cards in a soft neumorphic style, light and dark.",
 					status: "Open template",
+					previewAlt: "The agenda view of the Neumorphic UI kit",
 				},
 				liveStatus: "Live experiment",
 				useTemplate: "Use the template on v0",
@@ -172,6 +174,7 @@ export default function LandingPage() {
 					description:
 						"Ein sprachgesteuertes Interface, das natürliche Sprache (per Stimme oder Text) mit Spotify verbindet. Musiksteuerung in Echtzeit, ohne klassische App.",
 					status: "Live-Prototyp",
+					previewAlt: "Der Spotify Agent: Suchfeld und Titelliste mit Play-Buttons",
 					tryIt: "Mit Ihrem Spotify ausprobieren",
 					premium: "Die Wiedergabe braucht Spotify Premium.",
 				},
@@ -180,6 +183,7 @@ export default function LandingPage() {
 					description:
 						"Eine offene v0-Vorlage, die wir mit der Community teilen: Musikplayer, Events, Agenda und Projektkarten im sanften Neumorphic-Stil, hell und dunkel.",
 					status: "Offene Vorlage",
+					previewAlt: "Die Agenda-Ansicht des Neumorphic UI-Kits",
 				},
 				liveStatus: "Live-Experiment",
 				useTemplate: "Vorlage auf v0 verwenden",
@@ -402,7 +406,8 @@ export default function LandingPage() {
 
 						{/* Experiments 2 and 3: side by side. Buttons follow status (see DESIGN.md). */}
 						<div className="mt-12 border-t border-gold/50 grid md:grid-cols-2 md:divide-x divide-gold/50 max-w-4xl mx-auto">
-							<motion.article className="pt-10 md:pr-10 flex flex-col md:grid md:grid-rows-subgrid md:row-span-4 md:content-start" variants={itemVariants}>
+							<motion.article className="pt-10 md:pr-10 flex flex-col md:grid md:grid-rows-subgrid md:row-span-5 md:content-start" variants={itemVariants}>
+								<Preview src="/images/previews/spotify-agent.jpg" alt={c.projects.spotify.previewAlt} />
 								<StatusChip tone="live">{c.projects.spotify.status}</StatusChip>
 								<h3 className="mt-3 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.spotify.title}</h3>
 								<p className="mb-6 text-deep leading-relaxed">{c.projects.spotify.description}</p>
@@ -417,7 +422,8 @@ export default function LandingPage() {
 								</div>
 							</motion.article>
 
-							<motion.article className="pt-10 md:pl-10 flex flex-col md:grid md:grid-rows-subgrid md:row-span-4 md:content-start border-t border-gold/50 mt-10 md:border-t-0 md:mt-0" variants={itemVariants}>
+							<motion.article className="pt-10 md:pl-10 flex flex-col md:grid md:grid-rows-subgrid md:row-span-5 md:content-start border-t border-gold/50 mt-10 md:border-t-0 md:mt-0" variants={itemVariants}>
+								<Preview src="/images/previews/ui-kit.jpg" alt={c.projects.kit.previewAlt} />
 								<StatusChip tone="open">{c.projects.kit.status}</StatusChip>
 								<h3 className="mt-3 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.kit.title}</h3>
 								<p className="mb-6 text-deep leading-relaxed">{c.projects.kit.description}</p>
@@ -637,6 +643,15 @@ function PromptLink({ placeholder, label }: { placeholder: string; label: string
 				<ArrowRight size={16} />
 			</span>
 		</a>
+	);
+}
+
+// Product preview for the smaller Lab entries: same 5:4 frame for both, so they read as a pair.
+function Preview({ src, alt }: { src: string; alt: string }) {
+	return (
+		<div className="relative mb-6 aspect-[5/4] w-full overflow-hidden rounded-md border border-gold/40 shadow-[0_1px_2px_rgba(31,42,37,0.08),0_12px_24px_-12px_rgba(31,42,37,0.3)]">
+			<Image src={src} alt={alt} fill sizes="(min-width: 768px) 420px, 90vw" className="object-cover" />
+		</div>
 	);
 }
 
