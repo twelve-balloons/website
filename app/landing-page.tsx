@@ -646,11 +646,12 @@ function PromptLink({ placeholder, label }: { placeholder: string; label: string
 	);
 }
 
-// Product preview for the smaller Lab entries: same 5:4 frame for both, so they read as a pair.
+// Product preview for the smaller Lab entries: a small icon-like tile, the whole card centred on its
+// own background (never cropped through content), same size for both so they read as a pair.
 function Preview({ src, alt }: { src: string; alt: string }) {
 	return (
-		<div className="relative mb-6 aspect-[5/4] w-full overflow-hidden rounded-md border border-gold/40 shadow-[0_1px_2px_rgba(31,42,37,0.08),0_12px_24px_-12px_rgba(31,42,37,0.3)]">
-			<Image src={src} alt={alt} fill sizes="(min-width: 768px) 420px, 90vw" className="object-cover" />
+		<div className="relative mb-6 aspect-[4/3] w-[200px] overflow-hidden rounded-md border border-gold/40 shadow-[0_1px_2px_rgba(31,42,37,0.08),0_10px_20px_-10px_rgba(31,42,37,0.3)]">
+			<Image src={src} alt={alt} fill sizes="200px" className="object-cover" />
 		</div>
 	);
 }
