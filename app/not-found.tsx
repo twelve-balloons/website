@@ -22,7 +22,7 @@ export default function NotFound() {
 				<p className="mt-3 text-deep leading-relaxed">The page you were looking for isn&apos;t here. The rest of the sky is.</p>
 				<Link
 					href="/"
-					className="mt-8 inline-flex items-center rounded-full bg-balloon px-6 py-3 font-bold text-ink border border-balloon-dark/60 transition-[transform,background-color] duration-150 ease-out hover:bg-balloon-dark active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep"
+					className="mt-8 inline-flex items-center btn-lit rounded-full px-6 py-3 font-bold text-ink border border-balloon-dark/60 transition-transform duration-150 ease-out active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep"
 				>
 					Back to the homepage
 				</Link>

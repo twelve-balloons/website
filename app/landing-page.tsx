@@ -535,7 +535,7 @@ function PrimaryButton({ href, children, size = "lg" }: { href: string; children
 			href={href}
 			target="_blank"
 			rel="noopener noreferrer"
-			className={`inline-flex items-center gap-2 rounded-full bg-balloon text-ink font-bold border border-balloon-dark/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-2px_0_rgba(0,0,0,0.08),0_6px_16px_-6px_rgba(217,133,58,0.55)] transition-[transform,background-color] duration-150 ease-out hover:bg-balloon-dark active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep ${
+			className={`btn-lit inline-flex items-center gap-2 rounded-full text-ink font-bold border border-balloon-dark/60 transition-transform duration-150 ease-out active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep ${
 				size === "lg" ? "px-7 py-3.5 text-base md:text-lg" : "px-5 py-2.5 text-sm"
 			}`}
 		>
