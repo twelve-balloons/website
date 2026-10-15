@@ -84,7 +84,7 @@ export default function LandingPage() {
 				kit: {
 					title: "Neumorphic UI kit",
 					description:
-						"An open v0 template we share with the community: music player, events, agenda and project cards in a soft neumorphic style, light and dark. The Spotify Agent runs on it.",
+						"An open v0 template we share with the community: music player, events, agenda and project cards in a soft neumorphic style, light and dark.",
 					status: "Open template",
 				},
 				liveStatus: "Live experiment",
@@ -178,7 +178,7 @@ export default function LandingPage() {
 				kit: {
 					title: "Neumorphic UI-Kit",
 					description:
-						"Eine offene v0-Vorlage, die wir mit der Community teilen: Musikplayer, Events, Agenda und Projektkarten im sanften Neumorphic-Stil, hell und dunkel. Der Spotify Agent läuft darauf.",
+						"Eine offene v0-Vorlage, die wir mit der Community teilen: Musikplayer, Events, Agenda und Projektkarten im sanften Neumorphic-Stil, hell und dunkel.",
 					status: "Offene Vorlage",
 				},
 				liveStatus: "Live-Experiment",
