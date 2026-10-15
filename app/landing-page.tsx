@@ -77,12 +77,14 @@ export default function LandingPage() {
 					title: "Spotify Agent",
 					description:
 						"A conversational UI that links natural language (voice or text) to real-time music control via Spotify.",
-					status: "Working prototype",
+					status: "Live prototype",
+					tryIt: "Try it with your Spotify",
+					premium: "Playback needs Spotify Premium.",
 				},
 				kit: {
 					title: "Neumorphic UI kit",
 					description:
-						"An open v0 template we share with the community: music player, events, agenda and project cards in a soft neumorphic style, light and dark.",
+						"An open v0 template we share with the community: music player, events, agenda and project cards in a soft neumorphic style, light and dark. The Spotify Agent runs on it.",
 					status: "Open template",
 				},
 				liveStatus: "Live experiment",
@@ -169,12 +171,14 @@ export default function LandingPage() {
 					title: "Spotify Agent",
 					description:
 						"Ein sprachgesteuertes Interface, das natürliche Sprache (per Stimme oder Text) mit Spotify verbindet. Musiksteuerung in Echtzeit, ohne klassische App.",
-					status: "Funktionierender Prototyp",
+					status: "Live-Prototyp",
+					tryIt: "Mit Ihrem Spotify ausprobieren",
+					premium: "Die Wiedergabe braucht Spotify Premium.",
 				},
 				kit: {
 					title: "Neumorphic UI-Kit",
 					description:
-						"Eine offene v0-Vorlage, die wir mit der Community teilen: Musikplayer, Events, Agenda und Projektkarten im sanften Neumorphic-Stil, hell und dunkel.",
+						"Eine offene v0-Vorlage, die wir mit der Community teilen: Musikplayer, Events, Agenda und Projektkarten im sanften Neumorphic-Stil, hell und dunkel. Der Spotify Agent läuft darauf.",
 					status: "Offene Vorlage",
 				},
 				liveStatus: "Live-Experiment",
@@ -398,20 +402,26 @@ export default function LandingPage() {
 
 						{/* Experiments 2 and 3: side by side. Buttons follow status (see DESIGN.md). */}
 						<div className="mt-12 border-t border-gold/50 grid md:grid-cols-2 md:divide-x divide-gold/50 max-w-4xl mx-auto">
-							<motion.article className="pt-10 md:pr-10 flex flex-col" variants={itemVariants}>
-								<StatusChip tone="progress">{c.projects.spotify.status}</StatusChip>
-								<h3 className="mt-4 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.spotify.title}</h3>
+							<motion.article className="pt-10 md:pr-10 flex flex-col md:grid md:grid-rows-subgrid md:row-span-4 md:content-start" variants={itemVariants}>
+								<StatusChip tone="live">{c.projects.spotify.status}</StatusChip>
+								<h3 className="mt-3 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.spotify.title}</h3>
 								<p className="mb-6 text-deep leading-relaxed">{c.projects.spotify.description}</p>
-								<TextLink href="https://miketwelveballoons.substack.com/p/when-conversation-becomes-the-ui">
-									{c.projects.readPost}
-								</TextLink>
+								<div className="flex flex-col items-start gap-3">
+									<PrimaryButton href="https://v0-neumorphic-spotify-player.vercel.app" size="sm">
+										{c.projects.spotify.tryIt}
+									</PrimaryButton>
+									<p className="text-xs text-deep/70">{c.projects.spotify.premium}</p>
+									<TextLink href="https://miketwelveballoons.substack.com/p/when-conversation-becomes-the-ui">
+										{c.projects.readPost}
+									</TextLink>
+								</div>
 							</motion.article>
 
-							<motion.article className="pt-10 md:pl-10 flex flex-col border-t border-gold/50 mt-10 md:border-t-0 md:mt-0" variants={itemVariants}>
+							<motion.article className="pt-10 md:pl-10 flex flex-col md:grid md:grid-rows-subgrid md:row-span-4 md:content-start border-t border-gold/50 mt-10 md:border-t-0 md:mt-0" variants={itemVariants}>
 								<StatusChip tone="open">{c.projects.kit.status}</StatusChip>
-								<h3 className="mt-4 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.kit.title}</h3>
+								<h3 className="mt-3 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.kit.title}</h3>
 								<p className="mb-6 text-deep leading-relaxed">{c.projects.kit.description}</p>
-								<div className="mt-auto">
+								<div className="self-start">
 									<SecondaryButton href="https://v0.app/templates/neumorphic-design-system-ChCGgi8RVyO">
 										{c.projects.useTemplate}
 									</SecondaryButton>
