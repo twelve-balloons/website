@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 
@@ -45,9 +45,9 @@ export default function SkyBackground() {
 
 	return (
 		<div className="fixed inset-0 z-0 overflow-hidden bg-paper" aria-hidden="true">
-			{/* Square artwork sized like object-cover, anchored to the top so the balloons stay in view */}
-			<div className="absolute left-1/2 top-0 aspect-square w-[max(100vw,100vh)] -translate-x-1/2">
-				<Image src="/images/mountain-sky.png" alt="" fill priority sizes="100vw" className="object-cover" />
+			<MeadowScrub reduce={!!reduce} />
+			{/* Balloon box: square of 90vh, centred, so the cluster stays in the sky on every screen */}
+			<div className="absolute left-1/2 top-[-3vh] aspect-square h-[90vh] -translate-x-1/2">
 				<motion.div className="absolute inset-0" style={reduce ? undefined : { y: rise }}>
 					<motion.div className="absolute inset-0" style={reduce ? undefined : { x: sx, y: sy }}>
 						{BALLOONS.map((b) => (
@@ -70,5 +70,51 @@ export default function SkyBackground() {
 				</motion.div>
 			</div>
 		</div>
+	);
+}
+
+// Background painting: an 8 s transition video (meadow blooms) scrubbed by page scroll.
+// Poster = start frame, so the page looks right before the video has loaded.
+function MeadowScrub({ reduce }: { reduce: boolean }) {
+	const videoRef = useRef<HTMLVideoElement>(null);
+	const { scrollYProgress } = useScroll();
+
+	useEffect(() => {
+		const video = videoRef.current;
+		if (!video || reduce) return;
+		let frame = 0;
+		let target = 0;
+		const seek = () => {
+			frame = 0;
+			if (video.readyState >= 1 && Number.isFinite(video.duration)) {
+				video.currentTime = Math.min(target * video.duration, video.duration - 0.05);
+			}
+		};
+		const unsubscribe = scrollYProgress.on("change", (p) => {
+			target = p;
+			if (!frame) frame = requestAnimationFrame(seek);
+		});
+		video.addEventListener("loadedmetadata", seek);
+		return () => {
+			unsubscribe();
+			cancelAnimationFrame(frame);
+			video.removeEventListener("loadedmetadata", seek);
+		};
+	}, [reduce, scrollYProgress]);
+
+	if (reduce) {
+		return <Image src="/media/meadow-start.jpg" alt="" fill priority sizes="100vw" className="object-cover object-top" />;
+	}
+
+	return (
+		<video
+			ref={videoRef}
+			src="/media/meadow-bloom.mp4"
+			poster="/media/meadow-start.jpg"
+			muted
+			playsInline
+			preload="auto"
+			className="absolute inset-0 h-full w-full object-cover object-top"
+		/>
 	);
 }

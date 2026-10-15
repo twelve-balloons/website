@@ -497,6 +497,7 @@ export default function LandingPage() {
 									width={62}
 									height={52}
 									className="h-[52px] w-auto"
+									style={{ width: "auto" }}
 								/>
 							</div>
 							<div className="flex gap-6">
