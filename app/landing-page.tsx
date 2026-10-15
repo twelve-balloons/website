@@ -364,12 +364,12 @@ export default function LandingPage() {
 							<div className="grid grid-cols-[minmax(0,1fr)] md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-x-10 gap-y-8 max-w-4xl mx-auto">
 								<div className="w-full min-w-0 text-center md:text-left md:py-4 max-w-xl mx-auto md:mx-0">
 									<StatusChip tone="live" center>{c.projects.liveStatus}</StatusChip>
-									<h3 className="mt-4 text-2xl md:text-3xl font-extrabold tracking-[-0.02em] text-ink">{c.badgeGenerator.title}</h3>
+									<h3 className="mt-3 text-2xl md:text-3xl font-extrabold tracking-[-0.02em] text-ink">{c.badgeGenerator.title}</h3>
 									<p className="mt-4 text-lg text-deep leading-relaxed">{c.badgeGenerator.description}</p>
 									{/* The question labels the prompt field; the field is this entry's one main action */}
-									<p id="badge-prompt-label" className="mt-8 text-lg font-bold text-ink">{c.badgeGenerator.cta}</p>
+									<p id="badge-prompt-label" className="mt-10 text-base font-semibold text-ink">{c.badgeGenerator.cta}</p>
 									<PromptLink placeholder={c.badgeGenerator.promptPlaceholder} label={c.badgeGenerator.openPrompt} />
-									<div className="mt-4">
+									<div className="mt-3">
 										<a
 											href="https://badge.twelve-balloons.com/imagine"
 											target="_blank"
@@ -619,12 +619,12 @@ function PromptLink({ placeholder, label }: { placeholder: string; label: string
 			rel="noopener noreferrer"
 			aria-label={label}
 			aria-describedby="badge-prompt-label"
-			className={`group mt-3 mx-auto md:mx-0 flex w-full max-w-sm items-center gap-2 rounded-full border border-gold/60 bg-white/70 py-1.5 pl-5 pr-1.5 text-base text-deep/70 shadow-[inset_0_1px_2px_rgba(31,42,37,0.06)] transition-[border-color,background-color,box-shadow] duration-200 ease-out hover:border-deep/40 hover:bg-white hover:shadow-[0_0_0_4px_rgba(232,155,82,0.18)] ${focusRing}`}
+			className={`group mt-3 mx-auto md:mx-0 flex h-12 w-full max-w-[22rem] items-center gap-1.5 sm:gap-2 rounded-full border border-gold/60 bg-white/70 pl-4 sm:pl-5 pr-1.5 text-sm sm:text-[15px] text-deep/70 shadow-[inset_0_1px_2px_rgba(31,42,37,0.06)] transition-[border-color,background-color,box-shadow] duration-200 ease-out hover:border-deep/40 hover:bg-white hover:shadow-[0_0_0_4px_rgba(232,155,82,0.18)] ${focusRing}`}
 		>
 			<span className="min-w-0 truncate">{placeholder}</span>
-			<span className="caret-blink inline-block h-5 w-px shrink-0 bg-deep" />
-			<span className="btn-lit ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-balloon-dark/60 text-ink transition-transform duration-150 ease-out group-hover:translate-x-0.5 group-active:scale-[0.97]">
-				<ArrowRight size={18} />
+			<span className="caret-blink hidden sm:inline-block h-[18px] w-px shrink-0 bg-deep" />
+			<span className="btn-lit ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-balloon-dark/60 text-ink transition-transform duration-150 ease-out group-hover:translate-x-0.5 group-active:scale-[0.97]">
+				<ArrowRight size={16} />
 			</span>
 		</a>
 	);
@@ -645,8 +645,9 @@ function TextLink({ href, children }: { href: string; children: React.ReactNode 
 }
 
 function StatusChip({ tone, children, center }: { tone: "live" | "progress" | "open"; children: React.ReactNode; center?: boolean }) {
+	// Eyebrow label, deliberately not a pill: the only pill in an entry is its action.
 	return (
-		<span className={`inline-flex items-center gap-2 ${center ? "" : "self-start"} rounded-full border border-gold/50 bg-paper px-3 py-1 text-xs font-semibold text-deep`}>
+		<span className={`inline-flex items-center gap-2 ${center ? "" : "self-start"} text-xs font-semibold uppercase tracking-[0.1em] text-deep/80`}>
 			<span className={`h-2 w-2 rounded-full ${tone === "live" ? "bg-balloon" : tone === "open" ? "bg-deep" : "bg-sage"}`} />
 			{children}
 		</span>

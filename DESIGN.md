@@ -66,6 +66,8 @@ Rules:
 
 ## 4. Components
 
+**Prompt field** (`PromptLink`): 48 px tall, about 352 px wide (full width on phones), 15 px text, 36 px orange lit arrow button inside. Labelled by a short question above it.
+
 **Primary button** (`PrimaryButton`, class `btn-lit` in `globals.css`). Lit from above:
 1. 1 px light inset on the top edge
 2. darker inset line at the bottom
@@ -87,7 +89,7 @@ One button per entry; further links are text links, never a second button.
 
 **Text link** (`TextLink`): `deep`, semibold, arrow that nudges right on hover, underline on hover.
 
-**Status chip** (`StatusChip`): paper pill with a dot. Orange dot = live, sage dot = in progress, deep green dot = open resource.
+**Status label** (`StatusChip`): no pill, just a dot + small caps (`text-xs uppercase tracking-[0.1em]`). Orange dot = live, sage = in progress, deep green = open resource. The only pill in an entry is its action.
 
 **Focus:** every interactive element shows `focusRing` (2 px `deep` outline, 2 px offset) on keyboard focus.
 
