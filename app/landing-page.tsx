@@ -11,10 +11,24 @@ import SkyBackground from "./sky-background";
 export default function LandingPage() {
 	const [language, setLanguage] = useState<"en" | "de">("en");
 	const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const onScroll = () => setScrolled(window.scrollY > 24);
+		onScroll();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
+
+	// Keep the document language in sync with the toggle (screen readers, hyphenation).
+	useEffect(() => {
+		document.documentElement.lang = language;
+	}, [language]);
 
 	// Content object for both languages
 	const content = {
 		en: {
+			nav: { lab: "Lab", projects: "Projects", mission: "Mission", community: "Community" },
 			hero: {
 				title: "The Future of Apps Is Conversational",
 				subtitle:
@@ -103,6 +117,7 @@ export default function LandingPage() {
 			},
 		},
 		de: {
+			nav: { lab: "Labor", projects: "Projekte", mission: "Mission", community: "Community" },
 			hero: {
 				title: "Die Zukunft von Apps ist sprachgesteuert",
 				subtitle:
@@ -196,81 +211,93 @@ export default function LandingPage() {
 	const heroWords = c.hero.title.split(" ");
 
 	return (
-		<div className="min-h-screen flex flex-col overflow-x-clip font-display text-ink">
+		<div id="top" className="min-h-screen flex flex-col overflow-x-clip font-display text-ink">
 			<SkyBackground />
 
 			<div className="relative z-10 min-h-screen flex flex-col px-6 md:px-16 lg:px-24">
-				{/* Header */}
-				<header className="pt-6 relative max-w-5xl mx-auto w-full flex items-center justify-center">
-					<p className="text-xl md:text-2xl font-black tracking-tight text-deep">Twelve Balloons</p>
-				</header>
-
-				{/* Language toggle */}
-				<div className="fixed md:absolute md:top-6 top-6 right-6 z-20">
+				{/* Header: logo, section anchors, language. Gets a paper background once you scroll. */}
+				<header
+					className={`sticky top-0 z-30 -mx-6 md:-mx-16 lg:-mx-24 px-6 md:px-16 lg:px-24 transition-[background-color,box-shadow] duration-200 ease-out ${
+						scrolled ? "bg-paper/80 backdrop-blur-md shadow-[0_1px_0_rgba(31,42,37,0.08)]" : "bg-transparent"
+					}`}
+				>
+					<div className="max-w-5xl mx-auto h-16 flex items-center justify-between gap-6">
+						<a href="#top" className={`flex items-center gap-2.5 rounded-md ${focusRing}`}>
+							<Image src="/images/logo-balloons.png" alt="" width={34} height={28} className="h-7 w-auto" style={{ width: "auto" }} />
+							<span className="text-lg md:text-xl font-black tracking-tight text-deep">Twelve Balloons</span>
+						</a>
+						<nav aria-label="Sections" className="hidden md:flex items-center gap-7 text-sm font-semibold text-deep">
+							{(["lab", "projects", "mission", "community"] as const).map((id) => (
+								<a key={id} href={`#${id}`} className={`rounded-sm transition-colors hover:text-ink ${focusRing}`}>
+									{c.nav[id]}
+								</a>
+							))}
+						</nav>
 					<div className="relative">
-						{/* Mobile: floating button */}
-						<div className="md:hidden">
-							<button
-								onClick={() => setShowLanguageMenu(!showLanguageMenu)}
-								aria-label="Change language"
-								aria-expanded={showLanguageMenu}
-								className="w-11 h-11 bg-paper/80 backdrop-blur-sm rounded-full shadow-sm flex items-center justify-center text-deep font-bold border border-gold/40 text-xs transition-transform active:scale-[0.97]"
-							>
-								{language.toUpperCase()}
-							</button>
-							<motion.div
-								className="absolute top-12 right-0 bg-paper/95 backdrop-blur-sm rounded-xl shadow-lg border border-gold/40 overflow-hidden"
-								initial={false}
-								animate={{
-									opacity: showLanguageMenu ? 1 : 0,
-									y: showLanguageMenu ? 0 : -8,
-									scale: showLanguageMenu ? 1 : 0.95,
-								}}
-								transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
-								style={{ pointerEvents: showLanguageMenu ? "auto" : "none", transformOrigin: "top right" }}
-							>
-								{(["en", "de"] as const).map((lang) => (
-									<button
-										key={lang}
-										onClick={() => {
-											setLanguage(lang);
-											setShowLanguageMenu(false);
-										}}
-										className={`block w-full px-4 py-3 text-left font-semibold transition-colors ${
-											language === lang ? "bg-deep text-paper" : "text-deep hover:bg-sage/20"
-										}`}
-									>
-										{lang === "en" ? "English" : "Deutsch"}
-									</button>
-								))}
-							</motion.div>
-						</div>
+							{/* Mobile: floating button */}
+							<div className="md:hidden">
+								<button
+									onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+									aria-label="Change language"
+									aria-expanded={showLanguageMenu}
+									className={`w-11 h-11 bg-paper/80 backdrop-blur-sm rounded-full shadow-sm flex items-center justify-center text-deep font-bold border border-gold/40 text-xs transition-transform active:scale-[0.97] ${focusRing}`}
+								>
+									{language.toUpperCase()}
+								</button>
+								<motion.div
+									className="absolute top-12 right-0 bg-paper/95 backdrop-blur-sm rounded-xl shadow-lg border border-gold/40 overflow-hidden"
+									initial={false}
+									animate={{
+										opacity: showLanguageMenu ? 1 : 0,
+										y: showLanguageMenu ? 0 : -8,
+										scale: showLanguageMenu ? 1 : 0.95,
+									}}
+									transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
+									style={{ pointerEvents: showLanguageMenu ? "auto" : "none", transformOrigin: "top right" }}
+								>
+									{(["en", "de"] as const).map((lang) => (
+										<button
+											key={lang}
+											onClick={() => {
+												setLanguage(lang);
+												setShowLanguageMenu(false);
+											}}
+											className={`block w-full px-4 py-3 text-left font-semibold transition-colors ${focusRing} ${
+												language === lang ? "bg-deep text-paper" : "text-deep hover:bg-sage/20"
+											}`}
+										>
+											{lang === "en" ? "English" : "Deutsch"}
+										</button>
+									))}
+								</motion.div>
+							</div>
 
-						{/* Desktop: sliding toggle */}
-						<div className="hidden md:block relative bg-paper/80 backdrop-blur-sm rounded-full p-1 shadow-sm border border-gold/40">
-							<motion.div
-								className="absolute top-1 bottom-1 bg-deep rounded-full"
-								initial={false}
-								animate={{ left: language === "en" ? "4px" : "50%" }}
-								style={{ width: "calc(50% - 4px)" }}
-								transition={{ type: "spring", stiffness: 300, damping: 30 }}
-							/>
-							<div className="relative flex">
-								{(["en", "de"] as const).map((lang) => (
-									<button
-										key={lang}
-										onClick={() => setLanguage(lang)}
-										className={`relative z-10 px-3 py-1 rounded-full text-sm font-bold transition-colors ${
-											language === lang ? "text-paper" : "text-deep hover:text-ink"
-										}`}
-									>
-										{lang.toUpperCase()}
-									</button>
-								))}
+							{/* Desktop: sliding toggle */}
+							<div className="hidden md:block relative bg-paper/80 backdrop-blur-sm rounded-full p-1 shadow-sm border border-gold/40">
+								<motion.div
+									className="absolute top-1 bottom-1 bg-deep rounded-full"
+									initial={false}
+									animate={{ left: language === "en" ? "4px" : "50%" }}
+									style={{ width: "calc(50% - 4px)" }}
+									transition={{ type: "spring", stiffness: 300, damping: 30 }}
+								/>
+								<div className="relative flex">
+									{(["en", "de"] as const).map((lang) => (
+										<button
+											key={lang}
+											onClick={() => setLanguage(lang)}
+											className={`relative z-10 px-3 py-1 rounded-full text-sm font-bold transition-colors ${focusRing} ${
+												language === lang ? "text-paper" : "text-deep hover:text-ink"
+											}`}
+										>
+											{lang.toUpperCase()}
+										</button>
+									))}
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</header>
 
 				<main className="flex-1 flex flex-col max-w-5xl mx-auto w-full">
 					{/* Hero: full first screen, balloons above, text in the lower part */}
@@ -316,7 +343,7 @@ export default function LandingPage() {
 					</section>
 
 					{/* Badge Generator */}
-					<AnimatedSection className={`${panel} mb-12`}>
+					<AnimatedSection id="lab" className={`${panel} mb-12`}>
 						<div className="text-center">
 							<motion.div
 								className="inline-flex items-center gap-2 bg-paper border border-gold/50 text-deep px-3 py-1.5 rounded-full mb-5 text-xs font-semibold uppercase tracking-[0.08em]"
@@ -335,7 +362,7 @@ export default function LandingPage() {
 							</motion.p>
 
 							{/* Four steps of the pipeline, numbered instead of icons */}
-							<motion.ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-px mb-10 max-w-4xl mx-auto text-left bg-gold/40 rounded-xl overflow-hidden border border-gold/40" variants={itemVariants}>
+							<motion.ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-px mb-10 max-w-4xl mx-auto text-left bg-gold/40 rounded-md overflow-hidden border border-gold/40" variants={itemVariants}>
 								{c.badgeGenerator.steps.map((step, i) => (
 									<li key={step.title} className="bg-paper/90 p-5">
 										<span className="font-mono text-xs text-deep/70">{String(i + 1).padStart(2, "0")}</span>
@@ -366,51 +393,40 @@ export default function LandingPage() {
 					</AnimatedSection>
 
 					{/* Mission */}
-					<AnimatedSection className={`${panel} mb-12 text-center`}>
+					<AnimatedSection id="mission" className={`${panel} mb-12 text-center`}>
 						<motion.h2 className={sectionTitle} variants={itemVariants}>
 							{c.mission.title}
 						</motion.h2>
-						<ul className="space-y-3 text-lg max-w-3xl mx-auto">
+						<ul className="max-w-xl mx-auto text-left text-lg divide-y divide-gold/50 border-y border-gold/50">
 							{c.mission.items.map((item) => (
-								<motion.li key={item} className="font-semibold text-ink" variants={itemVariants}>
+								<motion.li key={item} className="py-3.5 font-semibold text-ink" variants={itemVariants}>
 									{item}
 								</motion.li>
 							))}
 						</ul>
 					</AnimatedSection>
 
-					{/* Featured Projects */}
-					<AnimatedSection className={`${panel} mb-12`}>
+					{/* Featured Projects (the Badge Generator has its own section above) */}
+					<AnimatedSection id="projects" className={`${panel} mb-12`}>
 						<motion.h2 className={`${sectionTitle} text-center`} variants={itemVariants}>
 							{c.projects.title}
 						</motion.h2>
 
-						<div className="grid md:grid-cols-2 gap-6">
-							<motion.div className={card} variants={itemVariants}>
+						<motion.div className="grid md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-end max-w-3xl mx-auto" variants={itemVariants}>
+							<div>
 								<StatusChip tone="progress">{c.projects.spotify.status}</StatusChip>
 								<h3 className="text-xl font-bold mt-4 mb-2 text-ink">{c.projects.spotify.title}</h3>
-								<p className="mb-6 text-deep leading-relaxed">{c.projects.spotify.description}</p>
-								<div className="flex flex-wrap gap-3 mt-auto">
-									<SecondaryButton href="https://v0.dev/community/neumorphic-design-system-ChCGgi8RVyO">
-										{c.projects.viewPrototype}
-									</SecondaryButton>
-									<SecondaryButton href="https://miketwelveballoons.substack.com/p/when-conversation-becomes-the-ui">
-										{c.projects.readPost}
-									</SecondaryButton>
-								</div>
-							</motion.div>
-
-							<motion.div className={card} variants={itemVariants}>
-								<StatusChip tone="live">{c.projects.badge.status}</StatusChip>
-								<h3 className="text-xl font-bold mt-4 mb-2 text-ink">{c.projects.badge.title}</h3>
-								<p className="mb-6 text-deep leading-relaxed">{c.projects.badge.description}</p>
-								<div className="mt-auto">
-									<PrimaryButton href="https://badge.twelve-balloons.com/" size="sm">
-										{c.projects.tryIt}
-									</PrimaryButton>
-								</div>
-							</motion.div>
-						</div>
+								<p className="text-deep leading-relaxed">{c.projects.spotify.description}</p>
+							</div>
+							<div className="flex flex-wrap gap-3 md:flex-col md:items-stretch">
+								<SecondaryButton href="https://v0.dev/community/neumorphic-design-system-ChCGgi8RVyO">
+									{c.projects.viewPrototype}
+								</SecondaryButton>
+								<SecondaryButton href="https://miketwelveballoons.substack.com/p/when-conversation-becomes-the-ui">
+									{c.projects.readPost}
+								</SecondaryButton>
+							</div>
+						</motion.div>
 					</AnimatedSection>
 
 					{/* What We're Building */}
@@ -432,7 +448,7 @@ export default function LandingPage() {
 					</AnimatedSection>
 
 					{/* Community */}
-					<AnimatedSection className={`${panel} mb-12 text-center`}>
+					<AnimatedSection id="community" className={`${panel} mb-12 text-center`}>
 						<motion.h2 className={sectionTitle} variants={itemVariants}>
 							{c.community.title}
 						</motion.h2>
@@ -440,46 +456,33 @@ export default function LandingPage() {
 							{c.community.description}
 						</motion.p>
 
-						<div className="grid md:grid-cols-3 gap-6">
-							<motion.div className={`${card} items-center text-center`} variants={itemVariants}>
+						<div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/50 border-t border-gold/50">
+							<motion.div className={column} variants={itemVariants}>
 								<IconBadge>
 									<Github size={22} />
 								</IconBadge>
 								<h3 className="text-xl font-bold mb-2 text-ink">{c.community.openSource.title}</h3>
 								<p className="mb-4 text-deep">{c.community.openSource.description}</p>
-								<span className="mt-auto font-semibold text-deep/50 cursor-not-allowed">{c.community.openSource.link}</span>
+								<TextLink href="https://github.com/twelve-balloons">{c.community.openSource.link}</TextLink>
 							</motion.div>
 
-							<motion.div className={`${card} items-center text-center`} variants={itemVariants}>
+							<motion.div className={column} variants={itemVariants}>
 								<IconBadge>
 									<Calendar size={22} />
 								</IconBadge>
 								<h3 className="text-xl font-bold mb-2 text-ink">{c.community.events.title}</h3>
-								<p className="mb-4 text-deep">{c.community.events.description}</p>
-								<span className="mt-auto font-semibold text-deep/50 cursor-not-allowed">{c.community.events.link}</span>
+								<p className="text-deep">{c.community.events.description}</p>
 							</motion.div>
 
-							<motion.div className={`${card} items-center text-center`} variants={itemVariants}>
+							<motion.div className={column} variants={itemVariants}>
 								<IconBadge>
 									<Newspaper size={22} />
 								</IconBadge>
 								<h3 className="text-xl font-bold mb-2 text-ink">{c.community.news.title}</h3>
 								<p className="mb-4 text-deep">{c.community.news.description}</p>
-								<div className="flex gap-4 mt-auto">
-									<Link
-										href="https://miketwelveballoons.substack.com/s/twelve-balloons"
-										className="text-deep hover:text-ink transition-colors"
-									>
-										<Newspaper size={24} />
-										<span className="sr-only">Substack</span>
-									</Link>
-									<Link
-										href="https://www.linkedin.com/company/twelve-balloons"
-										className="text-deep hover:text-ink transition-colors"
-									>
-										<Linkedin size={24} />
-										<span className="sr-only">LinkedIn</span>
-									</Link>
+								<div className="flex gap-5 mt-auto">
+									<TextLink href="https://miketwelveballoons.substack.com/s/twelve-balloons">Substack</TextLink>
+									<TextLink href="https://www.linkedin.com/company/twelve-balloons">LinkedIn</TextLink>
 								</div>
 							</motion.div>
 						</div>
@@ -500,9 +503,17 @@ export default function LandingPage() {
 									style={{ width: "auto" }}
 								/>
 							</div>
-							<div className="flex gap-6">
-								<div className="font-semibold text-deep/50 cursor-not-allowed">GitHub</div>
-							</div>
+							<nav aria-label="Elsewhere" className="flex gap-6 text-sm font-semibold text-deep">
+								<a href="https://miketwelveballoons.substack.com/s/twelve-balloons" className={`inline-flex items-center gap-1.5 rounded-sm hover:text-ink transition-colors ${focusRing}`}>
+									<Newspaper size={16} /> Substack
+								</a>
+								<a href="https://www.linkedin.com/company/twelve-balloons" className={`inline-flex items-center gap-1.5 rounded-sm hover:text-ink transition-colors ${focusRing}`}>
+									<Linkedin size={16} /> LinkedIn
+								</a>
+								<a href="https://github.com/twelve-balloons" className={`inline-flex items-center gap-1.5 rounded-sm hover:text-ink transition-colors ${focusRing}`}>
+									<Github size={16} /> GitHub
+								</a>
+							</nav>
 						</div>
 					</div>
 				</footer>
@@ -512,8 +523,9 @@ export default function LandingPage() {
 }
 
 // Shared class recipes
-const panel = "bg-paper/85 backdrop-blur-md rounded-2xl border border-gold/30 p-8 md:p-12 shadow-[0_1px_2px_rgba(31,42,37,0.04),0_12px_32px_-12px_rgba(31,42,37,0.12)]";
-const card = "bg-paper rounded-xl border border-gold/40 p-6 flex flex-col h-full transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_12px_24px_-12px_rgba(31,42,37,0.2)]";
+const panel = "scroll-mt-24 bg-paper/85 backdrop-blur-md rounded-2xl border border-gold/30 p-8 md:p-12 shadow-[0_1px_2px_rgba(31,42,37,0.04),0_12px_32px_-12px_rgba(31,42,37,0.12)]";
+const column = "flex flex-col items-center text-center px-6 py-8";
+const focusRing = "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-deep";
 const sectionTitle = "text-2xl md:text-3xl font-extrabold mb-6 tracking-[-0.02em] text-ink";
 const bodyText = "text-lg max-w-3xl mx-auto text-deep leading-relaxed";
 
@@ -547,6 +559,20 @@ function SecondaryButton({ href, children }: { href: string; children: React.Rea
 	);
 }
 
+function TextLink({ href, children }: { href: string; children: React.ReactNode }) {
+	return (
+		<a
+			href={href}
+			target="_blank"
+			rel="noopener noreferrer"
+			className={`group mt-auto inline-flex items-center gap-1 font-semibold text-deep underline-offset-4 hover:underline hover:text-ink rounded-sm ${focusRing}`}
+		>
+			{children}
+			<ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
+		</a>
+	);
+}
+
 function StatusChip({ tone, children }: { tone: "live" | "progress"; children: React.ReactNode }) {
 	return (
 		<span className="inline-flex items-center gap-2 self-start rounded-full border border-gold/50 bg-paper px-3 py-1 text-xs font-semibold text-deep">
@@ -569,7 +595,7 @@ const itemVariants = {
 // Content is rendered visible on the server and for anything already on screen.
 // Only sections that start below the fold are hidden after mount and revealed on scroll,
 // so the page never depends on JavaScript to show its text.
-function AnimatedSection({ children, className }: { children: React.ReactNode; className?: string }) {
+function AnimatedSection({ children, className, id }: { children: React.ReactNode; className?: string; id?: string }) {
 	const ref = useRef<HTMLElement>(null);
 	const reduce = useReducedMotion();
 	const [deferred, setDeferred] = useState(false);
@@ -586,6 +612,7 @@ function AnimatedSection({ children, className }: { children: React.ReactNode; c
 	return (
 		<motion.section
 			ref={ref}
+			id={id}
 			className={className}
 			initial={false}
 			animate={state}

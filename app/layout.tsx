@@ -1,4 +1,5 @@
 import type React from "react";
+import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { Montserrat } from "next/font/google";
@@ -9,10 +10,25 @@ const montserrat = Montserrat({
 	display: "swap",
 });
 
-export const metadata = {
-	title: "Twelve Balloons - The Future of Apps is Conversational",
-	description:
-		"We're a collective of builders exploring how large language models (LLMs) can shape the way humans interact with technology.",
+const title = "Twelve Balloons: The Future of Apps Is Conversational";
+const description =
+	"A collective of builders exploring how large language models can shape the way humans interact with technology. Let ideas fly.";
+
+// The social preview image is app/opengraph-image.jpg (picked up by file convention).
+export const metadata: Metadata = {
+	metadataBase: new URL("https://www.twelve-balloons.com"),
+	title,
+	description,
+	openGraph: {
+		type: "website",
+		url: "/",
+		siteName: "Twelve Balloons",
+		title,
+		description,
+		locale: "en_US",
+		alternateLocale: ["de_CH"],
+	},
+	twitter: { card: "summary_large_image", title, description },
 };
 
 export default function RootLayout({
