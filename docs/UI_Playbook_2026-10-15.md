@@ -206,3 +206,85 @@ All guarded by `prefers-reduced-motion`.
 5. No bold body text, no centred long paragraphs.
 
 **Mood references for designer/AI:** Google Labs (project structure), Sky (hero mood), Rauno Freiberg (Mission voice, restraint).
+
+---
+
+## 7. Addendum: the remaining 212 notes (16.10.2026)
+
+The first pass read 184 notes selected by title. This pass read the 212 notes that mention UI terms only inside the transcript. About 77 were UI-related; roughly 40 added something new. Only what is new compared to sections 1 to 6:
+
+**Typography**
+- Type scale from one body size × 1.618 (golden ratio) for subheads and headlines. [2025-07-10 type-sizes]
+- Long titles wrap inside cards, never truncate; shorten at the source. [2026-08-08 nick-saraev-mobile-apps-with-claude-code-course]
+
+**Colour**
+- Monochrome icons in the palette colour; mixed-colour emojis look scattered. [nick-saraev course]
+- Typical AI bug: icon or text colour equal to its background (invisible ticks, selectors). Run a pass for it. [nick-saraev course]
+- CSS blend modes for paper texture or grain over the painting: `multiply` on light grounds, a contrast mode for film grain. [2025-05-26 blending-modes]
+
+**Layout**
+- Nested radius: outer radius = inner radius + padding. Matching radii leave an awkward gap. [2025-12-01 corner-radius]
+- "Bookshelf" pattern for an archive page (posts as books, hover to pick). Useful later for Substack posts. [2026-08-27 newsletter-archive]
+
+**Components**
+- Confirmation dialogs: title = verb + noun ("Delete folder"), one line saying it is irreversible, confirm button = plain verb, secondary = "Cancel". [2025-11-08 are-you-sure-modal]
+- Skeleton loaders only with a slow left-to-right shimmer, matching the final layout, only for waits under 3 s; beyond that a progress indicator. [2026-07-27 skeleton-screens]
+- Error fallback with reset button, loading/empty/error state for every async call, forms keep input after a failed submit, custom 404, no dead links or broken images. [2026-06-04 vibe-code-error-boundary]
+- Sliders: drag, arrow keys, clickable items inside slides (Swiper JS, GSAP). [2025-10-13 smoothie-slider]
+
+**Motion & scroll**
+- Pinned image over scrolling video, which then transforms into another atmosphere ("Herstory"). This is what the meadow transition now does. [2025-09-12 herstory]
+- Randomise the opening variant per reload so the page feels different each visit. [2025-09-12 herstory]
+- Describe motion concretely ("a button that snaps into a green tick", "lines that draw themselves"); "make it nice" yields nothing. One style file (colours, fonts, how things move) + one described moment. [2026-10-15 motion-for-style]
+- Lottie via the LottieFiles MCP in Claude Code. [2026-09-25 lottiefiles]
+- scroll-world: open-source repo for scroll-driven motion sites; the notes give no URL. [2026-09-05 scroll-world-repo]
+
+**Landing & copy**
+- Make 3 to 5 landing-page mockups with an image model first, pick one, then have the coding agent rebuild it and compare against the image in a test browser until they match. [2026-10-06 vibecoded-app-suggestions]
+- Copy in your own voice: interview to extract the voice, strip AI phrasing, write three reference pieces yourself. [2026-03-07 claude-code-copy]
+
+**SEO, AI visibility, analytics**
+- AEO check: ask ChatGPT and others what Twelve Balloons does, for whom, why choose it. Publish clear answers to everything you dislike; re-check after 30 days (HubSpot AEO grader is free). [2026-06-20 agent-webseite-ai]
+- Server-render the first view for speed and SEO, then hydrate. Confirms fix 1. [2025-10-23 server-side-and-client-side-rendering]
+- Competitor outlines with the "Detailed SEO" extension; `site:chatgpt.com/share <keyword>` shows real user questions. [2025-07-07 seo-extension], [2025-07-31 index-search-from-gpt]
+- PostHog (free) with a Claude connector to ask where visitors drop off. [2026-05-08 posthog]
+
+**AI workflow**
+- Separate function from design: build first, then a dedicated design pass, then "audit the design with your own testing flow" across every page; restyles often miss pages. [nick-saraev course]
+- Lock the style into one file (design.md or master prompt) and screenshot-verify after each change. [2026-02-02 vibe-code-apps-instructions], [2026-05-21 mastering-claude-code]
+- Hallmark skill: extracts formatting from reference sites and removes AI-slop trends; similar to impeccable. Not installed. [2026-08-13 hallmark-skill-a-bit-like-impeccable-skills]
+
+**Considered and not applied**
+- "Serif display font looks more premium" [nick-saraev course]: conflicts with the design-taste rule against serif as a reflex default. Montserrat in several weights stays.
+- Dark-mode toggle [2026-07-18 crm-dashboard-good-example]: for dashboards; the painted sky is the identity here.
+
+---
+
+## 8. Gap check: the site against the full rulebook (16.10.2026)
+
+**Done**
+- Content visible without JS (0 hidden elements in the server HTML, was 52).
+- Hero with primary CTA and secondary link, headline rise animation.
+- One accent colour, palette from the painting, no gradients or gradient text.
+- No emoji icons; numbered steps; monochrome Lucide icons.
+- Body text at regular weight, `text-wrap: balance` / `pretty`.
+- Balloons as live layers: drift, sway, per-balloon parallax, pointer follow, reduced motion.
+- Meadow bloom tied to scroll (take 2: only grows); phones get a crossfade instead of the video.
+- One `h1`, focus-visible on buttons, no em dashes in copy.
+
+**Missing, ranked by impact**
+
+| # | Gap | Fix | Effort |
+|---|---|---|---|
+| 1 | Greyed-out "Join on GitHub", "View Calendar", footer "GitHub" look unfinished | Link them or remove them | S |
+| 2 | No navigation | Small header: logo, 3 anchors, CTA; blur on scroll | S |
+| 3 | Badge Generator appears twice (section + project card) | Keep one | S |
+| 4 | No Open Graph image or social meta | `opengraph-image`, title, description | S |
+| 5 | Nested cards inside panels (Projects, Community); radii break outer = inner + padding | Drop the outer panel on those sections, or apply the formula | S |
+| 6 | Seven panels with the same treatment, the bloom is hidden behind them | Vary rhythm: Mission and "What we're building" as open text without panel; let the meadow show | M |
+| 7 | Language switch doesn't change the URL; `<html lang>` stays "en" in German | `/en` and `/de` routes, `hreflang`, correct `lang` | M |
+| 8 | No custom 404, no contact or imprint in the footer | `not-found.tsx`; footer with contact and legal | S |
+| 9 | No proof of activity | "Recently flown" (3 to 4 dated entries) or a "Now" block | M (content from Mike) |
+| 10 | Mission as plain centred lines | Five short imperatives on a left key line | S |
+| 11 | No analytics, no AEO check | PostHog or Vercel Analytics; one AEO check before launch | S |
+| 12 | Language toggle buttons have no visible focus style | `focus-visible` ring like the CTAs | XS |
