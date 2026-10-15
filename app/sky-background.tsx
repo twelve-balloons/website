@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, type MotionValue, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 
@@ -78,15 +78,55 @@ function Balloon({ balloon: b, scrollY, reduce }: { balloon: BalloonSpec; scroll
 	);
 }
 
+// Phones and touch devices get two images instead of the video: iOS Safari ignores preload and
+// does not paint a seeked, never-played video, so the background stayed empty there.
+const TOUCH_QUERY = "(pointer: coarse), (max-width: 767px)";
+
+function useTouchLayout() {
+	const [touch, setTouch] = useState<boolean | null>(null);
+	useEffect(() => {
+		const mq = window.matchMedia(TOUCH_QUERY);
+		const update = () => setTouch(mq.matches);
+		update();
+		mq.addEventListener("change", update);
+		return () => mq.removeEventListener("change", update);
+	}, []);
+	return touch;
+}
+
 // Background painting: an 8 s transition video (meadow blooms) scrubbed by page scroll.
 // Poster = start frame, so the page looks right before the video has loaded.
 function MeadowScrub({ reduce }: { reduce: boolean }) {
+	const touch = useTouchLayout();
+	if (reduce || touch === null) {
+		return <Image src="/media/meadow-start.jpg" alt="" fill priority sizes="100vw" className="object-cover object-top" />;
+	}
+	return touch ? <MeadowCrossfade /> : <MeadowVideo />;
+}
+
+// Touch: the bloomed end frame fades in over the start frame as the page scrolls.
+function MeadowCrossfade() {
+	const { scrollYProgress } = useScroll();
+	const opacity = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
+	return (
+		<>
+			<Image src="/media/meadow-start.jpg" alt="" fill priority sizes="100vw" className="object-cover object-top" />
+			<motion.div className="absolute inset-0" style={{ opacity }}>
+				<Image src="/media/meadow-end.jpg" alt="" fill sizes="100vw" className="object-cover object-top" />
+			</motion.div>
+			{/* Phones crop deep into the painting, so it reads louder: a light paper wash calms it behind the text. */}
+			<div className="absolute inset-0 bg-paper/35" />
+		</>
+	);
+}
+
+function MeadowVideo() {
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const { scrollYProgress } = useScroll();
 
 	useEffect(() => {
 		const video = videoRef.current;
-		if (!video || reduce) return;
+		if (!video) return;
 		let frame = 0;
 		let target = scrollYProgress.get();
 		// One seek at a time: fast trackpad scrolling (Safari) would otherwise queue seeks
@@ -109,11 +149,7 @@ function MeadowScrub({ reduce }: { reduce: boolean }) {
 			video.removeEventListener("loadedmetadata", seek);
 			video.removeEventListener("seeked", seek);
 		};
-	}, [reduce, scrollYProgress]);
-
-	if (reduce) {
-		return <Image src="/media/meadow-start.jpg" alt="" fill priority sizes="100vw" className="object-cover object-top" />;
-	}
+	}, [scrollYProgress]);
 
 	return (
 		<video

@@ -196,7 +196,7 @@ export default function LandingPage() {
 	const heroWords = c.hero.title.split(" ");
 
 	return (
-		<div className="min-h-screen flex flex-col font-display text-ink">
+		<div className="min-h-screen flex flex-col overflow-x-clip font-display text-ink">
 			<SkyBackground />
 
 			<div className="relative z-10 min-h-screen flex flex-col px-6 md:px-16 lg:px-24">
@@ -274,7 +274,7 @@ export default function LandingPage() {
 
 				<main className="flex-1 flex flex-col max-w-5xl mx-auto w-full">
 					{/* Hero: full first screen, balloons above, text in the lower part */}
-					<section className="min-h-[92svh] flex flex-col justify-end pb-[10vh] pt-[40vh] md:pt-[46vh]">
+					<section className="min-h-[92svh] flex flex-col justify-end pb-[7svh] pt-[33svh] md:pb-[10vh] md:pt-[46vh]">
 						<div className="relative mx-auto max-w-3xl text-center">
 							{/* Soft paper glow for legibility over the painting (no box) */}
 							<div
@@ -292,13 +292,13 @@ export default function LandingPage() {
 								))}
 							</h1>
 							<p
-								className="fade-up mt-6 text-lg md:text-xl max-w-2xl mx-auto text-deep leading-relaxed"
+								className="fade-up mt-5 text-base sm:text-lg md:mt-6 md:text-xl max-w-2xl mx-auto text-deep leading-relaxed"
 								style={{ animationDelay: "520ms" }}
 							>
 								{c.hero.subtitle}
 							</p>
 							<div
-								className="fade-up mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6"
+								className="fade-up mt-6 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6"
 								style={{ animationDelay: "680ms" }}
 							>
 								<PrimaryButton href="https://badge.twelve-balloons.com/">{c.hero.primaryCta}</PrimaryButton>
