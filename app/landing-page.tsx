@@ -28,7 +28,8 @@ export default function LandingPage() {
 	// Content object for both languages
 	const content = {
 		en: {
-			nav: { lab: "Lab", projects: "Projects", mission: "Mission", community: "Community" },
+			nav: { lab: "Lab", exploring: "Exploring", about: "About", community: "Community" },
+			lab: { title: "The Lab", subtitle: "Experiments we've built and are still building" },
 			hero: {
 				title: "The Future of Apps Is Conversational",
 				subtitle:
@@ -37,7 +38,6 @@ export default function LandingPage() {
 				secondaryCta: "Read on Substack",
 			},
 			badgeGenerator: {
-				label: "New lab experiment",
 				title: "AI Event Badge Generator",
 				description:
 					"It started as a playful Twelve Balloons lab experiment: type a prompt and watch your badge come alive in that style, colours and motion shifting uniquely to your words.",
@@ -58,7 +58,7 @@ export default function LandingPage() {
 					"Our client work shapes real-world tools. But our boldest ideas begin in-house: building our own agents, testing workflows, and reimagining how humans and machines think together.",
 			},
 			mission: {
-				title: "Our Mission",
+				title: "What we stand for",
 				items: [
 					"Let ideas fly: faster, lighter, bolder",
 					"Build open-source tools and experiments",
@@ -75,19 +75,12 @@ export default function LandingPage() {
 						"A conversational UI that links natural language (voice or text) to real-time music control via Spotify.",
 					status: "Prototype in progress",
 				},
-				badge: {
-					title: "AI Event Badge Generator",
-					description:
-						"Type a prompt and watch your badge come alive in that style. An API-based architecture for event-ready scenarios where organisers can generate badges at scale.",
-					status: "Live experiment",
-				},
+				liveStatus: "Live experiment",
 				viewPrototype: "View prototype",
 				readPost: "Read the post",
-				tryIt: "Try it now",
 			},
 			building: {
-				title: "What We're Building",
-				subtitle: "Live Experiments",
+				title: "What We're Exploring",
 				items: [
 					{ title: "Conversational interfaces", description: "Apps that speak, listen, and respond" },
 					{ title: "Composable UI agents", description: "LLMs that assemble interfaces from intent" },
@@ -117,7 +110,8 @@ export default function LandingPage() {
 			},
 		},
 		de: {
-			nav: { lab: "Labor", projects: "Projekte", mission: "Mission", community: "Community" },
+			nav: { lab: "Lab", exploring: "Forschung", about: "Über uns", community: "Community" },
+			lab: { title: "Das Lab", subtitle: "Experimente, die wir gebaut haben und weiterbauen" },
 			hero: {
 				title: "Die Zukunft von Apps ist sprachgesteuert",
 				subtitle:
@@ -126,7 +120,6 @@ export default function LandingPage() {
 				secondaryCta: "Auf Substack lesen",
 			},
 			badgeGenerator: {
-				label: "Neues Labor-Experiment",
 				title: "KI Event-Badge-Generator",
 				description:
 					"Es begann als spielerisches Twelve Balloons Labor-Experiment: Geben Sie einen Prompt ein und beobachten Sie, wie Ihr Badge zum Leben erwacht. Stil, Farben und Bewegungen passen sich einzigartig an Ihre Worte an.",
@@ -147,7 +140,7 @@ export default function LandingPage() {
 					"Unsere Arbeit mit Kund:innen führt zu echten Tools für komplexe Umgebungen. Aber unsere mutigsten Ideen entstehen intern: Wir bauen eigene Agenten, testen neue Workflows und gestalten neu, wie Menschen und Maschinen gemeinsam denken.",
 			},
 			mission: {
-				title: "Unsere Mission",
+				title: "Wofür wir stehen",
 				items: [
 					"Ideen fliegen lassen: schnell, leicht, mutig",
 					"Offene Tools und gewagte Experimente entwickeln",
@@ -164,19 +157,12 @@ export default function LandingPage() {
 						"Ein sprachgesteuertes Interface, das natürliche Sprache (per Stimme oder Text) mit Spotify verbindet. Musiksteuerung in Echtzeit, ohne klassische App.",
 					status: "Prototyp in Entwicklung",
 				},
-				badge: {
-					title: "KI Event-Badge-Generator",
-					description:
-						"Geben Sie einen Prompt ein und beobachten Sie, wie Ihr Badge zum Leben erwacht. Eine API-basierte Architektur für Event-fähige Szenarien, in denen Organisatoren Badges in grossem Massstab generieren können.",
-					status: "Live-Experiment",
-				},
+				liveStatus: "Live-Experiment",
 				viewPrototype: "Prototyp ansehen",
 				readPost: "Beitrag lesen",
-				tryIt: "Jetzt ausprobieren",
 			},
 			building: {
-				title: "Woran wir arbeiten",
-				subtitle: "Live-Experimente",
+				title: "Woran wir forschen",
 				items: [
 					{ title: "Sprachbasierte Interfaces", description: "Apps, die zuhören, antworten und mitdenken" },
 					{ title: "Modulare UI-Agenten", description: "Systeme, die aus Absicht und Sprache Oberflächen erzeugen" },
@@ -227,7 +213,7 @@ export default function LandingPage() {
 							<span className="text-lg md:text-xl font-black tracking-tight text-deep">Twelve Balloons</span>
 						</a>
 						<nav aria-label="Sections" className="hidden md:flex items-center gap-7 text-sm font-semibold text-deep">
-							{(["lab", "projects", "mission", "community"] as const).map((id) => (
+							{(["lab", "exploring", "about", "community"] as const).map((id) => (
 								<a key={id} href={`#${id}`} className={`rounded-sm transition-colors hover:text-ink ${focusRing}`}>
 									{c.nav[id]}
 								</a>
@@ -342,27 +328,27 @@ export default function LandingPage() {
 						</div>
 					</section>
 
-					{/* Badge Generator */}
+					{/* The Lab: everything we've built, live or in progress */}
 					<AnimatedSection id="lab" className={`${panel} mb-12`}>
-						<div className="text-center">
-							<motion.div
-								className="inline-flex items-center gap-2 bg-paper border border-gold/50 text-deep px-3 py-1.5 rounded-full mb-5 text-xs font-semibold uppercase tracking-[0.08em]"
-								variants={itemVariants}
-							>
-								<span className="h-2 w-2 rounded-full bg-balloon" />
-								{c.badgeGenerator.label}
-							</motion.div>
-
-							<motion.h2 className="text-3xl md:text-4xl font-extrabold mb-5 tracking-[-0.02em] text-ink" variants={itemVariants}>
-								{c.badgeGenerator.title}
+						<div className="text-center mb-10">
+							<motion.h2 className="text-3xl md:text-4xl font-extrabold tracking-[-0.02em] text-ink" variants={itemVariants}>
+								{c.lab.title}
 							</motion.h2>
-
-							<motion.p className="text-lg max-w-2xl mx-auto mb-10 text-deep leading-relaxed" variants={itemVariants}>
-								{c.badgeGenerator.description}
+							<motion.p className="mt-3 text-lg text-deep" variants={itemVariants}>
+								{c.lab.subtitle}
 							</motion.p>
+						</div>
+
+						{/* Experiment 1: Badge Generator (live) */}
+						<motion.article className="border-t border-gold/50 pt-10" variants={itemVariants}>
+							<div className="text-center">
+								<StatusChip tone="live" center>{c.projects.liveStatus}</StatusChip>
+								<h3 className="mt-4 text-2xl md:text-3xl font-extrabold tracking-[-0.02em] text-ink">{c.badgeGenerator.title}</h3>
+								<p className="mt-4 text-lg max-w-2xl mx-auto text-deep leading-relaxed">{c.badgeGenerator.description}</p>
+							</div>
 
 							{/* Four steps of the pipeline, numbered instead of icons */}
-							<motion.ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-px mb-10 max-w-4xl mx-auto text-left bg-gold/40 rounded-md overflow-hidden border border-gold/40" variants={itemVariants}>
+							<ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-px my-10 max-w-4xl mx-auto text-left bg-gold/40 rounded-md overflow-hidden border border-gold/40">
 								{c.badgeGenerator.steps.map((step, i) => (
 									<li key={step.title} className="bg-paper/90 p-5">
 										<span className="font-mono text-xs text-deep/70">{String(i + 1).padStart(2, "0")}</span>
@@ -370,52 +356,22 @@ export default function LandingPage() {
 										<p className="mt-1 text-sm text-deep leading-snug">{step.text}</p>
 									</li>
 								))}
-							</motion.ol>
+							</ol>
 
-							<motion.div className="space-y-4" variants={itemVariants}>
+							<div className="text-center space-y-4">
 								<p className="text-xl font-bold text-ink">{c.badgeGenerator.cta}</p>
 								<PrimaryButton href="https://badge.twelve-balloons.com/">{c.badgeGenerator.buttonText}</PrimaryButton>
-							</motion.div>
-						</div>
-					</AnimatedSection>
+							</div>
+						</motion.article>
 
-					{/* About */}
-					<AnimatedSection className={`${panel} mb-12 text-center`}>
-						<motion.h2 className={sectionTitle} variants={itemVariants}>
-							{c.about.title}
-						</motion.h2>
-						<motion.p className={`${bodyText} mb-6`} variants={itemVariants}>
-							{c.about.description1}
-						</motion.p>
-						<motion.p className={bodyText} variants={itemVariants}>
-							{c.about.description2}
-						</motion.p>
-					</AnimatedSection>
-
-					{/* Mission */}
-					<AnimatedSection id="mission" className={`${panel} mb-12 text-center`}>
-						<motion.h2 className={sectionTitle} variants={itemVariants}>
-							{c.mission.title}
-						</motion.h2>
-						<ul className="max-w-xl mx-auto text-left text-lg divide-y divide-gold/50 border-y border-gold/50">
-							{c.mission.items.map((item) => (
-								<motion.li key={item} className="py-3.5 font-semibold text-ink" variants={itemVariants}>
-									{item}
-								</motion.li>
-							))}
-						</ul>
-					</AnimatedSection>
-
-					{/* Featured Projects (the Badge Generator has its own section above) */}
-					<AnimatedSection id="projects" className={`${panel} mb-12`}>
-						<motion.h2 className={`${sectionTitle} text-center`} variants={itemVariants}>
-							{c.projects.title}
-						</motion.h2>
-
-						<motion.div className="grid md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-end max-w-3xl mx-auto" variants={itemVariants}>
+						{/* Experiment 2: Spotify Agent (prototype) */}
+						<motion.article
+							className="mt-12 border-t border-gold/50 pt-10 grid md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-end max-w-4xl mx-auto"
+							variants={itemVariants}
+						>
 							<div>
 								<StatusChip tone="progress">{c.projects.spotify.status}</StatusChip>
-								<h3 className="text-xl font-bold mt-4 mb-2 text-ink">{c.projects.spotify.title}</h3>
+								<h3 className="mt-4 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.spotify.title}</h3>
 								<p className="text-deep leading-relaxed">{c.projects.spotify.description}</p>
 							</div>
 							<div className="flex flex-wrap gap-3 md:flex-col md:items-stretch">
@@ -426,22 +382,43 @@ export default function LandingPage() {
 									{c.projects.readPost}
 								</SecondaryButton>
 							</div>
-						</motion.div>
+						</motion.article>
 					</AnimatedSection>
 
-					{/* What We're Building */}
-					<AnimatedSection className={`${panel} mb-12 text-center`}>
-						<motion.h2 className="text-2xl md:text-3xl font-extrabold mb-3 tracking-[-0.02em] text-ink" variants={itemVariants}>
+					{/* Exploring: research directions, not shipped experiments */}
+					<AnimatedSection id="exploring" className={`${panel} mb-12`}>
+						<motion.h2 className={`${sectionTitle} text-center mb-8`} variants={itemVariants}>
 							{c.building.title}
 						</motion.h2>
-						<motion.p className="text-sm font-semibold uppercase tracking-[0.08em] text-deep/80 mb-8" variants={itemVariants}>
-							{c.building.subtitle}
-						</motion.p>
-						<ul className="space-y-6 text-lg max-w-3xl mx-auto">
+						<ul className="grid sm:grid-cols-2 gap-x-10 max-w-3xl mx-auto border-t border-gold/50">
 							{c.building.items.map((item) => (
-								<motion.li key={item.title} className="flex flex-col items-center" variants={itemVariants}>
-									<span className="font-bold text-ink mb-1">{item.title}</span>
-									<span className="text-deep text-base">{item.description}</span>
+								<motion.li key={item.title} className="py-4 border-b border-gold/50" variants={itemVariants}>
+									<p className="font-bold text-ink">{item.title}</p>
+									<p className="mt-1 text-deep">{item.description}</p>
+								</motion.li>
+							))}
+						</ul>
+					</AnimatedSection>
+
+					{/* About: who we are + what we stand for */}
+					<AnimatedSection id="about" className={`${panel} mb-12`}>
+						<motion.h2 className={`${sectionTitle} text-center`} variants={itemVariants}>
+							{c.about.title}
+						</motion.h2>
+						<motion.p className={`${bodyText} text-center mb-6`} variants={itemVariants}>
+							{c.about.description1}
+						</motion.p>
+						<motion.p className={`${bodyText} text-center`} variants={itemVariants}>
+							{c.about.description2}
+						</motion.p>
+
+						<motion.h3 className="mt-12 mb-4 text-center text-sm font-semibold uppercase tracking-[0.08em] text-deep/80" variants={itemVariants}>
+							{c.mission.title}
+						</motion.h3>
+						<ul className="max-w-xl mx-auto text-left text-lg divide-y divide-gold/50 border-y border-gold/50">
+							{c.mission.items.map((item) => (
+								<motion.li key={item} className="py-3.5 font-semibold text-ink" variants={itemVariants}>
+									{item}
 								</motion.li>
 							))}
 						</ul>
@@ -573,9 +550,9 @@ function TextLink({ href, children }: { href: string; children: React.ReactNode 
 	);
 }
 
-function StatusChip({ tone, children }: { tone: "live" | "progress"; children: React.ReactNode }) {
+function StatusChip({ tone, children, center }: { tone: "live" | "progress"; children: React.ReactNode; center?: boolean }) {
 	return (
-		<span className="inline-flex items-center gap-2 self-start rounded-full border border-gold/50 bg-paper px-3 py-1 text-xs font-semibold text-deep">
+		<span className={`inline-flex items-center gap-2 ${center ? "" : "self-start"} rounded-full border border-gold/50 bg-paper px-3 py-1 text-xs font-semibold text-deep`}>
 			<span className={`h-2 w-2 rounded-full ${tone === "live" ? "bg-balloon" : "bg-sage"}`} />
 			{children}
 		</span>
