@@ -1,1 +1,2 @@
 - never start dev server
+- before any UI change, read DESIGN.md (colours, type, components, motion, checks)
