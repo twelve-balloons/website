@@ -184,3 +184,70 @@
   }
 }
 
+
+/* Twelve Balloons: motion + type */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Balloon drift: transform only, anchored at the string end */
+.balloon-drift {
+  transform-origin: 50% 100%;
+  animation-name: balloonDrift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes balloonDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-1.2deg);
+  }
+  50% {
+    transform: translate3d(0, -9px, 0) rotate(1.4deg);
+  }
+}
+
+/* Hero headline: words rise from a mask. CSS only, so text exists without JS. */
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+}
+
+.word-rise {
+  display: inline-block;
+  animation: wordRise 0.9s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes wordRise {
+  from {
+    transform: translate3d(0, 105%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .balloon-drift,
+  .word-rise,
+  .fade-up {
+    animation: none !important;
+  }
+}

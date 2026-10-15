@@ -16,6 +16,13 @@ const config: Config = {
     },
     extend: {
       colors: {
+        // Twelve Balloons palette (sampled from the watercolour + logo)
+        paper: "#F6F1E4",
+        sage: "#99AFA0",
+        deep: "#2F4A3F",
+        ink: "#1F2A25",
+        gold: "#CEBD8C",
+        balloon: { DEFAULT: "#E89B52", dark: "#D9853A" },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
