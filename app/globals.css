@@ -244,7 +244,28 @@ p {
   animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
+/* Badge on its cord: swings from the top of the cord */
+.badge-sway {
+  transform-origin: 50% 0;
+  animation: badgeSway 6.5s ease-in-out infinite;
+}
+
+@keyframes badgeSway {
+  0%, 100% { transform: rotate(-1.6deg); }
+  50% { transform: rotate(1.6deg); }
+}
+
+.caret-blink {
+  animation: caretBlink 1.1s steps(1, end) infinite;
+}
+
+@keyframes caretBlink {
+  50% { opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .caret-blink,
+  .badge-sway,
   .balloon-drift,
   .word-rise,
   .fade-up {

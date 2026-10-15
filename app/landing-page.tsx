@@ -49,6 +49,7 @@ export default function LandingPage() {
 				],
 				cta: "What's your badge's look?",
 				exampleAlt: "Badges made with the generator, each in a different style",
+				promptPlaceholder: "Describe your badge style…",
 				buttonText: "Try the Badge Generator",
 			},
 			about: {
@@ -138,6 +139,7 @@ export default function LandingPage() {
 				],
 				cta: "Wie sieht Ihr Badge aus?",
 				exampleAlt: "Mit dem Generator erstellte Badges, jedes in einem anderen Stil",
+				promptPlaceholder: "Beschreiben Sie Ihren Badge-Stil…",
 				buttonText: "Badge-Generator ausprobieren",
 			},
 			about: {
@@ -365,7 +367,7 @@ export default function LandingPage() {
 										<PrimaryButton href="https://badge.twelve-balloons.com/">{c.badgeGenerator.buttonText}</PrimaryButton>
 									</div>
 								</div>
-								<BadgeCycler alt={c.badgeGenerator.exampleAlt} />
+								<BadgeCycler alt={c.badgeGenerator.exampleAlt} placeholder={c.badgeGenerator.promptPlaceholder} />
 							</div>
 
 							{/* Four steps of the pipeline, numbered instead of icons */}
@@ -560,10 +562,11 @@ function SecondaryButton({ href, children }: { href: string; children: React.Rea
 	);
 }
 
-// Real badges from the generator (stills from the team's screen recordings), shown one by one.
-const BADGE_EXAMPLES = ["/images/badges/badge-1.jpg", "/images/badges/badge-2.jpg", "/images/badges/badge-3.jpg", "/images/badges/badge-4.jpg", "/images/badges/badge-5.jpg"];
+// Real badges from the generator, cut out with their cord (from the team's screen recordings).
+// Shown one at a time, crossfading, swinging gently on the cord like the balloons in the sky.
+const BADGE_EXAMPLES = ["/images/badges/badge-1.png", "/images/badges/badge-2.png", "/images/badges/badge-3.png", "/images/badges/badge-4.png", "/images/badges/badge-5.png"];
 
-function BadgeCycler({ alt }: { alt: string }) {
+function BadgeCycler({ alt, placeholder }: { alt: string; placeholder: string }) {
 	const reduce = useReducedMotion();
 	const [index, setIndex] = useState(0);
 	useEffect(() => {
@@ -572,17 +575,27 @@ function BadgeCycler({ alt }: { alt: string }) {
 		return () => window.clearInterval(id);
 	}, [reduce]);
 	return (
-		<figure className="relative mx-auto w-[200px] md:w-[220px] aspect-[2/3] rounded-md overflow-hidden border border-gold/40 shadow-[0_12px_32px_-12px_rgba(31,42,37,0.35)]">
-			{BADGE_EXAMPLES.map((src, i) => (
-				<Image
-					key={src}
-					src={src}
-					alt={i === 0 ? alt : ""}
-					fill
-					sizes="220px"
-					className={`object-cover transition-opacity duration-700 ease-out ${i === index ? "opacity-100" : "opacity-0"}`}
-				/>
-			))}
+		<figure className="mx-auto flex flex-col items-center -mt-10 md:-mt-14">
+			<div className="badge-sway relative w-[190px] md:w-[210px] aspect-[440/742]">
+				{BADGE_EXAMPLES.map((src, i) => (
+					<Image
+						key={src}
+						src={src}
+						alt={i === 0 ? alt : ""}
+						fill
+						sizes="210px"
+						className={`object-contain drop-shadow-[0_14px_18px_rgba(31,42,37,0.28)] transition-opacity duration-700 ease-out ${i === index ? "opacity-100" : "opacity-0"}`}
+					/>
+				))}
+			</div>
+			{/* The generator's own prompt field, so it reads as "type something, get a badge" */}
+			<figcaption
+				aria-hidden="true"
+				className="mt-5 flex items-center gap-2 rounded-full border border-gold/60 bg-paper px-4 py-2 text-sm text-deep/70 shadow-[inset_0_1px_2px_rgba(31,42,37,0.06)]"
+			>
+				<span>{placeholder}</span>
+				<span className="caret-blink inline-block h-4 w-px bg-deep" />
+			</figcaption>
 		</figure>
 	);
 }
