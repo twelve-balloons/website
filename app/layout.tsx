@@ -26,7 +26,8 @@ export default function RootLayout({
 			suppressHydrationWarning
 			className={`${montserrat.className} bg-white`}
 		>
-			<body className="min-h-screen">
+			{/* suppressHydrationWarning: browser extensions (e.g. Grammarly) inject attributes into <body> */}
+			<body className="min-h-screen" suppressHydrationWarning>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="light"
