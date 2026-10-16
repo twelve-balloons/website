@@ -86,7 +86,8 @@ export default function LandingPage() {
 					title: "Mut zur Lücke",
 					description:
 						"An AI coach for students in exam panic: upload your notes and past exams, get an honest read on what is still passable and a plan for the time you have left. Built on Apertus, Switzerland's open language model.",
-					status: "Coming soon",
+					status: "Prototype",
+					link: "Visit mutzurluecke.ch",
 					previewAlt: "60 percent fail the first year at EPFL; students start studying 6 days before an exam on average",
 					stats: [
 						{ value: "60%", label: "fail the first year at EPFL" },
@@ -193,7 +194,8 @@ export default function LandingPage() {
 					title: "Mut zur Lücke",
 					description:
 						"Ein KI-Coach für Studierende im Prüfungsstress: Unterlagen und alte Prüfungen hochladen, ehrlich erfahren, was noch machbar ist, und einen Plan für die verbleibende Zeit bekommen. Gebaut auf Apertus, dem offenen Schweizer Sprachmodell.",
-					status: "Bald verfügbar",
+					status: "Prototyp",
+					link: "mutzurluecke.ch besuchen",
 					previewAlt: "60 Prozent scheitern im ersten Jahr an der EPFL; im Schnitt beginnt das Lernen 6 Tage vor der Prüfung",
 					stats: [
 						{ value: "60%", label: "scheitern im ersten Jahr an der EPFL" },
@@ -435,6 +437,9 @@ export default function LandingPage() {
 								<StatusChip tone="progress">{c.projects.mzl.status}</StatusChip>
 								<h3 className="mt-3 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.mzl.title}</h3>
 								<p className="mb-6 text-deep leading-relaxed">{c.projects.mzl.description}</p>
+								<div className="self-start">
+									<TextLink href="https://www.mutzurluecke.ch/">{c.projects.mzl.link}</TextLink>
+								</div>
 							</motion.article>
 
 							<motion.article className="pt-10 mt-10 lg:mt-0 border-t border-gold/50 lg:border-t-0 lg:px-8 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5 lg:content-start" variants={itemVariants}>
