@@ -29,6 +29,7 @@ export default function LandingPage() {
 	const content = {
 		en: {
 			nav: { lab: "Lab", exploring: "Exploring", about: "About", community: "Community" },
+			footer: { partner: "Swiss {ai} Weeks, partner of Twelve Balloons" },
 			lab: { title: "The Lab", subtitle: "Experiments we've built and are still building" },
 			hero: {
 				title: "The Future of Apps Is Conversational",
@@ -137,6 +138,7 @@ export default function LandingPage() {
 		},
 		de: {
 			nav: { lab: "Lab", exploring: "Forschung", about: "Über uns", community: "Community" },
+			footer: { partner: "Swiss {ai} Weeks, Partner von Twelve Balloons" },
 			lab: { title: "Das Lab", subtitle: "Experimente, die wir gebaut haben und weiterbauen" },
 			hero: {
 				title: "Die Zukunft von Apps ist sprachgesteuert",
@@ -565,7 +567,7 @@ export default function LandingPage() {
 				{/* Footer */}
 				<footer className="relative z-10 border-t border-deep/15 py-8 bg-paper/70 backdrop-blur-sm">
 					<div className="max-w-5xl mx-auto px-6 md:px-3">
-						<div className="flex flex-col md:flex-row justify-between items-center mb-4">
+						<div className="flex flex-col md:flex-row justify-between items-center">
 							<div className="mb-4 md:mb-0 flex justify-center md:justify-start">
 								<Image
 									src="/images/logo-balloons.png"
@@ -576,6 +578,7 @@ export default function LandingPage() {
 									style={{ width: "auto" }}
 								/>
 							</div>
+							<div className="flex flex-col md:flex-row items-center gap-6">
 							<nav aria-label="Elsewhere" className="flex gap-6 text-sm font-semibold text-deep">
 								<a href="https://miketwelveballoons.substack.com/s/twelve-balloons" className={`inline-flex items-center gap-1.5 rounded-sm hover:text-ink transition-colors ${focusRing}`}>
 									<Newspaper size={16} /> Substack
@@ -587,6 +590,18 @@ export default function LandingPage() {
 									<Github size={16} /> GitHub
 								</a>
 							</nav>
+								{/* Partner logo: Twelve Balloons is a partner of Swiss {ai} Weeks (black logo from their brand kit, unaltered) */}
+								<a
+									href="https://ai-weeks.ch"
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={c.footer.partner}
+									className={`flex items-center rounded-sm opacity-80 transition-opacity hover:opacity-100 md:border-l md:border-deep/15 md:pl-6 ${focusRing}`}
+								>
+									<Image src="/images/partners/swiss-ai-weeks.png" alt="Swiss {ai} Weeks" width={147} height={64} className="h-[28px] w-auto" style={{ width: "auto" }} />
+								</a>
+							</div>
+
 						</div>
 					</div>
 				</footer>
