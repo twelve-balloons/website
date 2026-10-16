@@ -29,7 +29,7 @@ export default function LandingPage() {
 	const content = {
 		en: {
 			nav: { lab: "Lab", exploring: "Exploring", about: "About", community: "Community" },
-			footer: { partner: "Swiss {ai} Weeks, partner of Twelve Balloons" },
+			footer: { partners: "Partners" },
 			lab: { title: "The Lab", subtitle: "Experiments we've built and are still building" },
 			hero: {
 				title: "The Future of Apps Is Conversational",
@@ -138,7 +138,7 @@ export default function LandingPage() {
 		},
 		de: {
 			nav: { lab: "Lab", exploring: "Forschung", about: "Über uns", community: "Community" },
-			footer: { partner: "Swiss {ai} Weeks, Partner von Twelve Balloons" },
+			footer: { partners: "Partner" },
 			lab: { title: "Das Lab", subtitle: "Experimente, die wir gebaut haben und weiterbauen" },
 			hero: {
 				title: "Die Zukunft von Apps ist sprachgesteuert",
@@ -590,16 +590,26 @@ export default function LandingPage() {
 									<Github size={16} /> GitHub
 								</a>
 							</nav>
-								{/* Partner logo: Twelve Balloons is a partner of Swiss {ai} Weeks (black logo from their brand kit, unaltered) */}
+								{/* Partner logos (official files, unaltered): Swiss {ai} Weeks (content partner) and Hack Apertus
+						    (community partner). Gap >= logo height, per Hack Apertus' clear-space rule. */}
+							<div aria-label={c.footer.partners} role="group" className="flex items-center gap-8 md:border-l md:border-deep/15 md:pl-6">
 								<a
 									href="https://ai-weeks.ch"
 									target="_blank"
 									rel="noopener noreferrer"
-									aria-label={c.footer.partner}
-									className={`flex items-center rounded-sm opacity-80 transition-opacity hover:opacity-100 md:border-l md:border-deep/15 md:pl-6 ${focusRing}`}
+									className={`flex items-center rounded-sm opacity-80 transition-opacity hover:opacity-100 ${focusRing}`}
 								>
 									<Image src="/images/partners/swiss-ai-weeks.png" alt="Swiss {ai} Weeks" width={147} height={64} className="h-[28px] w-auto" style={{ width: "auto" }} />
 								</a>
+								<a
+									href="https://hackapertus.ch"
+									target="_blank"
+									rel="noopener noreferrer"
+									className={`flex items-center rounded-sm opacity-80 transition-opacity hover:opacity-100 ${focusRing}`}
+								>
+									<Image src="/images/partners/hack-apertus.png" alt="Hack Apertus" width={254} height={56} className="h-[22px] w-auto" style={{ width: "auto" }} />
+								</a>
+							</div>
 							</div>
 
 						</div>
