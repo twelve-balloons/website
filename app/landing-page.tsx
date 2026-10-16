@@ -85,7 +85,7 @@ export default function LandingPage() {
 				mzl: {
 					title: "Mut zur Lücke",
 					description:
-						"An AI coach for students in exam panic: upload your notes and past exams, get an honest read on what is still passable and a plan for the time you have left. Built on Apertus, Switzerland's open language model.",
+						"An AI coach for students in exam panic: upload your notes and past exams, get an honest read on what is still passable and a plan for the time you have left. Built on Apertus, Switzerland's open language model. It won first place at the BotWerkstatt hackathon (ZHAW).",
 					status: "Prototype",
 					link: "Visit mutzurluecke.ch",
 					previewAlt: "60 percent fail the first year at EPFL; students start studying 6 days before an exam on average",
@@ -193,7 +193,7 @@ export default function LandingPage() {
 				mzl: {
 					title: "Mut zur Lücke",
 					description:
-						"Ein KI-Coach für Studierende im Prüfungsstress: Unterlagen und alte Prüfungen hochladen, ehrlich erfahren, was noch machbar ist, und einen Plan für die verbleibende Zeit bekommen. Gebaut auf Apertus, dem offenen Schweizer Sprachmodell.",
+						"Ein KI-Coach für Studierende im Prüfungsstress: Unterlagen und alte Prüfungen hochladen, ehrlich erfahren, was noch machbar ist, und einen Plan für die verbleibende Zeit bekommen. Gebaut auf Apertus, dem offenen Schweizer Sprachmodell. Am Hackathon der BotWerkstatt (ZHAW) gewann das Projekt den ersten Platz.",
 					status: "Prototyp",
 					link: "mutzurluecke.ch besuchen",
 					previewAlt: "60 Prozent scheitern im ersten Jahr an der EPFL; im Schnitt beginnt das Lernen 6 Tage vor der Prüfung",
