@@ -82,6 +82,17 @@ export default function LandingPage() {
 					tryIt: "Try it with your Spotify",
 					premium: "Playback needs Spotify Premium.",
 				},
+				mzl: {
+					title: "Mut zur Lücke",
+					description:
+						"An AI coach for students in exam panic: upload your notes and past exams, get an honest read on what is still passable and a plan for the time you have left. Built on Apertus, Switzerland's open language model.",
+					status: "Coming soon",
+					previewAlt: "60 percent fail the first year at EPFL; students start studying 6 days before an exam on average",
+					stats: [
+						{ value: "60%", label: "fail the first year at EPFL" },
+						{ value: "6 days", label: "average study start before an exam" },
+					],
+				},
 				kit: {
 					title: "Neumorphic UI kit",
 					description:
@@ -177,6 +188,17 @@ export default function LandingPage() {
 					previewAlt: "Der Spotify Agent: Suchfeld und Titelliste mit Play-Buttons",
 					tryIt: "Mit Ihrem Spotify ausprobieren",
 					premium: "Die Wiedergabe braucht Spotify Premium.",
+				},
+				mzl: {
+					title: "Mut zur Lücke",
+					description:
+						"Ein KI-Coach für Studierende im Prüfungsstress: Unterlagen und alte Prüfungen hochladen, ehrlich erfahren, was noch machbar ist, und einen Plan für die verbleibende Zeit bekommen. Gebaut auf Apertus, dem offenen Schweizer Sprachmodell.",
+					status: "Bald verfügbar",
+					previewAlt: "60 Prozent scheitern im ersten Jahr an der EPFL; im Schnitt beginnt das Lernen 6 Tage vor der Prüfung",
+					stats: [
+						{ value: "60%", label: "scheitern im ersten Jahr an der EPFL" },
+						{ value: "6 Tage", label: "Lernbeginn vor der Prüfung, im Schnitt" },
+					],
 				},
 				kit: {
 					title: "Neumorphic UI-Kit",
@@ -404,9 +426,18 @@ export default function LandingPage() {
 							</ol>
 						</motion.article>
 
-						{/* Experiments 2 and 3: side by side. Buttons follow status (see DESIGN.md). */}
-						<div className="mt-12 border-t border-gold/50 grid md:grid-cols-2 md:divide-x divide-gold/50 max-w-4xl mx-auto">
-							<motion.article className="pt-10 md:pr-10 flex flex-col md:grid md:grid-rows-subgrid md:row-span-5 md:content-start" variants={itemVariants}>
+						{/* Side entries: three columns from lg, stacked below. Buttons follow status (see DESIGN.md). */}
+						<div className="mt-12 border-t border-gold/50 grid lg:grid-cols-3 lg:divide-x divide-gold/50 max-w-5xl mx-auto">
+							<motion.article className="pt-10 lg:pr-8 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5 lg:content-start" variants={itemVariants}>
+								<PreviewArea label={c.projects.mzl.previewAlt}>
+									<StatsCard stats={c.projects.mzl.stats} />
+								</PreviewArea>
+								<StatusChip tone="progress">{c.projects.mzl.status}</StatusChip>
+								<h3 className="mt-3 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.mzl.title}</h3>
+								<p className="mb-6 text-deep leading-relaxed">{c.projects.mzl.description}</p>
+							</motion.article>
+
+							<motion.article className="pt-10 mt-10 lg:mt-0 border-t border-gold/50 lg:border-t-0 lg:px-8 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5 lg:content-start" variants={itemVariants}>
 								<PreviewArea label={c.projects.spotify.previewAlt}>
 									<SpotifyMock />
 								</PreviewArea>
@@ -424,9 +455,9 @@ export default function LandingPage() {
 								</div>
 							</motion.article>
 
-							<motion.article className="pt-10 md:pl-10 flex flex-col md:grid md:grid-rows-subgrid md:row-span-5 md:content-start border-t border-gold/50 mt-10 md:border-t-0 md:mt-0" variants={itemVariants}>
+							<motion.article className="pt-10 lg:pl-8 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5 lg:content-start border-t border-gold/50 mt-10 lg:border-t-0 lg:mt-0" variants={itemVariants}>
 								<PreviewArea>
-									<Image src="/images/previews/ui-kit-light.png" alt={c.projects.kit.previewAlt} width={472} height={377} className="h-auto w-[290px] max-w-full md:-ml-[27px]" />
+									<Image src="/images/previews/ui-kit-light.png" alt={c.projects.kit.previewAlt} width={472} height={377} className="h-auto w-[260px] max-w-full lg:-ml-[24px]" />
 								</PreviewArea>
 								<StatusChip tone="open">{c.projects.kit.status}</StatusChip>
 								<h3 className="mt-3 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.kit.title}</h3>
@@ -654,7 +685,7 @@ function PromptLink({ placeholder, label }: { placeholder: string; label: string
 // rise out of the page without a frame. Same height for both so the rows below stay aligned.
 function PreviewArea({ children, label }: { children: React.ReactNode; label?: string }) {
 	return (
-		<div className="mb-8 flex h-[280px] items-center justify-center md:justify-start" role={label ? "img" : undefined} aria-label={label}>
+		<div className="mb-8 flex h-[280px] items-center justify-center lg:justify-start" role={label ? "img" : undefined} aria-label={label}>
 			{children}
 		</div>
 	);
@@ -699,6 +730,20 @@ function SpotifyMock() {
 					</li>
 				))}
 			</ul>
+		</div>
+	);
+}
+
+// Mut zur Lücke: the problem in two figures, as a light neumorphic card (no link yet, the product site will change).
+function StatsCard({ stats }: { stats: { value: string; label: string }[] }) {
+	return (
+		<div aria-hidden="true" className={`w-[200px] rounded-[18px] bg-[#EEE9DB] p-3 ${NEU_RAISED}`}>
+			{stats.map((st) => (
+				<div key={st.value} className={`rounded-xl bg-[#EEE9DB] px-3 py-3 text-center first:mb-3 ${NEU_SMALL}`}>
+					<p className="text-[26px] font-black leading-none tracking-[-0.03em] text-balloon-dark">{st.value}</p>
+					<p className="mt-1.5 text-[10px] font-semibold leading-snug text-deep">{st.label}</p>
+				</div>
+			))}
 		</div>
 	);
 }
