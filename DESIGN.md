@@ -129,6 +129,7 @@ Rules:
 - No buzzwords (seamless, empower, supercharge, world-class).
 - Buttons say what happens. Links make sense out of context.
 - No links to pages that don't exist yet; leave the link out instead.
+- **Never sound commercial.** Twelve Balloons is a lab for open experiments, not an agency: no "clients", "customers", "services", "consulting", "we offer", "hire us", no paid-training wording ("teach", "vermitteln"). Nothing on the site may read as competing with Mike's employer (Panter). Partnerships are shown as logos only (Swiss {ai} Weeks, Hack Apertus).
 
 ## 8. Don'ts
 

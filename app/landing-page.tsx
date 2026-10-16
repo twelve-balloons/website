@@ -60,7 +60,7 @@ export default function LandingPage() {
 				description1:
 					"We're developers, designers, researchers, and systems thinkers exploring a new interface paradigm, one where the UI is generated, not predefined.",
 				description2:
-					"Our client work shapes real-world tools. But our boldest ideas begin in-house: building our own agents, testing workflows, and reimagining how humans and machines think together.",
+					"Twelve Balloons is a lab for open experiments. We build our own agents, test workflows, mentor at hackathons, and explore how humans and machines think together.",
 			},
 			mission: {
 				title: "What we stand for",
@@ -68,7 +68,7 @@ export default function LandingPage() {
 					"Let ideas fly: faster, lighter, bolder",
 					"Build open-source tools and experiments",
 					"Share patterns, practices, philosophies",
-					"Teach AI-native ways of working",
+					"Learn AI-native ways of working, in the open",
 					"Redesign the interface, from the prompt up",
 				],
 			},
@@ -169,7 +169,7 @@ export default function LandingPage() {
 				description1:
 					"Wir sind Entwickler:innen, Designer:innen, Forscher:innen und Systemdenker:innen, die ein neues Interface-Paradigma erforschen, eines, bei dem die Benutzeroberfläche nicht vorgegeben, sondern generiert wird.",
 				description2:
-					"Unsere Arbeit mit Kund:innen führt zu echten Tools für komplexe Umgebungen. Aber unsere mutigsten Ideen entstehen intern: Wir bauen eigene Agenten, testen neue Workflows und gestalten neu, wie Menschen und Maschinen gemeinsam denken.",
+					"Twelve Balloons ist ein Lab für offene Experimente. Wir bauen eigene Agenten, testen Workflows, begleiten Hackathons und erforschen, wie Menschen und Maschinen gemeinsam denken.",
 			},
 			mission: {
 				title: "Wofür wir stehen",
@@ -177,7 +177,7 @@ export default function LandingPage() {
 					"Ideen fliegen lassen: schnell, leicht, mutig",
 					"Offene Tools und gewagte Experimente entwickeln",
 					"Denkmuster teilen, Perspektiven öffnen",
-					"KI-native Arbeitsweisen vermitteln und weitergeben",
+					"KI-native Arbeitsweisen offen erproben",
 					"Interfaces neu denken, gebaut aus Sprache",
 				],
 			},
