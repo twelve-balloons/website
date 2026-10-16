@@ -4,7 +4,7 @@ import type React from "react";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, Github, Calendar, Newspaper, Linkedin } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, Calendar, Newspaper, Linkedin, Sun, Search, Play, Pause } from "lucide-react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import SkyBackground from "./sky-background";
 
@@ -407,7 +407,9 @@ export default function LandingPage() {
 						{/* Experiments 2 and 3: side by side. Buttons follow status (see DESIGN.md). */}
 						<div className="mt-12 border-t border-gold/50 grid md:grid-cols-2 md:divide-x divide-gold/50 max-w-4xl mx-auto">
 							<motion.article className="pt-10 md:pr-10 flex flex-col md:grid md:grid-rows-subgrid md:row-span-5 md:content-start" variants={itemVariants}>
-								<Preview src="/images/previews/spotify-agent.jpg" alt={c.projects.spotify.previewAlt} />
+								<PreviewArea label={c.projects.spotify.previewAlt}>
+									<SpotifyMock />
+								</PreviewArea>
 								<StatusChip tone="live">{c.projects.spotify.status}</StatusChip>
 								<h3 className="mt-3 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.spotify.title}</h3>
 								<p className="mb-6 text-deep leading-relaxed">{c.projects.spotify.description}</p>
@@ -423,7 +425,9 @@ export default function LandingPage() {
 							</motion.article>
 
 							<motion.article className="pt-10 md:pl-10 flex flex-col md:grid md:grid-rows-subgrid md:row-span-5 md:content-start border-t border-gold/50 mt-10 md:border-t-0 md:mt-0" variants={itemVariants}>
-								<Preview src="/images/previews/ui-kit.jpg" alt={c.projects.kit.previewAlt} />
+								<PreviewArea>
+									<Image src="/images/previews/ui-kit-light.png" alt={c.projects.kit.previewAlt} width={472} height={377} className="h-auto w-[290px] max-w-full md:-ml-[27px]" />
+								</PreviewArea>
 								<StatusChip tone="open">{c.projects.kit.status}</StatusChip>
 								<h3 className="mt-3 mb-2 text-2xl font-extrabold tracking-[-0.02em] text-ink">{c.projects.kit.title}</h3>
 								<p className="mb-6 text-deep leading-relaxed">{c.projects.kit.description}</p>
@@ -646,12 +650,55 @@ function PromptLink({ placeholder, label }: { placeholder: string; label: string
 	);
 }
 
-// Product preview for the smaller Lab entries: a small icon-like tile, the whole card centred on its
-// own background (never cropped through content), same size for both so they read as a pair.
-function Preview({ src, alt }: { src: string; alt: string }) {
+// Previews for the smaller Lab entries: light neumorphism in the panel's own colour, so the cards
+// rise out of the page without a frame. Same height for both so the rows below stay aligned.
+function PreviewArea({ children, label }: { children: React.ReactNode; label?: string }) {
 	return (
-		<div className="relative mb-6 aspect-[4/3] w-[200px] overflow-hidden rounded-md border border-gold/40 shadow-[0_1px_2px_rgba(31,42,37,0.08),0_10px_20px_-10px_rgba(31,42,37,0.3)]">
-			<Image src={src} alt={alt} fill sizes="200px" className="object-cover" />
+		<div className="mb-8 flex h-[280px] items-center justify-center md:justify-start" role={label ? "img" : undefined} aria-label={label}>
+			{children}
+		</div>
+	);
+}
+
+const NEU_RAISED = "shadow-[-5px_-5px_12px_rgba(255,255,255,0.75),6px_7px_14px_rgba(31,42,37,0.13)]";
+const NEU_SMALL = "shadow-[-2px_-2px_5px_rgba(255,255,255,0.8),3px_3px_6px_rgba(31,42,37,0.12)]";
+const NEU_INSET = "shadow-[inset_2px_2px_5px_rgba(31,42,37,0.12),inset_-2px_-2px_5px_rgba(255,255,255,0.8)]";
+
+// The Spotify Agent's player, re-drawn from Mike's screenshot (content and covers as in the app).
+const SPOTIFY_TRACKS = [
+	{ title: "Could You Be Loved", artist: "Bob Marley & The Wailers", cover: "/images/previews/cover-1.png", playing: false },
+	{ title: "Three Little Birds", artist: "Bob Marley & The Wailers", cover: "/images/previews/cover-2.png", playing: true },
+	{ title: "Buffalo Soldier", artist: "Bob Marley & The Wailers", cover: "/images/previews/cover-3.png", playing: false },
+	{ title: "Bob Marley", artist: "Dadju", cover: "/images/previews/cover-4.png", playing: false },
+];
+
+function SpotifyMock() {
+	return (
+		<div aria-hidden="true" className={`w-[180px] rounded-[18px] bg-[#EEE9DB] p-3 font-sans ${NEU_RAISED}`}>
+			<div className="flex items-center justify-between px-0.5">
+				<span className="text-[11px] font-bold text-ink">Spotify Player</span>
+				<span className={`flex h-6 w-6 items-center justify-center rounded-full bg-[#EEE9DB] text-balloon-dark ${NEU_SMALL}`}>
+					<Sun size={11} strokeWidth={2.2} />
+				</span>
+			</div>
+			<div className={`mt-2.5 flex h-7 items-center gap-1.5 rounded-lg bg-[#EEE9DB] px-2 text-[9px] text-deep/60 ${NEU_INSET}`}>
+				<Search size={10} />
+				<span>Search Spotify</span>
+			</div>
+			<ul className="mt-2.5 space-y-2">
+				{SPOTIFY_TRACKS.map((t) => (
+					<li key={t.title} className={`flex items-center gap-2 rounded-lg bg-[#EEE9DB] p-1.5 ${NEU_SMALL}`}>
+						<Image src={t.cover} alt="" width={22} height={22} className="h-[22px] w-[22px] shrink-0 rounded-full" />
+						<span className="min-w-0 flex-1 leading-tight">
+							<span className="block truncate text-[9px] font-semibold text-ink">{t.title}</span>
+							<span className="block truncate text-[8px] text-deep/60">{t.artist}</span>
+						</span>
+						<span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EEE9DB] text-balloon-dark ${NEU_SMALL}`}>
+							{t.playing ? <Pause size={8} strokeWidth={2.4} /> : <Play size={8} strokeWidth={2.4} />}
+						</span>
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 }

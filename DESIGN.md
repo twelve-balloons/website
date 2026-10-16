@@ -119,7 +119,7 @@ Rules:
 - The painting is the identity: watercolour, pencil outlines, paper texture, soft pastel light.
 - Generated assets (Nano Banana / Veo, see `docs/nano-banana/`) keep the composition, trees and mountains; prompts are written as PRESERVE / CHANGE / NO.
 - Palette for anything added to the painting: muted orange, pale yellow, sage, dusty blue, cream. No purple, no saturated colours.
-- Screenshots of other products (Lab side entries): small icon-like tiles (200 px, 4:3), the whole UI card centred on its own dark background, recoloured to the palette (ink green, orange accents) with shadows kept. Never crop through content.
+- Screenshots of other products (Lab side entries): light neumorphism in the panel colour (#EEE9DB family), no frame, no dark tile. The whole card is always visible, never cropped through content. Accents orange, text ink. Visible card edges align with the text column; both previews share one image-area height so the rows below line up.
 - Social preview: `app/opengraph-image.jpg` (painting + balloons, 1200 × 630).
 - Product examples keep their own colours. Badges (`public/images/badges/`) are cut out with their cord, no background, layered shadow in ink colour (tight contact shadow + small mid shadow + large soft drop, all `drop-shadow` so the cord casts too); one at a time, crossfading every ~3 s and swinging ±1.6° on the cord (`.badge-sway`); reduced motion shows the first, still.
 
