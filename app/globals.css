@@ -184,3 +184,115 @@
   }
 }
 
+
+/* Twelve Balloons: motion + type */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Balloon drift: transform only, anchored at the string end */
+.balloon-drift {
+  transform-origin: 50% 100%;
+  animation-name: balloonDrift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes balloonDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-1.2deg);
+  }
+  50% {
+    transform: translate3d(0, -9px, 0) rotate(1.4deg);
+  }
+}
+
+/* Hero headline: words rise from a mask. CSS only, so text exists without JS. */
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+}
+
+.word-rise {
+  display: inline-block;
+  animation: wordRise 0.9s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes wordRise {
+  from {
+    transform: translate3d(0, 105%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Badge on its cord: swings from the top of the cord */
+.badge-sway {
+  transform-origin: 50% 0;
+  animation: badgeSway 6.5s ease-in-out infinite;
+}
+
+@keyframes badgeSway {
+  0%, 100% { transform: rotate(-1.6deg); }
+  50% { transform: rotate(1.6deg); }
+}
+
+.caret-blink {
+  animation: caretBlink 1.1s steps(1, end) infinite;
+}
+
+@keyframes caretBlink {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret-blink,
+  .badge-sway,
+  .balloon-drift,
+  .word-rise,
+  .fade-up {
+    animation: none !important;
+  }
+}
+
+/* Primary button, lit from above (AI-Links note "Buttons lit from above", 15.10.2026):
+   1 light on the top edge, 2 darker bottom edge, 3 tight contact shadow, 4 glow in the
+   button's own colour, plus a gentle top-to-bottom gradient. Pressed: the light flips. */
+.btn-lit {
+  background-color: #e89b52;
+  background-image: linear-gradient(to bottom, #efae6f, #e89b52);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(120, 62, 16, 0.22),
+    0 1px 2px rgba(31, 42, 37, 0.3),
+    0 8px 20px -6px rgba(232, 155, 82, 0.6);
+}
+
+.btn-lit:hover {
+  background-image: linear-gradient(to bottom, #eba463, #df8e44);
+}
+
+.btn-lit:active {
+  background-image: linear-gradient(to top, #efae6f, #e89b52);
+  box-shadow:
+    inset 0 1px 2px rgba(120, 62, 16, 0.3),
+    0 1px 1px rgba(31, 42, 37, 0.2);
+}

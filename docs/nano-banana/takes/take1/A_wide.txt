@@ -1,0 +1,7 @@
+Extend this watercolour painting to a wide 16:9 format. Keep it the exact same painting, only wider.
+
+PRESERVE: everything already in the picture, unchanged and at the same scale, centred: the mountain shapes, snow and their position; the sky and clouds; the green meadow and hills; the paper texture, pencil outlines and soft watercolour wash; the overall pastel palette.
+
+CHANGE: only add new painted area on the left and on the right. The landscape continues naturally in the same hand and style: more sky, the mountain range running on, the meadow and hills continuing to the edges.
+
+NO: balloons, people, animals, buildings, text, logos. No new objects in the sky. No photographic realism, no sharp digital edges, no saturated colours. No visible seam between the old and the new areas. Do not move or redraw the existing mountains.
