@@ -61,6 +61,8 @@ export default function LandingPage() {
 					"We're developers, designers, researchers, and systems thinkers exploring a new interface paradigm, one where the UI is generated, not predefined.",
 				description2:
 					"Twelve Balloons is a lab for open experiments. We build our own agents, test workflows, mentor at hackathons, and explore how humans and machines think together.",
+				imageAlt:
+					"Watercolour drawing: an ape, an early human, a man and a woman walk in a row across a meadow, each holding a balloon that grows larger and more orange from left to right.",
 			},
 			mission: {
 				title: "What we stand for",
@@ -170,6 +172,8 @@ export default function LandingPage() {
 					"Wir sind Entwickler:innen, Designer:innen, Forscher:innen und Systemdenker:innen, die ein neues Interface-Paradigma erforschen, eines, bei dem die Benutzeroberfläche nicht vorgegeben, sondern generiert wird.",
 				description2:
 					"Twelve Balloons ist ein Lab für offene Experimente. Wir bauen eigene Agenten, testen Workflows, begleiten Hackathons und erforschen, wie Menschen und Maschinen gemeinsam denken.",
+				imageAlt:
+					"Aquarell: Ein Affe, ein Frühmensch, ein Mann und eine Frau gehen hintereinander über eine Wiese, jede Figur mit einem Ballon, der von links nach rechts grösser und oranger wird.",
 			},
 			mission: {
 				title: "Wofür wir stehen",
@@ -500,15 +504,31 @@ export default function LandingPage() {
 
 					{/* About: who we are + what we stand for */}
 					<AnimatedSection id="about" className={`${panel} mb-12`}>
-						<motion.h2 className={`${sectionTitle} text-center`} variants={itemVariants}>
-							{c.about.title}
-						</motion.h2>
-						<motion.p className={`${bodyText} text-center mb-6`} variants={itemVariants}>
-							{c.about.description1}
-						</motion.p>
-						<motion.p className={`${bodyText} text-center`} variants={itemVariants}>
-							{c.about.description2}
-						</motion.p>
+						{/* Feature row: text left, the evolution drawing right (60/40). On phones the drawing comes first. */}
+						<div className="grid grid-cols-[minmax(0,1fr)] md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-x-10 gap-y-8 max-w-4xl mx-auto items-center">
+							<div className="min-w-0 text-center md:text-left">
+								<motion.h2 className={sectionTitle} variants={itemVariants}>
+									{c.about.title}
+								</motion.h2>
+								<motion.p className="text-lg text-deep leading-relaxed mb-6" variants={itemVariants}>
+									{c.about.description1}
+								</motion.p>
+								<motion.p className="text-lg text-deep leading-relaxed" variants={itemVariants}>
+									{c.about.description2}
+								</motion.p>
+							</div>
+							<motion.div className="order-first md:order-none mx-auto w-full max-w-[300px] md:max-w-none" variants={itemVariants}>
+								{/* Cut out like the badges: figures and balloons on a thin strip of meadow, no sky, no frame */}
+								<Image
+									src="/images/evolution-balloons.png"
+									alt={c.about.imageAlt}
+									width={1011}
+									height={985}
+									sizes="(min-width: 768px) 340px, 300px"
+									className="w-full h-auto"
+								/>
+							</motion.div>
+						</div>
 
 						<motion.h3 className="mt-12 mb-4 text-center text-sm font-semibold uppercase tracking-[0.08em] text-deep/80" variants={itemVariants}>
 							{c.mission.title}
