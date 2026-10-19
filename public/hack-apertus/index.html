@@ -1,0 +1,1372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1412">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/jpeg;base64,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">
+<title>Hack Apertus Mentor Guide</title>
+<meta name="description" content="Mentor notes from Hack Apertus Liebefeld, 18 to 19 October 2026: the three challenges, possible architectures, jury criteria, Apertus primer, evals, table-visit method, pitch and submission check.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple:#E89B52; --violet:#E9B27C; --sage:#9CB8A0; --gold:#C9B98A; --ink:#1F2A25;
+    --bg:#0f1412; --panel:#161d1a; --panel2:#1c2521; --sunken:#0b0f0d;
+    --line:#26312c; --line2:#34423b;
+    --txt:#EEEBE2; --mut:#BFC6C0; --dim:#919B94; --faint:#86908A;
+    --ok:#34d399; --warn:#f5a742; --bad:#f87171; --run:#38bdf8; --mint:#B9D3BE;
+    --wash:rgba(232,155,82,.14); --wash-soft:rgba(232,155,82,.08);
+    --r-s:6px; --r-m:9px; --r-l:12px;
+    --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,monospace;
+    --head:"Montserrat",var(--font);
+    --ease:cubic-bezier(0.23,1,0.32,1);
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family:var(--font); background:var(--bg); color:var(--txt); font-size:15px; line-height:1.55;
+         -webkit-font-smoothing:antialiased; min-height:100vh; }
+  ::selection { background:rgba(232,155,82,.35); }
+  ::-webkit-scrollbar { width:9px; height:9px; }
+  ::-webkit-scrollbar-thumb { background:rgba(255,255,255,.10); border-radius:5px; border:2px solid transparent; background-clip:content-box; }
+  ::-webkit-scrollbar-thumb:hover { background-color:rgba(255,255,255,.20); }
+  ::-webkit-scrollbar-track { background:transparent; }
+  :focus-visible { outline:2px solid var(--violet); outline-offset:1px; border-radius:4px; }
+  button { touch-action:manipulation; font-family:inherit; }
+  button:active { transform:scale(.97); }
+  kbd { font-family:var(--mono); font-size:.68rem; color:var(--mut); background:var(--panel2);
+        border:1px solid var(--line2); border-bottom-width:2px; border-radius:4px; padding:1px 5px; }
+  .ic { width:14px; height:14px; stroke:currentColor; stroke-width:1.7; fill:none; stroke-linecap:round; stroke-linejoin:round;
+        vertical-align:-2.5px; display:inline-block; flex-shrink:0; }
+  a { color:var(--violet); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  /* ---- Header ---- */
+  header { height:53px; position:sticky; top:0; z-index:30; background:rgba(15,20,18,.92); backdrop-filter:blur(8px);
+           border-bottom:1px solid var(--line); padding:0 20px; display:flex; align-items:center; gap:14px; }
+  header .menu { width:40px; height:40px; border-radius:50%; border:0; background:none; color:var(--mut); display:inline-flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; margin-left:-6px; transition:background .14s var(--ease), color .14s var(--ease); }
+  header .menu:hover { background:var(--panel2); color:var(--txt); }
+  header .menu .ic { width:20px; height:20px; }
+  header .dot { width:6px; height:6px; border-radius:50%; background:var(--purple); }
+  header h1 { font-family:var(--head); font-size:.95rem; font-weight:700; margin:0; letter-spacing:-.01em; white-space:nowrap; }
+  header h1 span { color:var(--gold); font-weight:600; }
+  header .spacer { flex:1; }
+  .prog { display:flex; align-items:center; gap:10px; font-family:var(--mono); font-size:.76rem; color:var(--mut); }
+  .bar { width:120px; height:5px; background:var(--panel2); border-radius:3px; overflow:hidden; }
+  .bar i { display:block; height:100%; width:0; background:var(--purple); transition:width .3s var(--ease); }
+  header .stand { font-family:var(--mono); font-size:.7rem; color:var(--dim); }
+  header .hclock { font-family:var(--mono); font-size:.8rem; color:var(--txt); background:var(--panel2); border:1px solid var(--line2);
+                   border-radius:99px; padding:3px 10px; }
+  @media(max-width:760px){ header{padding:0 14px; gap:10px} header .stand{display:none} header h1 span{display:none} .bar{width:60px} }
+  @media(max-width:340px){ header{gap:8px} header .prog span{display:none} .bar{width:40px} }
+
+  /* ---- Layout ---- */
+  .shell { display:grid; grid-template-columns:var(--navw,250px) 1fr; transition:grid-template-columns .2s var(--ease); min-height:calc(100vh - 53px); }
+  nav.side { border-right:1px solid var(--line); padding:12px 12px 16px; position:sticky; top:53px; align-self:start;
+             height:calc(100vh - 53px); overflow-y:auto; display:flex; flex-direction:column; gap:2px; }
+  nav.side .grp { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--dim);
+                  padding:8px 12px 8px; }
+  nav.side button { display:flex; align-items:center; gap:10px; width:100%; min-height:36px; text-align:left; background:none; border:1px solid transparent;
+                    color:var(--mut); padding:6px 10px 6px 12px; border-radius:10px; cursor:pointer; font-size:.86rem; line-height:1.3;
+                    transition:background .14s var(--ease), color .14s var(--ease), border-color .14s var(--ease); }
+  nav.side button:hover { background:var(--panel); color:var(--txt); }
+  nav.side button:focus-visible { outline:2px solid var(--purple); outline-offset:1px; }
+  nav.side button.active { background:var(--wash); color:#fff; border-color:rgba(232,155,82,.55); }
+  nav.side .n { font-family:var(--mono); font-size:.7rem; color:var(--dim); width:18px; flex-shrink:0; text-align:center; }
+  nav.side button.active .n { color:var(--violet); }
+  nav.side .st { margin-left:auto; width:8px; height:8px; border-radius:50%; border:1.5px solid var(--line2); flex-shrink:0; }
+  nav.side .st.done { background:var(--ok); border-color:var(--ok); }
+  nav.side .tbfoot { margin-top:auto; padding:16px 0 0 2px; display:flex; }
+  nav.side .tbfoot img { width:40px; height:40px; border-radius:10px; object-fit:cover; display:block;
+                         box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 4px 12px rgba(0,0,0,.4); transition:transform .18s var(--ease); }
+  nav.side .tbfoot img:hover { transform:translateY(-1px); }
+  main { padding:28px 40px 90px; min-width:0; }
+  @media(min-width:901px){
+    nav.side { width:var(--navw,250px); background:var(--bg); z-index:25; transition:width .2s var(--ease); overflow-x:hidden; }
+    body.navc { --navw:68px; }
+    body.navc nav.side .lbl, body.navc nav.side .st, body.navc nav.side .grp { display:none; }
+    body.navc nav.side button { justify-content:center; width:44px; padding:6px 0; }
+    body.navc nav.side .n { width:auto; font-size:.76rem; }
+    body.navc nav.side .tbfoot { justify-content:center; padding-left:0; }
+  }
+  header .cur { display:none; }
+  .scrim { position:fixed; inset:0; background:rgba(0,0,0,.55); opacity:0; pointer-events:none; transition:opacity .22s var(--ease); z-index:55; }
+  @media(max-width:900px){
+    .shell{grid-template-columns:1fr}
+    header{padding:0 12px 0 14px; gap:8px}
+    header h1{display:flex; flex-direction:column; line-height:1.15; min-width:0}
+    header .cur{display:block; font-family:var(--font); font-size:.74rem; font-weight:500; color:var(--gold); overflow:hidden; text-overflow:ellipsis; max-width:56vw}
+    nav.side{position:fixed; top:0; left:0; bottom:0; z-index:60; width:min(84vw,320px); height:100dvh; background:var(--bg);
+             border-right:1px solid var(--line); padding:calc(16px + env(safe-area-inset-top)) 12px calc(16px + env(safe-area-inset-bottom));
+             transform:translateX(-102%); transition:transform .26s var(--ease); box-shadow:12px 0 32px rgba(0,0,0,.45); overscroll-behavior:contain;}
+    body.navopen nav.side{transform:none}
+    body.navopen .scrim{opacity:1; pointer-events:auto}
+    body.navopen{overflow:hidden}
+    nav.side button{min-height:44px; font-size:.95rem}
+    main{padding:20px 16px calc(96px + env(safe-area-inset-bottom))}
+    .navbtns button{min-height:44px; padding:10px 18px}
+  }
+  @media (prefers-reduced-motion: reduce){ nav.side, .scrim{transition:none} }
+
+  /* ---- Pane content ---- */
+  .pane { display:none; max-width:820px; }
+  .pane.active { display:block; animation:fade .22s var(--ease); }
+  @keyframes fade { from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none} }
+  @media (prefers-reduced-motion: reduce){ .pane.active{animation:none} .bar i{transition:none} * {transition-duration:0s !important} }
+  .eyebrow { font-family:var(--mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--sage); margin-bottom:8px; }
+  h2.title { font-family:var(--head); font-size:1.75rem; font-weight:800; letter-spacing:-.02em; margin:0 0 8px; line-height:1.18; text-wrap:balance; }
+  .lede { color:var(--mut); font-size:1.02rem; margin:0 0 26px; max-width:66ch; text-wrap:pretty; }
+  h3 { font-size:1.08rem; font-weight:600; margin:30px 0 8px; letter-spacing:-.01em; }
+  h4 { font-size:.95rem; font-weight:600; margin:20px 0 6px; }
+  p { margin:0 0 12px; max-width:72ch; text-wrap:pretty; }
+  ul, ol { margin:0 0 14px; padding-left:22px; max-width:72ch; }
+  li { margin-bottom:6px; }
+  strong { color:#fff; font-weight:600; }
+  code { font-family:var(--mono); font-size:.84em; background:var(--panel2); border:1px solid var(--line); border-radius:4px; padding:1px 5px; color:var(--mint); }
+  cite.src { font-style:normal; font-family:var(--mono); font-size:.64rem; color:var(--faint); }
+  blockquote { margin:10px 0 12px; padding:12px 16px; border-left:3px solid var(--violet); background:var(--panel); border-radius:0 var(--r-m) var(--r-m) 0;
+               color:var(--txt); font-size:.95rem; max-width:72ch; }
+  blockquote .bl { display:block; font-family:var(--mono); font-size:.64rem; letter-spacing:.06em; text-transform:uppercase; color:var(--violet); margin-bottom:5px; }
+  .callout { border:1px solid var(--line); border-left:3px solid var(--purple); background:var(--wash-soft); border-radius:0 var(--r-l) var(--r-l) 0;
+             padding:14px 18px; margin:22px 0; }
+  .callout .t { font-family:var(--mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--violet); margin-bottom:6px; }
+  .callout p:last-child, .callout ul:last-child, .callout ol:last-child { margin-bottom:0; }
+  .callout.warn { border-left-color:var(--warn); background:rgba(245,167,66,.07); } .callout.warn .t { color:var(--warn); }
+  .callout.bad { border-left-color:var(--bad); background:rgba(248,113,113,.07); } .callout.bad .t { color:var(--bad); }
+  .callout.ok { border-left-color:var(--ok); background:rgba(52,211,153,.07); } .callout.ok .t { color:var(--ok); }
+  table { border-collapse:collapse; width:100%; font-size:.86rem; margin:14px 0 20px; }
+  .tw { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  th { text-align:left; font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:var(--dim);
+       padding:8px 10px; border-bottom:1px solid var(--line2); font-weight:500; }
+  td { padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--mut); }
+  td:first-child { color:var(--txt); white-space:nowrap; }
+  table.wrapfirst td:first-child { white-space:normal; }
+  .chip { display:inline-block; font-family:var(--mono); font-size:.66rem; padding:2px 8px; border:1px solid var(--line2); border-radius:99px; color:var(--mut); margin:0 4px 4px 0; vertical-align:1px; }
+  .chip.v { color:var(--violet); border-color:rgba(232,155,82,.5); }
+  .chip.ok { color:var(--ok); border-color:rgba(52,211,153,.5); }
+  .chip.warn { color:var(--warn); border-color:rgba(245,167,66,.5); }
+  .chip.bad { color:var(--bad); border-color:rgba(248,113,113,.5); }
+  .meta p { font-size:.84rem; color:var(--dim); }
+  .small { font-size:.84rem; color:var(--dim); }
+
+  /* ---- Clock and now/next ---- */
+  .clockbox { display:grid; grid-template-columns:auto 1fr; gap:14px 28px; align-items:center; border:1px solid var(--line); border-radius:var(--r-l);
+              background:var(--panel); padding:16px 20px; margin:0 0 22px; }
+  .clockbox .big { font-family:var(--mono); font-size:2.7rem; font-weight:500; letter-spacing:-.02em; line-height:1; color:#fff; }
+  .clockbox .sub { font-family:var(--mono); font-size:.7rem; color:var(--dim); margin-top:8px; }
+  .nn { display:grid; gap:10px; }
+  .nn .row { display:grid; grid-template-columns:44px 1fr; gap:10px; font-size:.88rem; color:var(--mut); }
+  .nn .k { font-family:var(--mono); font-size:.64rem; text-transform:uppercase; letter-spacing:.08em; padding-top:4px; }
+  .nn .now .k { color:var(--ok); } .nn .next .k { color:var(--violet); }
+  .nn b { color:var(--txt); font-weight:600; }
+  .nn .when { font-family:var(--mono); font-size:.72rem; color:var(--dim); white-space:nowrap; }
+  @media(max-width:600px){ .clockbox{grid-template-columns:1fr; gap:12px} .clockbox .big{font-size:2.2rem} }
+  #tl tr.now td { background:rgba(52,211,153,.08); } #tl tr.now td:first-child { color:var(--ok); font-weight:600; }
+  #tl tr.next td { background:var(--wash-soft); } #tl tr.next td:first-child { color:var(--violet); font-weight:600; }
+
+  /* ---- Question cards ---- */
+  .qc { border:1px solid rgba(232,155,82,.42); border-left:3px solid var(--purple); background:var(--wash-soft); border-radius:0 var(--r-l) var(--r-l) 0;
+        padding:12px 16px; margin:0 0 10px; }
+  .qc .qlab { font-family:var(--mono); font-size:.64rem; letter-spacing:.06em; text-transform:uppercase; color:var(--dim); margin-bottom:6px; }
+  .qc .q { font-weight:600; color:#fff; margin-bottom:8px; line-height:1.45; text-wrap:pretty; }
+  .qc .q .qn { font-family:var(--mono); font-size:.7rem; color:var(--violet); margin-right:8px; font-weight:500; }
+  .qc .q .tt { font-family:var(--mono); font-size:.64rem; letter-spacing:.06em; text-transform:uppercase; color:var(--violet); margin-right:8px; font-weight:500; white-space:nowrap; }
+  .qc .l { display:grid; grid-template-columns:118px 1fr; gap:4px 10px; font-size:.85rem; color:var(--mut); margin-top:4px; }
+  .qc .l b { font-family:var(--mono); font-size:.64rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; padding-top:3px; color:var(--dim); }
+  .qc .l.m b { color:var(--faint); } .qc .l.w b { color:var(--warn); } .qc .l.g b { color:var(--ok); } .qc .l.k b { color:var(--bad); } .qc .l.f b { color:var(--violet); }
+  @media(max-width:600px){ .qc .l{grid-template-columns:1fr; gap:1px} .qc .l b{padding-top:0} }
+
+  /* ---- Layer bank ---- */
+  .lctl { display:flex; gap:8px; margin:0 0 14px; flex-wrap:wrap; }
+  .btn { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line2); background:var(--panel); color:var(--txt);
+         padding:8px 14px; border-radius:99px; cursor:pointer; font-size:.84rem; font-weight:500;
+         transition:border-color .14s var(--ease), background .14s var(--ease); }
+  .btn:hover { border-color:var(--violet); }
+  .btn.primary { background:var(--purple); border-color:var(--purple); color:var(--ink); }
+  .btn.small { padding:5px 11px; font-size:.78rem; }
+  .btn.danger:hover { border-color:var(--bad); color:var(--bad); }
+  details.layer { border:1px solid var(--line); border-radius:var(--r-l); background:var(--panel); margin-bottom:10px; overflow:hidden; }
+  details.layer summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:12px; padding:12px 16px; font-weight:600; font-size:.95rem; }
+  details.layer summary::-webkit-details-marker { display:none; }
+  details.layer summary:hover { background:var(--panel2); }
+  details.layer summary .ln { font-family:var(--mono); font-size:.74rem; color:var(--violet); width:16px; }
+  details.layer summary .cnt { margin-left:auto; font-family:var(--mono); font-size:.68rem; color:var(--dim); }
+  details.layer summary .arr { width:8px; height:8px; border-right:1.5px solid var(--dim); border-bottom:1.5px solid var(--dim); transform:rotate(-45deg); transition:transform .18s var(--ease); }
+  details.layer[open] summary .arr { transform:rotate(45deg); }
+  details.layer .ldesc { margin:0; padding:10px 16px; border-top:1px solid var(--line); background:var(--sunken); color:var(--mut); font-size:.88rem; max-width:none; }
+  details.layer .qc { border-radius:0; border-top:0; border-right:0; border-bottom:1px solid var(--line); border-left:3px solid var(--purple); margin:0; background:transparent; padding:10px 16px; }
+  details.layer .qc:last-child { border-bottom:0; }
+  details.layer .qc .q { font-size:.92rem; margin-bottom:6px; }
+  details.layer .qc .l { font-size:.82rem; margin-top:2px; }
+  @media(min-width:761px){ details.layer .qc .lines { display:grid; grid-template-columns:1fr 1fr; gap:2px 18px; } details.layer .qc .l { grid-template-columns:96px 1fr; } }
+
+  /* ---- Challenge tabs ---- */
+  .tabs { display:flex; gap:6px; overflow-x:auto; -webkit-overflow-scrolling:touch; padding:2px 0 10px; margin:4px 0 18px; border-bottom:1px solid var(--line); }
+  .tabs button { border:1px solid var(--line); background:var(--panel); color:var(--mut); padding:7px 12px; border-radius:99px; cursor:pointer;
+                 font-size:.82rem; white-space:nowrap; display:inline-flex; gap:8px; align-items:center; flex-shrink:0;
+                 transition:background .14s var(--ease), color .14s var(--ease), border-color .14s var(--ease); }
+  .tabs button .code { font-family:var(--mono); font-size:.68rem; color:var(--violet); }
+  .tabs button:hover { color:var(--txt); border-color:var(--line2); }
+  .tabs button.active { background:var(--wash); color:#fff; border-color:rgba(232,155,82,.55); }
+  .ctab { display:none; } .ctab.active { display:block; animation:fade .22s var(--ease); }
+  .ctab h3.ct { margin-top:6px; font-size:1.25rem; }
+  .ctab h3.ct small { display:block; font-family:var(--mono); font-size:.7rem; color:var(--dim); font-weight:500; letter-spacing:.06em; text-transform:uppercase; margin-top:4px; }
+  .lab-h { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); margin:22px 0 6px; }
+  .terms { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:8px; margin:6px 0 14px; }
+  .term { border:1px solid var(--line); border-radius:var(--r-m); background:var(--panel); padding:8px 11px; font-size:.83rem; color:var(--mut); }
+  .term b { color:var(--mint); font-family:var(--mono); font-size:.76rem; font-weight:500; display:block; margin-bottom:2px; }
+  .rf { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0 4px; }
+  .rf .callout { margin:0; } .rf ul { padding-left:18px; font-size:.86rem; }
+  @media(max-width:700px){ .rf{grid-template-columns:1fr} }
+  em.why { font-style:normal; color:var(--violet); font-family:var(--mono); font-size:.72rem; }
+  .script { border:1px solid rgba(232,155,82,.55); background:var(--wash); border-radius:var(--r-l); padding:16px 18px; margin:22px 0; }
+  .script .t { font-family:var(--mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--violet); margin-bottom:10px; display:flex; align-items:center; gap:10px; }
+  .script .t .tot { margin-left:auto; color:var(--dim); text-transform:none; letter-spacing:0; }
+  .script .sg { display:grid; grid-template-columns:112px 1fr; gap:6px 12px; font-size:.88rem; padding:6px 0; border-top:1px dashed rgba(232,155,82,.3); }
+  .script .sg:first-of-type { border-top:0; }
+  .script .sg b { font-family:var(--mono); font-size:.72rem; color:var(--violet); font-weight:500; padding-top:3px; }
+  .script .sg span { color:var(--txt); }
+  @media(max-width:600px){ .script .sg{grid-template-columns:1fr; gap:2px} }
+
+  /* ---- Overview grid ---- */
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin:18px 0; }
+  .cell { border:1px solid var(--line); border-radius:var(--r-l); padding:14px 16px; background:var(--panel); cursor:pointer;
+          transition:border-color .14s var(--ease); text-align:left; color:var(--txt); font:inherit; }
+  .cell:hover { border-color:var(--violet); }
+  .cell .cn { font-family:var(--mono); font-size:.68rem; color:var(--violet); margin-bottom:4px; }
+  .cell .ct { font-weight:600; font-size:.92rem; margin-bottom:4px; }
+  .cell .cd { font-size:.8rem; color:var(--dim); }
+
+  /* ---- Glossary ---- */
+  .glctl { display:flex; gap:12px; align-items:center; margin:0 0 14px; flex-wrap:wrap; }
+  .glctl input { flex:1; min-width:200px; max-width:380px; background:var(--sunken); border:1px solid var(--line2); color:var(--txt); border-radius:99px; padding:8px 14px; font:inherit; font-size:.88rem; }
+  .glctl input:focus { border-color:var(--violet); outline:none; }
+  .glctl span { font-family:var(--mono); font-size:.72rem; color:var(--dim); }
+  dl.gl { margin:0; }
+  dl.gl .gi { display:grid; grid-template-columns:200px 1fr; gap:0 16px; padding:9px 0; border-bottom:1px solid var(--line); }
+  dl.gl .gi.hide { display:none; }
+  dl.gl dt { font-weight:600; color:#fff; font-size:.9rem; margin:0; }
+  dl.gl dd { margin:0; color:var(--mut); font-size:.88rem; }
+  .glnone { color:var(--dim); font-size:.88rem; padding:14px 0; display:none; }
+  @media(max-width:600px){ dl.gl .gi{grid-template-columns:1fr; gap:2px} }
+
+  /* ---- Scoring pad ---- */
+  .padtools { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 10px; align-items:center; }
+  .padsum { font-family:var(--mono); font-size:.74rem; color:var(--dim); margin:0 0 16px; }
+  .team { border:1px solid var(--line); border-radius:var(--r-l); background:var(--panel); padding:12px 14px; margin-bottom:12px; }
+  .team.sl { border-color:rgba(52,211,153,.6); box-shadow:inset 3px 0 0 var(--ok); }
+  .team.closed { padding:9px 14px; cursor:pointer; }
+  .team.closed:hover { border-color:var(--violet); }
+  .trow { display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:.86rem; }
+  .trow .tn { font-family:var(--mono); font-size:.76rem; color:var(--violet); }
+  .trow .nm { font-weight:600; color:#fff; }
+  .trow .sc { font-family:var(--mono); font-size:.76rem; color:var(--mut); }
+  .trow .hint { margin-left:auto; font-family:var(--mono); font-size:.64rem; color:var(--faint); }
+  .team .r1 { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:10px; }
+  .team .tn { font-family:var(--mono); font-size:.76rem; color:var(--violet); width:26px; }
+  .team input[type=text], .team select, textarea.exp { background:var(--sunken); border:1px solid var(--line2); color:var(--txt); border-radius:var(--r-s);
+                                                       padding:8px 10px; font:inherit; font-size:.86rem; }
+  .team input[type=text]:focus, .team select:focus, textarea.exp:focus { border-color:var(--violet); outline:none; }
+  .team input.tteam { flex:1; min-width:150px; }
+  .team .del, .team .fold { border:1px solid transparent; background:none; color:var(--dim); font-size:.74rem; cursor:pointer; padding:4px 8px; border-radius:99px; font-family:var(--mono); }
+  .team .fold { margin-left:auto; }
+  .team .fold:hover { color:var(--ok); border-color:rgba(52,211,153,.4); }
+  .team .del:hover, .team .del[data-arm] { color:var(--bad); border-color:rgba(248,113,113,.4); }
+  .btn[data-arm] { border-color:var(--bad); color:var(--bad); }
+  .team .scores { display:grid; grid-template-columns:repeat(auto-fit,minmax(128px,1fr)); gap:8px; margin-bottom:10px; }
+  .seg .sl { font-family:var(--mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.06em; color:var(--dim); margin-bottom:4px; display:block; }
+  .segb { display:flex; border:1px solid var(--line2); border-radius:var(--r-s); overflow:hidden; background:var(--sunken); }
+  .segb button { flex:1; background:none; border:0; border-right:1px solid var(--line2); color:var(--mut); padding:7px 0; cursor:pointer; font-family:var(--mono); font-size:.82rem; }
+  .segb button:last-child { border-right:0; }
+  .segb button:hover { background:var(--panel2); color:var(--txt); }
+  .segb button.on { background:var(--purple); color:#fff; }
+  .segb button:active { transform:none; }
+  .team .r3 { display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-bottom:8px; font-size:.84rem; color:var(--mut); }
+  .team .r3 label { display:inline-flex; gap:6px; align-items:center; cursor:pointer; }
+  .team .r3 input[type=checkbox] { accent-color:var(--purple); width:15px; height:15px; }
+  .team .r3 select { padding:4px 8px; font-size:.8rem; }
+  .team input.line { width:100%; margin-bottom:6px; }
+  .team .rb { font-family:var(--mono); font-size:.72rem; color:var(--mint); background:var(--sunken); border:1px solid var(--line); border-radius:var(--r-s);
+              padding:7px 9px; margin-top:6px; white-space:pre-wrap; line-height:1.5; }
+  .team .rb::before { content:"read-back  "; color:var(--faint); }
+  .padempty { border:1px dashed var(--line2); border-radius:var(--r-l); padding:20px; color:var(--dim); font-size:.88rem; text-align:center; }
+  textarea.exp { width:100%; min-height:240px; font-family:var(--mono); font-size:.74rem; line-height:1.5; resize:vertical; display:block; }
+  textarea.exp.imp { min-height:130px; }
+
+  /* ---- Rankings ---- */
+  table.rk { font-size:.82rem; }
+  table.rk th { cursor:pointer; user-select:none; white-space:nowrap; }
+  table.rk th:hover { color:var(--txt); }
+  table.rk th.on { color:var(--violet); }
+  table.rk th.on::after { content:" ▾"; } table.rk th.on.asc::after { content:" ▴"; }
+  table.rk td.num { font-family:var(--mono); text-align:right; white-space:nowrap; }
+  table.rk td.tot { font-family:var(--mono); text-align:right; color:#fff; font-weight:600; white-space:nowrap; }
+  table.rk td.ev { min-width:200px; }
+  table.rk tr.sl td:first-child { color:var(--ok); }
+  table.rk td .chip { margin:0; }
+  .top3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:8px; margin:8px 0 18px; }
+  .top3 .c { border:1px solid var(--line); border-radius:var(--r-m); background:var(--panel); padding:9px 12px; font-size:.82rem; }
+  .top3 .c b { display:block; font-family:var(--mono); font-size:.64rem; letter-spacing:.06em; text-transform:uppercase; color:var(--violet); margin-bottom:5px; font-weight:500; }
+  .top3 .c ol { margin:0; padding-left:18px; } .top3 .c li { margin-bottom:2px; color:var(--mut); } .top3 .c li span { font-family:var(--mono); color:var(--txt); }
+  .top3 .c .none { color:var(--faint); font-size:.78rem; }
+  .imperr { font-family:var(--mono); font-size:.76rem; color:var(--bad); white-space:pre-wrap; margin:8px 0 16px; line-height:1.5; }
+  .imperr.ok { color:var(--ok); }
+
+  /* ---- Numbered list blocks ---- */
+  .step { display:grid; grid-template-columns:34px 1fr; gap:12px; margin:0 0 16px; }
+  .step .no { width:28px; height:28px; border-radius:50%; border:1px solid var(--line2); display:flex; align-items:center; justify-content:center;
+              font-family:var(--mono); font-size:.74rem; color:var(--violet); flex-shrink:0; }
+
+  /* ---- Footer per pane ---- */
+  .pfoot { display:flex; align-items:center; gap:12px; margin-top:30px; padding-top:18px; border-top:1px solid var(--line); flex-wrap:wrap; }
+  .done-btn { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line2); background:var(--panel); color:var(--txt);
+              padding:9px 16px; border-radius:99px; cursor:pointer; font-size:.86rem; font-weight:500;
+              transition:border-color .14s var(--ease), background .14s var(--ease); }
+  .done-btn:hover { border-color:var(--violet); }
+  .done-btn.is { border-color:var(--ok); color:var(--ok); background:rgba(52,211,153,.08); }
+  .navbtns { margin-left:auto; display:flex; gap:8px; }
+  .navbtns button { border:1px solid var(--line); background:none; color:var(--mut); padding:8px 13px; border-radius:99px; cursor:pointer; font-size:.84rem;
+                    transition:color .14s var(--ease), background .14s var(--ease); }
+  .navbtns button:hover { color:var(--txt); background:var(--panel); }
+  .navbtns button:disabled { opacity:.35; cursor:default; }
+
+  .toast { position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(10px); opacity:0; background:var(--panel2); border:1px solid var(--line2);
+           color:var(--txt); padding:9px 16px; border-radius:99px; font-size:.84rem; pointer-events:none; transition:opacity .18s var(--ease), transform .18s var(--ease); z-index:50; }
+  .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+  .codeblk { font-family:var(--mono); font-size:.78rem; line-height:1.55; background:var(--panel2); border:1px solid var(--line); border-radius:var(--r-m); padding:12px 14px; overflow-x:auto; color:var(--txt); white-space:pre; margin:10px 0 18px; }
+  footer.credit { display:flex; gap:16px; align-items:center; max-width:820px; margin-top:44px; padding-top:14px; border-top:1px solid var(--line); font-size:.76rem; line-height:1.6; color:var(--dim); }
+  footer.credit b { color:var(--mut); font-weight:600; }
+  footer.credit { justify-content:space-between; flex-wrap:wrap; }
+  footer.credit > div { flex:1 1 380px; }
+  .madeby { display:inline-flex; align-items:center; gap:10px; color:var(--dim); font-size:.72rem; letter-spacing:.04em; text-decoration:none; opacity:.85; transition:opacity .14s var(--ease); }
+  .madeby:hover { opacity:1; text-decoration:none; }
+  .madeby .tbmark { height:22px; width:86px; display:block; }
+
+  /* ---- Architecture maps ---- */
+  .archwrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:10px 0 6px; border:1px solid var(--line); border-radius:var(--r-l); background:var(--sunken); }
+  svg.arch { display:block; width:100%; min-width:700px; height:auto; font-family:var(--font); }
+  svg.arch .b { stroke-width:1.2; fill:var(--panel); stroke:var(--line2); }
+  svg.arch .b.src { fill:var(--panel2); stroke:var(--dim); }
+  svg.arch .b.ap { fill:rgba(232,155,82,.22); stroke:var(--purple); stroke-width:1.6; }
+  svg.arch .b.ow { fill:rgba(156,184,160,.06); stroke:var(--mint); stroke-dasharray:4 3; }
+  svg.arch .b.out { fill:rgba(52,211,153,.08); stroke:var(--ok); }
+  svg.arch .b.ev { fill:rgba(245,167,66,.07); stroke:var(--warn); stroke-dasharray:5 4; }
+  svg.arch .bt { fill:var(--txt); font-size:11.5px; font-weight:600; }
+  svg.arch .bs { fill:var(--mut); font-size:10px; }
+  svg.arch .rl, svg.arch .bl { fill:var(--violet); font-family:var(--mono); font-size:9.5px; letter-spacing:.06em; }
+  svg.arch .bl { fill:var(--dim); }
+  svg.arch .bound { fill:none; stroke:var(--line2); stroke-dasharray:6 5; }
+  svg.arch .ar, svg.arch .lk { stroke:var(--dim); stroke-width:1.4; fill:none; }
+  svg.arch .lk { stroke-dasharray:3 4; }
+  svg.arch .ah { fill:var(--dim); }
+  .alg { display:flex; flex-wrap:wrap; gap:6px 14px; font-size:.76rem; color:var(--dim); margin:0 0 14px; }
+  .alg span { display:inline-flex; align-items:center; gap:6px; }
+  .alg .k { width:14px; height:10px; border-radius:3px; border:1.4px solid var(--line2); display:inline-block; }
+  .alg .k.src { background:var(--panel2); border-color:var(--dim); } .alg .k.ap { background:rgba(232,155,82,.3); border-color:var(--purple); }
+  .alg .k.ow { border:1.4px dashed var(--mint); } .alg .k.out { border-color:var(--ok); }
+</style>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7"/></symbol>
+  <symbol id="i-left" viewBox="0 0 16 16"><path d="M10 3L5 8l5 5"/></symbol>
+  <symbol id="i-right" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></symbol>
+</svg>
+
+<header>
+  <button type="button" class="menu" id="navtoggle" aria-label="Collapse or expand the chapter list" aria-expanded="true"><svg class="ic" viewBox="0 0 16 16"><path d="M2 4h12M2 8h12M2 12h12"/></svg></button>
+
+  <h1>Mentor Guide <span>Hack Apertus · Liebefeld</span><span class="cur" id="curch"></span></h1>
+  <span class="spacer"></span>
+  <span class="hclock" id="hclock">--:--</span>
+  <span class="stand">So 18. bis Mo 19.10.2026 · WORKSPACE &amp; MORE</span>
+</header>
+
+<div class="shell">
+<nav class="side" id="nav" aria-label="Chapters"></nav>
+<main id="main">
+
+<!-- ================= 0 ================= -->
+<section class="pane" data-id="c0">
+  <div class="eyebrow">Chapter 0</div>
+  <h2 class="title">At a glance</h2>
+  <p class="lede">Mentor notes from Hack Apertus Liebefeld. Three challenges, teams matched by the platform at 10:15, hacking from 11:30, hard submission deadline Monday 14:30. The mentor goal: get each team to one working demo path, one eval set and a clear answer to "why Apertus" before the overnight.</p>
+
+  <div class="clockbox">
+    <div><div class="big" id="clock">--:--:--</div><div class="sub" id="clockdate">Europe/Zurich</div></div>
+    <div class="nn">
+      <div class="row now"><span class="k">Now</span><span id="nnNow">Reading the timeline</span></div>
+      <div class="row next"><span class="k">Next</span><span id="nnNext">Reading the timeline</span></div>
+    </div>
+  </div>
+
+  <p class="small">WORKSPACE &amp; MORE, Waldeggstrasse 34, 3097 Liebefeld · Helpdesk near the entrance · Discord channel <code>bern-liebefeld_18-191026</code> · hello@hackapertus.ch <cite class="src">[Notion: Getting Started Guide, Getting there &amp; venue, Communication Channels]</cite></p>
+
+  <h3>Run of show, both days</h3>
+  <p class="small">Times may still shift; organisers post changes on Discord. Rows marked "mentor plan" are suggested mentor checkpoints, not the official programme. <cite class="src">[Notion: Schedule &amp; Support]</cite></p>
+  <div class="tw"><table id="tl">
+    <tr><th>When</th><th>What</th><th>Where</th><th>Mentor</th></tr>
+    <tr data-d="2026-10-18" data-s="08:00" data-e="09:00" data-short="Doors and check-in"><td>So 08:00</td><td>Doors open, check-in</td><td>Main entrance (east)</td><td></td></tr>
+    <tr data-d="2026-10-18" data-s="09:00" data-e="09:30" data-short="Opening and challenge pitches"><td>So 09:00</td><td>Opening and challenge pitches</td><td>TownHall</td><td></td></tr>
+    <tr data-d="2026-10-18" data-s="09:30" data-e="10:15" data-short="Challenge selection and team formation"><td>So 09:30</td><td>Challenge selection, team formation</td><td>sprintd</td><td></td></tr>
+    <tr data-d="2026-10-18" data-s="10:15" data-e="10:30" data-short="Team allocation announced"><td>So 10:15</td><td>Team allocation announced</td><td>TownHall</td><td></td></tr>
+    <tr data-d="2026-10-18" data-s="10:30" data-e="11:30" data-short="Partner workshops"><td>So 10:30</td><td>Partner workshops</td><td>Meeting 1, 2, 3</td><td></td></tr>
+    <tr data-d="2026-10-18" data-s="11:30" data-e="12:15" data-short="Hacking starts"><td>So 11:30</td><td>Hacking starts</td><td>Everywhere</td><td></td></tr>
+    <tr data-d="2026-10-18" data-s="12:15" data-e="13:30" data-short="Lunch (buffet 12:30 to 14:00)"><td>So 12:15</td><td>Lunch (buffet 12:30 to 14:00)</td><td>Coffeebar</td><td></td></tr>
+    <tr data-d="2026-10-18" data-s="13:30" data-e="15:30" data-short="Mentor plan: scoping round, every team, 10 min each (chapter 5)"><td>So 13:30</td><td>Mentor plan: scoping round</td><td>At the tables</td><td>Five questions per team, ch. 5</td></tr>
+    <tr data-d="2026-10-18" data-s="15:30" data-e="18:15" data-short="Mentor plan: eval-set check, does each team have 20 gold examples?"><td>So 15:30</td><td>Mentor plan: eval-set check</td><td>At the tables</td><td>"Show me your 20 gold cases"</td></tr>
+    <tr data-d="2026-10-18" data-s="18:15" data-e="19:30" data-short="Dinner (buffet 19:00 to 22:30)"><td>So 18:15</td><td>Dinner (buffet 19:00 to 22:30)</td><td>Coffeebar</td><td></td></tr>
+    <tr data-d="2026-10-18" data-s="19:30" data-e="23:00" data-short="Mentor plan: end-to-end check, one query runs through the whole pipeline?"><td>So 19:30</td><td>Mentor plan: end-to-end check</td><td>At the tables</td><td>One input to one demo output, live</td></tr>
+    <tr data-d="2026-10-18" data-s="23:00" data-e="23:59" data-short="Late-night snack; venue stays open overnight (no sleeping on site)"><td>So ~23:00</td><td>Late-night snack, venue open overnight</td><td></td><td>No sleeping on site</td></tr>
+    <tr data-d="2026-10-19" data-s="08:00" data-e="09:00" data-short="Breakfast"><td>Mo 08:00</td><td>Breakfast</td><td>Coffeebar</td><td></td></tr>
+    <tr data-d="2026-10-19" data-s="09:00" data-e="11:00" data-short="Mentor plan: feature freeze, eval numbers into the report"><td>Mo 09:00</td><td>Mentor plan: feature freeze</td><td>At the tables</td><td>Numbers into the tech report</td></tr>
+    <tr data-d="2026-10-19" data-s="11:00" data-e="12:15" data-short="Mentor plan: pitch dry-run, 7 minutes, demo first"><td>Mo 11:00</td><td>Mentor plan: pitch dry-run</td><td>Meeting rooms</td><td>7 min, stopwatch, ch. 6</td></tr>
+    <tr data-d="2026-10-19" data-s="12:15" data-e="13:30" data-short="Lunch"><td>Mo 12:15</td><td>Lunch</td><td>Coffeebar</td><td></td></tr>
+    <tr data-d="2026-10-19" data-s="13:30" data-e="14:30" data-short="Mentor plan: submission check, repo public, video, ZIP, Submit not Draft"><td>Mo 13:30</td><td>Mentor plan: submission check</td><td>sprintd</td><td>Checklist ch. 6</td></tr>
+    <tr data-d="2026-10-19" data-s="14:30" data-e="15:00" data-short="SUBMISSION DEADLINE on sprintd, no extension"><td>Mo 14:30</td><td><strong>Submission deadline, no extension</strong></td><td>sprintd</td><td></td></tr>
+    <tr data-d="2026-10-19" data-s="15:00" data-e="16:45" data-short="Team pitches to challenge partners, 7 min per team"><td>Mo 15:00</td><td>Pitches to challenge partners, 7 min/team</td><td>Meeting 1, 2, 3</td><td></td></tr>
+    <tr data-d="2026-10-19" data-s="17:00" data-e="17:30" data-short="Doors open for community"><td>Mo 17:00</td><td>Doors open for community</td><td></td><td></td></tr>
+    <tr data-d="2026-10-19" data-s="17:30" data-e="18:00" data-short="Top 6 teams announced"><td>Mo 17:30</td><td>Top 6 announced</td><td>TownHall</td><td></td></tr>
+    <tr data-d="2026-10-19" data-s="18:00" data-e="18:30" data-short="Apéro"><td>Mo 18:00</td><td>Apéro</td><td></td><td></td></tr>
+    <tr data-d="2026-10-19" data-s="18:30" data-e="19:10" data-short="Liebefeld Finals, top 6, 5 min per team on stage"><td>Mo 18:30</td><td>Finals, top 6, 5 min/team</td><td>TownHall</td><td></td></tr>
+    <tr data-d="2026-10-19" data-s="19:10" data-e="19:45" data-short="Jury voting"><td>Mo 19:10</td><td>Jury voting</td><td></td><td></td></tr>
+    <tr data-d="2026-10-19" data-s="19:45" data-e="20:00" data-short="Awards and closing"><td>Mo 19:45</td><td>Awards, closing</td><td>TownHall</td><td></td></tr>
+    <tr data-d="2026-10-19" data-s="20:00" data-e="21:30" data-short="Networking"><td>Mo 20:00</td><td>Networking</td><td></td><td></td></tr>
+  </table></div>
+
+  <h3>People</h3>
+  <div class="tw"><table class="wrapfirst">
+    <tr><th>Mentor</th><th>Strength</th></tr>
+    <tr><td>Vasco Schiavo, PhD</td><td>OpenHands, agent R&amp;D, evals, open source</td></tr>
+    <tr><td>Fabian Pedregosa</td><td>Google (Gemini Core), pre- and post-training, optimisation, RL</td></tr>
+    <tr><td>Corina Masanti</td><td>Uni Bern, PhD NLP, robustness, grammatical error detection</td></tr>
+    <tr><td>Merlin Streilein</td><td>Uni Bern, PhD NLP on diplomatic documents, knowledge representation</td></tr>
+    <tr><td>Mike Romano</td><td>Use case to architecture: retrieval, orchestration, validation, evals, Apertus deployment</td></tr>
+  </table></div>
+  <p class="small">Challenge owners: C1 Bern Economic Development Agency · C2 OpenParlData (technical and domain mentorship Sunday on the spot) · C3 University of Bern, technical owner Oleg Lavrovsky (<code>@loleg</code>), plus two Uni Bern expert mentors. <cite class="src">[Notion: Mentors database, challenge pages]</cite></p>
+  <p class="small">Main jury: Barthélémy Rochat (Biel/Bienne Chief Digital Officer), Lena Fuhrimann (bespinian), Susie Xi Rao (Professor @BFH), Barbara Dravec (Co-founder and Partner at CADD Consulting), Christian Gutknecht (OpenParlData) (chapter 2). Team: Sandro Galfo, Vasco Schiavo, Oleg Lavrovsky, Stefan Aeschbacher. <cite class="src">[hackapertus.ch/regions/bern-liebefeld]</cite></p>
+
+  <h3>All chapters</h3>
+  <div class="grid" id="ovgrid"></div>
+</section>
+
+<!-- ================= 1 ================= -->
+<section class="pane" data-id="c1">
+  <div class="eyebrow">Chapter 1</div>
+  <h2 class="title">How Hack Apertus works</h2>
+  <p class="lede">Two-day on-site hackathon on Apertus 1.5 (8B and 70B), one of the on-site hacks in Liebefeld, Zurich, Basel, Lausanne and St.Gallen (Oct 2026 to May 2027). The winner advances to the Grand Finals in May 2027 in St.Gallen. <cite class="src">[Notion: Getting Started Guide]</cite></p>
+
+  <h3>Format</h3>
+  <ul>
+    <li>Challenges are presented at the opening and published on the platform. You'll pick your preferences, and teams are matched to challenges by the platform. <cite class="src">[Schedule &amp; Support]</cite></li>
+    <li><strong>Submissions must use the Apertus 1.5 model 8B or 70B.</strong> Other open-weights models can be used to support development, e.g as automatic judges during evaluation. Their role must be clearly described in the submission report. <cite class="src">[Challenges]</cite></li>
+    <li>The venue is open 24/7 for hacking, no sleeping on site. Hostel77 nearby, code "HACKATHON 10%". <cite class="src">[Food &amp; overnight]</cite></li>
+  </ul>
+
+  <h3>What teams get</h3>
+  <div class="tw"><table class="wrapfirst">
+    <tr><th>Partner</th><th>What</th><th>How</th></tr>
+    <tr><td>CSCS</td><td>Apertus inference via API for all teams</td><td>Through the "Keera Gateway"; API key handed out at the start</td></tr>
+    <tr><td>Hugging Face</td><td>USD 10 credits (Inference Providers, Endpoints, Spaces, compute)</td><td>Access code published at the start</td></tr>
+    <tr><td>ElevenLabs</td><td>1 month Creator tier free</td><td>Discord coupon bot (for sign-ups before 17.10.)</td></tr>
+    <tr><td>Edit with Ava</td><td>Free video credits</td><td>For the 2-minute demo video</td></tr>
+  </table></div>
+  <p class="small"><cite class="src">[Resources &amp; Tools]</cite></p>
+
+  <h3>What a team must submit by Monday 14:30</h3>
+  <ol>
+    <li><strong>GitHub repo</strong>, created from the organisers' template repo, set to <strong>public</strong>.</li>
+    <li><strong>Demo video URL</strong>, max. 2 minutes.</li>
+    <li><strong>Project ZIP</strong> with two PDFs: pitch deck (max. 10 slides) and technical report (max. 6 pages, template in the repo).</li>
+    <li>Tick "This is our own work, built during this event", then <strong>"Submit project"</strong>. A saved draft is not a submission. One submission per team; anyone on the team can edit.</li>
+  </ol>
+  <p class="small"><cite class="src">[How/What to Submit]</cite></p>
+
+  <h3>Two pitch rounds</h3>
+  <p><strong>Round 1, Monday 15:00 to 16:45:</strong> each team pitches to its challenge partner, 7 minutes, in one of three workshop rooms. Laptop connected and tested before the slot. Deck as PDF, max. 10 slides, also uploaded with the submission. <strong>Round 2, 18:30 to 19:10:</strong> the top 6 (announced 17:30) pitch on stage, 5 minutes per team. <cite class="src">[Pitching — how to]</cite></p>
+
+  <h3>Prizes</h3>
+  <div class="tw"><table>
+    <tr><th>Place</th><th>Cash</th><th>On top</th></tr>
+    <tr><td>Winner</td><td>CHF 3,500</td><td>Qualifies for the Main «Hack Apertus» Award, Grand Finals St. Gallen 14.05.2027 · ElevenLabs 3 months Scale · USD 200 HF credits · 3 DINAcon tickets and a demo table · certificate and LinkedIn post</td></tr>
+    <tr><td>2nd</td><td>CHF 2,500</td><td>ElevenLabs 3 months Pro · USD 100 HF credits · 3 DINAcon tickets and a demo table · certificate and LinkedIn post · Project Showcase spot at the Grand Finals</td></tr>
+    <tr><td>3rd</td><td>CHF 1,000</td><td>ElevenLabs 3 months Pro · USD 50 HF credits · 3 DINAcon tickets and a demo table · certificate and LinkedIn post · Project Showcase spot at the Grand Finals</td></tr>
+  </table></div>
+  <p class="small">Powered by AI Innovation Booster, ElevenLabs, Hugging Face and DINAcon. Travel: up to CHF 100 for participants living more than 100 km away, receipts on sprintd by 17.11.2026 12:00. <cite class="src">[Jury &amp; Awards; Schedule &amp; Support]</cite></p>
+</section>
+
+<!-- ================= 2 ================= -->
+<section class="pane" data-id="c2">
+  <div class="eyebrow">Chapter 2</div>
+  <h2 class="title">Jury and criteria</h2>
+  <p class="lede">The jury is listed on hackapertus.ch, the criteria are quoted from the Hack Apertus Notion. Notion publishes no weighting and no scoring scale. The questions at the end are suggestions, not from Notion.</p>
+  <h3>Main jury</h3>
+  <div class="tw"><table class="wrapfirst"><tr><th>Juror</th><th>As listed on hackapertus.ch</th></tr><tr><td>Barthélémy Rochat</td><td>Biel/Bienne Chief Digital Officer</td></tr><tr><td>Lena Fuhrimann</td><td>bespinian</td></tr><tr><td>Susie Xi Rao</td><td>Professor @BFH</td></tr><tr><td>Barbara Dravec</td><td>Co-founder and Partner at CADD Consulting</td></tr><tr><td>Christian Gutknecht</td><td>OpenParlData</td></tr></table></div>
+  <p class="small"><cite class="src">[hackapertus.ch/regions/bern-liebefeld, "Main jury.", as of 19.10.2026]</cite></p>
+  <h3>Final jury criteria</h3>
+  <p class="small"><cite class="src">[Notion: Jury &amp; Awards, "Final jury critera"]</cite></p>
+  <div class="qc"><div class="q"><span class="qn">1</span>Purposeful use of AI</div><div class="lines"><div class="l m"><b>Notion</b><span>Is AI (Apertus) essential to the solution and used for the right job, not just bolted on?</span></div></div></div>
+  <div class="qc"><div class="q"><span class="qn">2</span>Technical rigour</div><div class="lines"><div class="l m"><b>Notion</b><span>Is the solution well built, tested and evaluated? Does the demo actually work?</span></div></div></div>
+  <div class="qc"><div class="q"><span class="qn">3</span>Value, cost &amp; scalability</div><div class="lines"><div class="l m"><b>Notion</b><span>Does it create real value for the partner? Is it affordable to run, and can it scale?</span></div></div></div>
+  <div class="qc"><div class="q"><span class="qn">4</span>Sovereign deployability</div><div class="lines"><div class="l m"><b>Notion</b><span>Can it run air-gapped, on-premise or on Swiss cloud, with no dependency on foreign closed services?</span></div></div></div>
+  <div class="qc"><div class="q"><span class="qn">5</span>Implementation feasibility</div><div class="lines"><div class="l m"><b>Notion</b><span>Could the partner realistically adopt and run it after the hackathon?</span></div></div></div>
+  <div class="qc"><div class="q"><span class="qn">6</span>Pitch &amp; presentation</div><div class="lines"><div class="l m"><b>Notion</b><span>Is the problem and solution clearly explained, with a convincing demo, within time, and with strong answers in Q&amp;A?</span></div></div></div>
+  <p class="small">Schedule: 17:30 Top 6 teams announced · 18:30–19:10 Liebefeld Finals (Top 6 teams, 5 min/team on stage) · 19:10–19:40 Jury voting. <cite class="src">[Notion: Schedule &amp; Support]</cite></p>
+  <h3>Challenge partner pitch</h3>
+  <p>15:00–16:45 Team pitches to challenge partners (7 min/team). "Pitch your solution to your challenge partner." <cite class="src">[Notion: Schedule &amp; Support; Pitching — how to]</cite> Each challenge page lists its own criteria:</p>
+  <div class="tw"><table class="wrapfirst"><tr><th>Challenge</th><th>Criteria on the challenge page</th></tr>
+    <tr><td>C1 Bern Economic Development Agency</td><td><b>Evaluation criteria:</b> Purposeful use of AI · Technical rigour · Value, cost &amp; scalability · Sovereign deployability · Implementation feasibility</td></tr>
+    <tr><td>C2 OpenParlData</td><td><b>Evaluation criteria (partner):</b> Usefulness for the OpenParlData community and public-sector users; technical quality and reproducibility; multilingual performance; innovation; ease of integration into OpenParlData; quality of the pitch.<br><b>Final jury criteria (series standard):</b> Purposeful use of AI · Technical rigour · Value, cost &amp; scalability · Sovereign deployability · Implementation feasibility</td></tr>
+    <tr><td>C3 University of Bern</td><td><b>Evaluation Criteria:</b><ul><li>Technical depth: Complexity and robustness of data pipeline</li><li>AI readiness: Quality of output format and metadata for model consumption</li><li>Ethical compliance: Documentation of privacy preservation, anonymization methods, and bias mitigation</li><li>Innovation: Novel approaches to handling archival document challenges</li><li>Documentation &amp; presentation: Clarity and completeness of submission materials</li></ul></td></tr>
+  </table></div>
+  <p class="small"><cite class="src">[Notion: challenge pages]</cite></p>
+  <h3>Suggestions: questions per criterion</h3>
+  <div class="callout"><div class="t">Suggestion · not from Notion</div><p>Questions a juror could ask to probe each criterion. Use any, none, or your own.</p></div>
+  <div class="qc"><div class="q"><span class="qn">1</span>Purposeful use of AI</div><div class="lines"><div class="l f"><b>Ask</b><span>Which step would break if you removed Apertus?</span></div><div class="l f"><b>Ask</b><span>Which parts did you deliberately keep as plain code, and why?</span></div><div class="l f"><b>Ask</b><span>Did you use any model besides Apertus, and what was its role?</span></div></div></div>
+  <div class="qc"><div class="q"><span class="qn">2</span>Technical rigour</div><div class="lines"><div class="l f"><b>Ask</b><span>How did you test it: how many test cases, and what is your result?</span></div><div class="l f"><b>Ask</b><span>Can you show us one case where it fails?</span></div></div></div>
+  <div class="qc"><div class="q"><span class="qn">3</span>Value, cost &amp; scalability</div><div class="lines"><div class="l f"><b>Ask</b><span>Who at the partner benefits first, and what changes for them?</span></div><div class="l f"><b>Ask</b><span>What would a run on the full dataset cost, and how long would it take?</span></div></div></div>
+  <div class="qc"><div class="q"><span class="qn">4</span>Sovereign deployability</div><div class="lines"><div class="l f"><b>Ask</b><span>Which services does the demo call, and where do they run?</span></div><div class="l f"><b>Ask</b><span>What still works without internet, apart from the Apertus endpoint?</span></div></div></div>
+  <div class="qc"><div class="q"><span class="qn">5</span>Implementation feasibility</div><div class="lines"><div class="l f"><b>Ask</b><span>Who at the partner could run this next month, and what do they need besides the repo?</span></div><div class="l f"><b>Ask</b><span>How long does a fresh setup from the README take?</span></div></div></div>
+  <div class="qc"><div class="q"><span class="qn">6</span>Pitch &amp; presentation</div><div class="lines"><div class="l f"><b>Ask</b><span>What is the one moment in the demo you want us to remember?</span></div><div class="l f"><b>Ask</b><span>What would you build next with one more week?</span></div></div></div>
+</section>
+
+<!-- ================= 3 ================= -->
+<section class="pane" data-id="c3">
+  <div class="eyebrow">Chapter 3</div>
+  <h2 class="title">The three challenges</h2>
+  <p class="lede">Objective, data, outputs and criteria are quoted from the Notion challenge pages. Boxes marked "as found on 18.10." describe the data as downloaded that day. Each tab ends with one possible architecture: a sketch of where Apertus could come in, not the expected solution.</p>
+
+  <div class="tabs" id="ctabs">
+    <button type="button" data-c="C1"><span class="code">C1</span>Expertise Navigator</button>
+    <button type="button" data-c="C2"><span class="code">C2</span>Parliament topics</button>
+    <button type="button" data-c="C3"><span class="code">C3</span>Archives pipeline</button>
+  </div>
+
+  <!-- C1 -->
+  <div class="ctab" data-c="C1">
+    <h3 class="ct">Research &amp; Expertise Navigator<small>Bern Economic Development Agency · Domain: Research &amp; Innovation</small></h3>
+    <div class="lab-h">Primary objective</div>
+    <p>Create an AI-powered Research &amp; Expertise Navigator that aggregates these distributed public sources and makes their content accessible through a single natural-language and keyword-based search interface.</p>
+    <div class="lab-h">Problem</div>
+    <p>Research institutions generate a considerable amount of valuable information about their people, expertise, research activities, technologies, infrastructures and services. However, this information is distributed across a large and heterogeneous landscape of institutional websites and platforms.</p>
+    <p>Someone looking for expertise in "glucose sensors", for example, may miss relevant information described as continuous glucose monitoring, biosensing, metabolic monitoring, wearable sensing or CGM.</p>
+    <div class="lab-h">Datasets</div>
+    <ol><li>University of Bern web ecosystem — based on the provided inventory of public unibe.ch subdomains (faculties, institutes, departments, research centres, laboratories, services and platforms).</li><li>ARTORG Center for Biomedical Engineering Research — website and its associated research, team and project pages.</li><li>Diabetes Center Berne — website and its associated research, expertise, team, project and service pages.</li></ol>
+    <p>The architecture should also be designed so that additional institutional websites and data sources can be added easily later.</p>
+    <div class="lab-h">Technical preferences</div>
+    <ul><li>Recommended platforms: External environments only — development and deployment must happen entirely outside the Canton of Bern's ICT infrastructure. Use local setups (e.g. Docker) or independent / Swiss Cloud infrastructure. Solutions must be self-contained and run fully air-gapped or on independent cloud instances, with no connection to internal cantonal networks.</li><li>Specific AI models: Apertus 8B or 70B (v1.5)</li></ul>
+    <div class="lab-h">Expected outputs</div>
+    <p>An end-to-end prototype: public web sources → content extraction → semantic enrichment → structured knowledge → natural-language search → source-backed results. Each query should return structured, traceable results:</p>
+    <ul><li>relevant people and contact persons;</li><li>their functions and affiliations;</li><li>departments / institutes / research groups;</li><li>fields of expertise;</li><li>related projects or activities;</li><li>relevant infrastructure or services;</li><li>a short explanation of why each result matches;</li><li>direct links to the original source pages.</li></ul>
+    <div class="lab-h">Success criteria</div>
+    <ol><li>Finds the right people: at least 80% of expected experts/units appear in the top 10 results.</li><li>Handles different wording: synonym and lay-term queries (e.g. "glucose sensors" vs. "CGM", "biosensing") find the same experts as the site's own terminology.</li><li>Every result is traceable: 100% of results link to a public source page that supports the claim; no invented people, roles or projects.</li><li>Structured results: each result fills the required fields (person, role/affiliation, unit, expertise, projects, infrastructure/services, reason for match, source link) where the source provides them.</li><li>Covers all three sources: UniBE, ARTORG and Diabetes Center Berne.</li><li>Easy to extend: a new institutional website can be added via configuration or a short documented step, without rewriting the pipeline.</li></ol>
+    <div class="lab-h">Evaluation criteria</div>
+    <p>Purposeful use of AI · Technical rigour · Value, cost &amp; scalability · Sovereign deployability · Implementation feasibility</p>
+    <div class="lab-h">Ethics &amp; compliance</div>
+    <ul><li>Transparency &amp; traceability: AI outputs must avoid unverified or hallucinated information. Every result, summary and explanation must be fully traceable and back-linked to the verifiable public source URL (e.g. UniBE, ARTORG).</li><li>Fair &amp; unbiased representation: the search must ensure fair, objective discoverability across all research groups, institutes and individual researchers, regardless of institutional size or prominence.</li><li>Accuracy &amp; reliability: the system must clearly say when no reliable, verifiable or sufficient source information is available to answer a query.</li><li>Legal &amp; compliance: Comply with the Swiss Federal Act on Data Protection (nDSG) and GDPR where applicable. Only public web content is used; the copyright of source pages stays with the original institutions. Outputs are published as Open Commons (see Terms &amp; Conditions, §6).</li></ul>
+    <p class="small"><cite class="src">[Notion: challenge page Bern Economic Development Agency]</cite></p>
+    <div class="callout"><div class="t">Sources as found on 18.10.</div><ul><li>The inventory xlsx lists <strong>42 unibe.ch subdomains</strong>.</li><li>Diabetes Center Berne is <code>www.dcberne.com</code>. Its <code>/en/team/</code> page is a flat list: team block, role, name, "Mail". No expertise on the team page; one person can appear twice under two roles.</li><li>ARTORG groups each have their own page under <code>/research/&lt;group&gt;/index_eng.html</code>, with expertise there and on project pages.</li></ul></div>
+
+    <div class="lab-h">One possible architecture</div>
+    <p class="small">A sketch of where Apertus could come in, not the expected solution. Row A builds the knowledge once, row B runs per request; the dotted arrow is where B reads what A produced. Orange boxes are where Apertus could do the language work; grey boxes are plain code. <em class="why">sketch</em></p>
+    <div class="archwrap"><svg class="arch" viewBox="0 0 860 380" role="img" aria-labelledby="tC1"><title id="tC1">C1 architecture</title>
+<defs><marker id="ahC1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs>
+<rect class="bound" x="8" y="8" width="844" height="364" rx="14"/>
+<text class="bl" x="22" y="28">SOVEREIGN BOUNDARY · Docker or Swiss cloud · Apertus via CSCS or local 8B · no closed foreign API</text>
+<text class="rl" x="24" y="50">A · INGEST (offline, re-run per source)</text>
+<rect class="b src" x="24.0" y="58" width="148.0" height="78" rx="9"/>
+<text class="bt" x="34.0" y="78">Sources</text>
+<text class="bs" x="34.0" y="95">42 unibe subdomains</text>
+<text class="bs" x="34.0" y="109">ARTORG groups</text>
+<text class="bs" x="34.0" y="123">dcberne.com team</text>
+<path class="ar" d="M174.0 97.0 H187.0" marker-end="url(#ahC1)"/>
+<rect class="b code" x="190.0" y="58" width="148.0" height="78" rx="9"/>
+<text class="bt" x="200.0" y="78">Crawl + clean</text>
+<text class="bs" x="200.0" y="95">config YAML per site</text>
+<text class="bs" x="200.0" y="109">robots.txt, HTML→text</text>
+<text class="bs" x="200.0" y="123">keep URL + date</text>
+<path class="ar" d="M340.0 97.0 H353.0" marker-end="url(#ahC1)"/>
+<rect class="b ap" x="356.0" y="58" width="148.0" height="78" rx="9"/>
+<text class="bt" x="366.0" y="78">Apertus 8B extract</text>
+<text class="bs" x="366.0" y="95">JSON: person, role,</text>
+<text class="bs" x="366.0" y="109">unit, expertise,</text>
+<text class="bs" x="366.0" y="123">projects, source_url</text>
+<path class="ar" d="M506.0 97.0 H519.0" marker-end="url(#ahC1)"/>
+<rect class="b code" x="522.0" y="58" width="148.0" height="78" rx="9"/>
+<text class="bt" x="532.0" y="78">Join + dedupe</text>
+<text class="bs" x="532.0" y="95">people ↔ expertise</text>
+<text class="bs" x="532.0" y="109">same name + unit</text>
+<text class="bs" x="532.0" y="123">= one entity</text>
+<path class="ar" d="M672.0 97.0 H685.0" marker-end="url(#ahC1)"/>
+<rect class="b ow" x="688.0" y="58" width="148.0" height="78" rx="9"/>
+<text class="bt" x="698.0" y="78">Index</text>
+<text class="bs" x="698.0" y="95">BM25 on terms</text>
+<text class="bs" x="698.0" y="109">+ local embeddings</text>
+<text class="bs" x="698.0" y="123">+ synonym list</text>
+<text class="rl" x="24" y="188">B · QUERY (live, per search)</text>
+<rect class="b src" x="24.0" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="34.0" y="216">User query</text>
+<text class="bs" x="34.0" y="233">&quot;glucose sensors&quot;</text>
+<text class="bs" x="34.0" y="247">DE / EN / lay terms</text>
+<text class="bs" x="34.0" y="261"></text>
+<path class="ar" d="M146.3 235.0 H159.3" marker-end="url(#ahC1)"/>
+<rect class="b ap" x="162.3" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="172.3" y="216">Apertus expand</text>
+<text class="bs" x="172.3" y="233">→ CGM, biosensing,</text>
+<text class="bs" x="172.3" y="247">continuous glucose</text>
+<text class="bs" x="172.3" y="261">monitoring</text>
+<path class="ar" d="M284.7 235.0 H297.7" marker-end="url(#ahC1)"/>
+<rect class="b code" x="300.7" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="310.7" y="216">Hybrid retrieve</text>
+<text class="bs" x="310.7" y="233">top 20 candidates</text>
+<text class="bs" x="310.7" y="247">score threshold</text>
+<text class="bs" x="310.7" y="261"></text>
+<path class="ar" d="M423.0 235.0 H436.0" marker-end="url(#ahC1)"/>
+<rect class="b ap" x="439.0" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="449.0" y="216">Apertus explain</text>
+<text class="bs" x="449.0" y="233">&quot;why it matches&quot;</text>
+<text class="bs" x="449.0" y="247">only from fields</text>
+<text class="bs" x="449.0" y="261">in the candidates</text>
+<path class="ar" d="M561.3 235.0 H574.3" marker-end="url(#ahC1)"/>
+<rect class="b code" x="577.3" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="587.3" y="216">Citation check</text>
+<text class="bs" x="587.3" y="233">every URL must be</text>
+<text class="bs" x="587.3" y="247">in the candidate set</text>
+<text class="bs" x="587.3" y="261">else drop it</text>
+<path class="ar" d="M699.7 235.0 H712.7" marker-end="url(#ahC1)"/>
+<rect class="b out" x="715.7" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="725.7" y="216">Result cards</text>
+<text class="bs" x="725.7" y="233">person · unit · why</text>
+<text class="bs" x="725.7" y="247">· source link</text>
+<text class="bs" x="725.7" y="261">else: no source found</text>
+<path class="lk" d="M762 137 C762 168, 360 160, 360 193" marker-end="url(#ahC1)"/>
+<rect class="b ev" x="24" y="306" width="812" height="50" rx="9"/>
+<text class="bt" x="36" y="326">EVAL LOOP</text>
+<text class="bs" x="36" y="344">20 to 50 gold queries with expected experts → recall@10 ≥ 80 % · synonym queries hit the same people · 100 % of results traceable</text>
+</svg></div>
+    <div class="alg"><span><i class="k src"></i>Data source</span><span><i class="k code"></i>Plain code</span><span><i class="k ap"></i>Apertus step</span><span><i class="k ow"></i>Open-weights helper (declare it)</span><span><i class="k out"></i>Output / demo</span></div>
+    <div class="script"><div class="t">Pipeline <span class="tot">sketch</span></div>
+      <div class="sg"><b>1 Crawl</b><span>Polite crawler per configured site (YAML list of seeds and depth), respect robots.txt, store raw HTML with URL and timestamp.</span></div>
+      <div class="sg"><b>2 Extract</b><span>Boilerplate removal (e.g. trafilatura), then <strong>Apertus 8B structured extraction</strong> into a fixed JSON schema per page: people, roles, unit, expertise terms, projects, infrastructure. Every field keeps its source URL.</span></div>
+      <div class="sg"><b>3 Enrich</b><span>Apertus generates synonyms and lay terms per expertise ("CGM" ↔ "continuous glucose monitoring" ↔ "glucose sensors"); dedupe people across pages by name plus unit.</span></div>
+      <div class="sg"><b>4 Index</b><span>Hybrid: BM25 on expanded terms plus a locally run open-weights multilingual embedding model (declare its role in the report).</span></div>
+      <div class="sg"><b>5 Query</b><span>Apertus expands the query, retrieval returns candidates, Apertus writes the one-line "why this matches" <strong>only from the retrieved fields</strong>; code checks that every cited URL is in the candidate set.</span></div>
+      <div class="sg"><b>6 Refuse</b><span>Below a score threshold: "No reliable public source found", with the closest units as hints.</span></div>
+    </div>
+  </div>
+
+  <!-- C2 -->
+  <div class="ctab" data-c="C2">
+    <h3 class="ct">Topic classification for Swiss parliaments<small>OpenParlData · Public Sector / Politics &amp; Democracy (Civic Tech, Open Government Data)</small></h3>
+    <div class="lab-h">In one summary</div>
+    <p>OpenParlData.ch aggregates 300,000+ parliamentary affairs and 900,000 documents from 90 Swiss parliaments into one open API, but this multilingual data is only searchable by full-text, with no shared, reusable way to organise it by topic. The challenge is to build an open, Apertus-based classification service that automatically tags affairs with either a standard two-level scheme or user-defined ad-hoc topics, working across all four languages and parliament levels — validated through a real use case with Digital Administration Switzerland (DVS).</p>
+    <div class="lab-h">Primary objective</div>
+    <p>Develop an open and reusable classification service for Swiss parliamentary data, based on Apertus and OpenParlData. The service processes parliamentary affairs — titles, texts and associated documents — in German, French, Italian and Romansh, and automatically returns either topics from a standard two-level classification (such as the Année Politique Suisse scheme) or ad-hoc topics defined by users (such as "digitalisation" or "Covid-19"). The approach is validated through a practical use case with Digital Administration Switzerland (DVS), automatically identifying digitalisation-related affairs across the OpenParlData dataset as an alternative to the current manual process.</p>
+    <div class="lab-h">Datasets and supporting materials</div>
+    <ul><li>OpenParlData API (REST / JSON, public, no key required): api.openparldata.ch/documentation — affairs, documents with extracted text, bodies, persons, votes. Multilingual (de / fr / it / rm), from federal, cantonal and municipal level.</li><li>Data export: files.openparldata.ch</li><li>Challenge background &amp; prior work: OpenParlData wiki page on classification (gitlab.com/groups/opendata.ch/openparldatach)</li><li>BFH prototype: huggingface.co/spaces/rcds/SwissParlTopicModelling</li><li>Demokratis classification for consultations: github.com/Demokratis-ch/demokratis-ml</li><li>Earlier classification work from Basel-Stadt (GitHub repos, tbc)</li><li>Mentorship: Both — technical and domain. Sunday, on the spot.</li></ul>
+    <div class="lab-h">Technical preferences</div>
+    <ul><li>Preferred languages / frameworks: No restriction. (OpenParlData itself uses Apache Hop.)</li><li>Recommended platforms: Both — use the Apertus compute &amp; inference infrastructure provided at the hackathon, or run locally.</li><li>Specific AI models: Apertus v1.5 — 8B or 70B</li></ul>
+    <div class="lab-h">Expected outputs</div>
+    <ul><li>Source code in a public repository under an open-source licence (README with setup and usage).</li><li>A working prototype — API endpoint, script, or small demo UI — that classifies affairs from the OpenParlData API.</li><li>Short evaluation results on a labelled sample.</li><li>A 5-minute pitch / demo on the final day.</li></ul>
+    <div class="lab-h">Success criteria</div>
+    <ul><li>Classification quality on a labelled sample (e.g. the DVS "digitalisation" use case; accuracy on the APS topics).</li><li>Works across languages (at least de / fr / it) and across parliament levels.</li><li>Ad-hoc topics can be added without retraining.</li><li>Feasible runtime for 300,000+ affairs.</li></ul>
+    <div class="lab-h">Evaluation criteria (partner)</div>
+    <p>Usefulness for the OpenParlData community and public-sector users; technical quality and reproducibility; multilingual performance; innovation; ease of integration into OpenParlData; quality of the pitch.</p>
+    <div class="lab-h">Ethics &amp; compliance</div>
+    <ul><li>Transparent &amp; explainable results: show why a topic was assigned (e.g. confidence, the relevant text passage).</li><li>Check for bias between languages, regions and parties.</li><li>Neutrality: classification must stay neutral and must not judge political positions.</li><li>Human in the loop: topic labels are suggestions; a human should be able to correct them.</li><li>Legal &amp; compliance: All data is public (open government data from Swiss parliaments). Solutions should be published under an open-source licence — see the Hack Apertus Terms &amp; Conditions (§6).</li></ul>
+    <p class="small"><cite class="src">[Notion: challenge page OpenParlData]</cite></p>
+    <div class="callout"><div class="t">Labelled data on files.openparldata.ch/hackapertus/, as found on 18.10.</div><ul><li><strong>DVS list: 30 affairs</strong> on digitalisation (federal and cantonal), 12 of them from Bern, 5 federal, mapped to <code>openparldata_id</code>. 29 of the 30 are also in PolitMonitor.</li><li><strong>PolitMonitor: 3,433 affairs</strong> tagged "Digitalisierung" by an editorial team, 1,448 of them federal.</li><li><strong>70,008 federal affairs</strong> with Curia Vista subject areas (28, multi-label); 10,412 have no subject area (mostly before 2000). German descriptors 1996 to 2014.</li><li><strong>210,437 affair texts</strong> in DE/FR/IT (232 MB). Median 518 characters, 90th percentile 3,009.</li><li>Cantonal schemes from SG, TG, city of Zug and ZH, each different.</li><li><strong>APS scheme: 8 domains, 22 chapters, 165 topics</strong>, DE/FR. "Digitalisierung" is 6.1.9.</li><li>API <code>api.openparldata.ch/v1/affairs/</code>: 326,396 affairs on 18.10.</li></ul></div>
+    <div class="lab-h">One possible architecture</div>
+    <p class="small">A sketch of where Apertus could come in, not the expected solution. Row A builds the knowledge once, row B runs per request; the dotted arrow is where B reads what A produced. Orange boxes are where Apertus could do the language work; grey boxes are plain code. <em class="why">sketch</em></p>
+    <div class="archwrap"><svg class="arch" viewBox="0 0 860 380" role="img" aria-labelledby="tC2"><title id="tC2">C2 architecture</title>
+<defs><marker id="ahC2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs>
+<rect class="bound" x="8" y="8" width="844" height="364" rx="14"/>
+<text class="bl" x="22" y="28">SOVEREIGN BOUNDARY · Docker or Swiss cloud · Apertus via CSCS or local 8B · no closed foreign API</text>
+<text class="rl" x="24" y="50">A · TOPICS (once per topic set)</text>
+<rect class="b src" x="24.0" y="58" width="189.5" height="78" rx="9"/>
+<text class="bt" x="34.0" y="78">Topic set</text>
+<text class="bs" x="34.0" y="95">APS 165 topics</text>
+<text class="bs" x="34.0" y="109">or ad-hoc topic</text>
+<text class="bs" x="34.0" y="123">typed by a user</text>
+<path class="ar" d="M215.5 97.0 H228.5" marker-end="url(#ahC2)"/>
+<rect class="b ap" x="231.5" y="58" width="189.5" height="78" rx="9"/>
+<text class="bt" x="241.5" y="78">Apertus 70B describe</text>
+<text class="bs" x="241.5" y="95">short definition +</text>
+<text class="bs" x="241.5" y="109">3–5 example phrases</text>
+<text class="bs" x="241.5" y="123">per DE / FR / IT</text>
+<path class="ar" d="M423.0 97.0 H436.0" marker-end="url(#ahC2)"/>
+<rect class="b code" x="439.0" y="58" width="189.5" height="78" rx="9"/>
+<text class="bt" x="449.0" y="78">Human review</text>
+<text class="bs" x="449.0" y="95">edit descriptions</text>
+<text class="bs" x="449.0" y="109">= the only &quot;training&quot;</text>
+<text class="bs" x="449.0" y="123">no retraining needed</text>
+<path class="ar" d="M630.5 97.0 H643.5" marker-end="url(#ahC2)"/>
+<rect class="b ow" x="646.5" y="58" width="189.5" height="78" rx="9"/>
+<text class="bt" x="656.5" y="78">Topic vectors</text>
+<text class="bs" x="656.5" y="95">embed descriptions</text>
+<text class="bs" x="656.5" y="109">locally</text>
+<text class="bs" x="656.5" y="123">stored per language</text>
+<text class="rl" x="24" y="188">B · CLASSIFY (batch or API)</text>
+<rect class="b src" x="24.0" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="34.0" y="216">Affairs</text>
+<text class="bs" x="34.0" y="233">OpenParlData export</text>
+<text class="bs" x="34.0" y="247">title + texts</text>
+<text class="bs" x="34.0" y="261">DE / FR / IT</text>
+<path class="ar" d="M146.3 235.0 H159.3" marker-end="url(#ahC2)"/>
+<rect class="b code" x="162.3" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="172.3" y="216">Prefilter</text>
+<text class="bs" x="172.3" y="233">keywords + vector</text>
+<text class="bs" x="172.3" y="247">similarity →</text>
+<text class="bs" x="172.3" y="261">top 3–5 topics</text>
+<path class="ar" d="M284.7 235.0 H297.7" marker-end="url(#ahC2)"/>
+<rect class="b ap" x="300.7" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="310.7" y="216">Apertus 8B decide</text>
+<text class="bs" x="310.7" y="233">label | none,</text>
+<text class="bs" x="310.7" y="247">confidence,</text>
+<text class="bs" x="310.7" y="261">supporting span</text>
+<path class="ar" d="M423.0 235.0 H436.0" marker-end="url(#ahC2)"/>
+<rect class="b ap" x="439.0" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="449.0" y="216">70B on doubt</text>
+<text class="bs" x="449.0" y="233">only low-confidence</text>
+<text class="bs" x="449.0" y="247">cases</text>
+<text class="bs" x="449.0" y="261">(cost control)</text>
+<path class="ar" d="M561.3 235.0 H574.3" marker-end="url(#ahC2)"/>
+<rect class="b code" x="577.3" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="587.3" y="216">Store + API</text>
+<text class="bs" x="587.3" y="233">POST /classify</text>
+<text class="bs" x="587.3" y="247">POST /topics</text>
+<text class="bs" x="587.3" y="261">batch script</text>
+<path class="ar" d="M699.7 235.0 H712.7" marker-end="url(#ahC2)"/>
+<rect class="b out" x="715.7" y="196" width="120.3" height="78" rx="9"/>
+<text class="bt" x="725.7" y="216">UI</text>
+<text class="bs" x="725.7" y="233">affairs per topic,</text>
+<text class="bs" x="725.7" y="247">passage shown,</text>
+<text class="bs" x="725.7" y="261">&quot;correct this label&quot;</text>
+<path class="lk" d="M741 137 C741 168, 222 160, 222 193" marker-end="url(#ahC2)"/>
+<rect class="b ev" x="24" y="306" width="812" height="50" rx="9"/>
+<text class="bt" x="36" y="326">EVAL LOOP</text>
+<text class="bs" x="36" y="344">PolitMonitor 3,433 (main) + DVS 30 (sanity) + Curia Vista 28 areas → precision / recall / macro-F1 per language and level · tokens/s → full-corpus hours</text>
+</svg></div>
+    <div class="alg"><span><i class="k src"></i>Data source</span><span><i class="k code"></i>Plain code</span><span><i class="k ap"></i>Apertus step</span><span><i class="k ow"></i>Open-weights helper (declare it)</span><span><i class="k out"></i>Output / demo</span></div>
+    <div class="script"><div class="t">Cascade <span class="tot">sketch</span></div>
+      <div class="sg"><b>1 Pull</b><span>Bulk export, not page-by-page API calls. Normalise to one record: id, parliament, level, language, title, short text, first N tokens of the main document.</span></div>
+      <div class="sg"><b>2 Describe</b><span>Each topic (APS level 1 and 2, or ad-hoc) gets a short description and 3 to 5 example phrases <strong>in each language</strong>, generated once by Apertus 70B and reviewed by a human.</span></div>
+      <div class="sg"><b>3 Prefilter</b><span>Cheap candidate step: keyword plus embedding similarity between affair and topic descriptions, keep the top 3 to 5 topics per affair.</span></div>
+      <div class="sg"><b>4 Classify</b><span>Apertus 8B decides among the candidates, returns label, confidence and the supporting text span (JSON). Only low-confidence cases go to 70B.</span></div>
+      <div class="sg"><b>5 Evaluate</b><span>Labelled sample per language: precision, recall and F1 per language and per level, as input for the bias check the C2 page asks for.</span></div>
+      <div class="sg"><b>6 Serve</b><span>Small API: <code>POST /classify</code> with affair id or text, and <code>POST /topics</code> to add an ad-hoc topic. Optional UI with a "correct this label" button.</span></div>
+    </div>
+  </div>
+
+  <!-- C3 -->
+  <div class="ctab" data-c="C3">
+    <h3 class="ct">Deciphering Archives with Apertus<small>University of Bern · Education &amp; Historical Research / Digital Humanities / Machine Learning · Challenge owner @loleg</small></h3>
+    <div class="lab-h">Main objective</div>
+    <p>Develop an end-to-end, reproducible data pipeline — powered by Apertus 1.5 — that processes historical Swiss archival documents into AI-ready data assets while maintaining document origin trails.</p>
+    <p>Your solution should combine automatic document structuring (titling, pagination hygiene, flagging of handwritten/illegible pages), metadata enrichment, and bias-aware preprocessing to create a dataset suitable for training Apertus (or similar language models) on Swiss legal and historical topics.</p>
+    <p>Evaluate your pipeline against a University of Bern case study, and demonstrate value with a small downstream application — e.g., dossier Q&amp;A with page citations, procedural timeline extraction, or an MCP server. See the slides in the fileshare for a visual example.</p>
+    <div class="lab-h">Problem</div>
+    <p>Transforming raw historical archival data into structured, machine-understandable formats while respecting the original document’s provenance and ethical constraints is an important duty of government archives. Current datasets contain partial preprocessing but lack systemic indexing, NLP-ready formatting, and metadata standardization. Frontier lab AI solutions are costly, resource-intensive, and ethically/legally under scrutiny.</p>
+    <p>Our local advantage: the University of Bern has research outputs that already define a target structure for archivists, so they can serve as a reference against which automated pipelines are evaluated.</p>
+    <div class="lab-h">Datasets</div>
+    <ol><li>Stapfer-Enquête: A unique survey of the school situation in the Helvetic Republic, initiated in 1799 by education minister Philipp Albert Stapfer (1766–1840). The ~2,400 handwritten response sheets are held in the Swiss Federal Archives (Archiv der Helvetik, Bestand B0#C.02.3.1). A University of Bern team datafied the survey 2009–2015 and handed it to the Archives, which operate www.stapferenquete.ch. Type/format: handwritten page scans plus the published datafication (transcriptions/structured records). Access: opendata.swiss</li><li>Federal Consultations 1960–1991: Metadata of the Federal Chancellery’s online index of consultations. Type/format: structured tabular metadata. Access: opendata.swiss</li><li>Archive Database of the Swiss Federal Archives: Metadata of originally 3.84 million dossiers and 257,000 documents, updated in February 2026. Type/format: structured metadata / linked data (RDF) / images. Access: opendata.swiss</li></ol>
+    <p>All three datasets are published on opendata.swiss — check and respect the licence stated for each dataset, and download from there.</p>
+    <p>Types of preprocessing that may be needed: transcription normalization and structure extraction; schema harmonization; linked-data handling, entity linking; date/geolocation parsing; anonymization verification.</p>
+    <div class="lab-h">Technical preferences</div>
+    <ul><li>Preferred languages / frameworks: Python (Pandas, Transformers) preferred for data processing and model interaction, with Gradio/Jupyter/JavaScript for dashboard interfaces. Any cloud platforms (Swiss based / Educational access) and local development environments can be used, as long as they are freely accessible to all team members.</li><li>Recommended platforms: the Opendata.swiss showcase, e.g. Swiss open data for AI assistants (42 read-only MCP servers over Swiss federal and cantonal data).</li><li>Specific AI models: Apertus v1.5 — 8B or 70B</li><li>Model sources: Official Swiss AI Initiative model weights or verified provider API, with required licenses/compliance documentation. Participants may experiment with other LLM variants if relevant for documentation contexts and baseline comparison, and will need to cite all model sources appropriately.</li></ul>
+    <div class="lab-h">Expected outputs</div>
+    <ul><li>Complete pipeline code repository (GitHub/GitLab) with clear installation instructions</li><li>Generated AI-ready dataset in specified format (CSV/JSON with metadata)</li><li>Demonstration notebook showing pipeline execution with sample documents</li><li>Documentation including API documentation, usage examples, and technical rationale</li><li>Ethical impact assessment document covering data privacy and bias considerations</li></ul>
+    <div class="lab-h">Success criteria</div>
+    <ul><li>Data Usability: Pipeline correctly processes 80%+ of documents with &lt;5% structural errors</li><li>AI Friendliness: Output includes model-ready JSON/TSV with standardized metadata schema</li><li>Provenance Preservation: Clear documentation of editing decisions and original document references</li><li>Performance: Pipeline completes within 2 hours for 1000+ page dataset on standard machine spec</li><li>Interoperability: Output conforms to shared specification ensuring compatibility across submissions</li></ul>
+    <div class="lab-h">Evaluation criteria</div>
+    <ul><li>Technical depth: Complexity and robustness of data pipeline</li><li>AI readiness: Quality of output format and metadata for model consumption</li><li>Ethical compliance: Documentation of privacy preservation, anonymization methods, and bias mitigation</li><li>Innovation: Novel approaches to handling archival document challenges</li><li>Documentation &amp; presentation: Clarity and completeness of submission materials</li></ul>
+    <div class="lab-h">Ethics &amp; compliance</div>
+    <ul><li>Adherence to Swiss data protection laws and archival restrictions.</li><li>Original document versions should be preserved alongside processed versions if possible. Clear documentation of all data modifications with annotations explaining why changes were made.</li><li>The Apertus Charter may be used as a reference to include assessment of potential biases in data selection, preprocessing, and model training recommendations.</li><li>Respect all copyright limitations established by Swiss Federal Archives for public documents vs. restricted access materials. Consider fair use / research exceptions in documentation.</li><li>Follow all conditions governing access to archival materials (some documents may have restricted access periods), use public bulk open data, avoid crawling and scraping.</li><li>All work must cite original documents and should contribute positively to open scholarship. Any trained models based on this data should consider appropriate licensing (Apache 2.0 recommended by Apertus)</li></ul>
+    <div class="lab-h">Mentorship</div>
+    <p>In addition to a technical challenge owner who will guide you on Open Data and the use of Apertus, two expert mentors from the University of Bern will assist the team in topics like: data science with archival materials; NLP preprocessing and data pipelines; ethical AI and privacy compliance; model fine-tuning with Apertus.</p>
+    <p class="small"><cite class="src">[Notion: challenge page University of Bern]</cite></p>
+    <div class="callout"><div class="t">Challenge fileshare (BFH Nextcloud), as found on 18.10.</div><p>Stapfer answers as xlsx exports, the full app database as SQL dump, a data model PDF, the challenge slides, literature and an "Academia Challenge Template" (.ods). The linked-data version sits on LINDAS (SPARQL). Consultations 1960 to 1991: 569 consultations, 14 columns, plus codebook. Archive DB: 1.38 GB zip.</p></div>
+    <div class="callout"><div class="t">Stapfer data as found on 18.10.</div><ul><li><strong>14,801 answer rows</strong>: school place, confession, school type, question number (e.g. <code>IV.15.b</code>), answer text, archive signature (<code>BAR B0 1000/1483, Nr. 1449, fol. 26</code>), transcription id, district, canton 2015 / 1799 / 1750, citation.</li><li>The questionnaire has numbered questions in DE and FR (<code>I.1</code> "Name des Ortes, wo die Schule ist").</li><li>Transcriptions keep 1799 spelling and an editorial markup: <code>@</code> = line break, <code>$ … $$</code> = marked passages.</li><li>The SQL dump has 27 tables (school, teacher, pupils, salary in money and kind, subjects, places, parish).</li><li>The scans are referenced by file name (<code>…fol_228-229v.pdf</code>) but are not in the fileshare.</li></ul></div>
+    <div class="lab-h">One possible architecture</div>
+    <p class="small">A sketch of where Apertus could come in, not the expected solution. Row A builds the knowledge once, row B runs per request; the dotted arrow is where B reads what A produced. Orange boxes are where Apertus could do the language work; grey boxes are plain code. <em class="why">sketch</em></p>
+    <div class="archwrap"><svg class="arch" viewBox="0 0 860 380" role="img" aria-labelledby="tC3"><title id="tC3">C3 architecture</title>
+<defs><marker id="ahC3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs>
+<rect class="bound" x="8" y="8" width="844" height="364" rx="14"/>
+<text class="bl" x="22" y="28">SOVEREIGN BOUNDARY · Docker or Swiss cloud · Apertus via CSCS or local 8B · no closed foreign API</text>
+<text class="rl" x="24" y="50">A · PIPELINE (reproducible, &lt; 2 h for 1,000+ pages)</text>
+<rect class="b src" x="24.0" y="58" width="120.3" height="78" rx="9"/>
+<text class="bt" x="34.0" y="78">Bulk data</text>
+<text class="bs" x="34.0" y="95">Stapfer 14,801 rows</text>
+<text class="bs" x="34.0" y="109">consultations: 569</text>
+<text class="bs" x="34.0" y="123">no scraping</text>
+<path class="ar" d="M146.3 97.0 H159.3" marker-end="url(#ahC3)"/>
+<rect class="b code" x="162.3" y="58" width="120.3" height="78" rx="9"/>
+<text class="bt" x="172.3" y="78">Ingest</text>
+<text class="bs" x="172.3" y="95">stable id per page,</text>
+<text class="bs" x="172.3" y="109">checksum,</text>
+<text class="bs" x="172.3" y="123">original untouched</text>
+<path class="ar" d="M284.7 97.0 H297.7" marker-end="url(#ahC3)"/>
+<rect class="b code" x="300.7" y="58" width="120.3" height="78" rx="9"/>
+<text class="bt" x="310.7" y="78">Rules first</text>
+<text class="bs" x="310.7" y="95">dates, places,</text>
+<text class="bs" x="310.7" y="109">pagination, empty</text>
+<text class="bs" x="310.7" y="123">pages, signatures</text>
+<path class="ar" d="M423.0 97.0 H436.0" marker-end="url(#ahC3)"/>
+<rect class="b ap" x="439.0" y="58" width="120.3" height="78" rx="9"/>
+<text class="bt" x="449.0" y="78">Apertus 8B</text>
+<text class="bs" x="449.0" y="95">normalise 1799 text,</text>
+<text class="bs" x="449.0" y="109">extract salary, pupils,</text>
+<text class="bs" x="449.0" y="123">subjects, title</text>
+<path class="ar" d="M561.3 97.0 H574.3" marker-end="url(#ahC3)"/>
+<rect class="b code" x="577.3" y="58" width="120.3" height="78" rx="9"/>
+<text class="bt" x="587.3" y="78">Edit log</text>
+<text class="bs" x="587.3" y="95">field · before · after</text>
+<text class="bs" x="587.3" y="109">rule or model</text>
+<text class="bs" x="587.3" y="123">· reason</text>
+<path class="ar" d="M699.7 97.0 H712.7" marker-end="url(#ahC3)"/>
+<rect class="b out" x="715.7" y="58" width="120.3" height="78" rx="9"/>
+<text class="bt" x="725.7" y="78">AI-ready dataset</text>
+<text class="bs" x="725.7" y="95">JSON / TSV</text>
+<text class="bs" x="725.7" y="109">+ metadata schema</text>
+<text class="bs" x="725.7" y="123">+ ethics note</text>
+<text class="rl" x="24" y="188">B · DOWNSTREAM APP (pick one)</text>
+<rect class="b ap" x="24.0" y="196" width="258.7" height="78" rx="9"/>
+<text class="bt" x="34.0" y="216">Dossier Q&amp;A</text>
+<text class="bs" x="34.0" y="233">answers with</text>
+<text class="bs" x="34.0" y="247">archive signature</text>
+<text class="bs" x="34.0" y="261">+ folio cited</text>
+<rect class="b code" x="300.7" y="196" width="258.7" height="78" rx="9"/>
+<text class="bt" x="310.7" y="216">MCP server</text>
+<text class="bs" x="310.7" y="233">read-only tools over</text>
+<text class="bs" x="310.7" y="247">the dataset</text>
+<text class="bs" x="310.7" y="261">(swiss-public-data-mcp)</text>
+<rect class="b ap" x="577.3" y="196" width="258.7" height="78" rx="9"/>
+<text class="bt" x="587.3" y="216">Timeline</text>
+<text class="bs" x="587.3" y="233">procedural events</text>
+<text class="bs" x="587.3" y="247">extracted per</text>
+<text class="bs" x="587.3" y="261">consultation</text>
+<path class="lk" d="M776 137 C776 168, 430 160, 430 193" marker-end="url(#ahC3)"/>
+<rect class="b ev" x="24" y="306" width="812" height="50" rx="9"/>
+<text class="bt" x="36" y="326">EVAL LOOP</text>
+<text class="bs" x="36" y="344">Score extraction against the SQL dump (27 tables: school, teacher, pupils, salary) → structural error rate &lt; 5 % · ≥ 80 % processed · runtime per 1,000 pages</text>
+</svg></div>
+    <div class="alg"><span><i class="k src"></i>Data source</span><span><i class="k code"></i>Plain code</span><span><i class="k ap"></i>Apertus step</span><span><i class="k ow"></i>Open-weights helper (declare it)</span><span><i class="k out"></i>Output / demo</span></div>
+    <div class="script"><div class="t">Pipeline <span class="tot">sketch</span></div>
+      <div class="sg"><b>1 Pick one</b><span>One dataset, done well. Stapfer is the richest story (scans plus existing transcriptions as ground truth); Consultations is the fastest (tabular).</span></div>
+      <div class="sg"><b>2 Ingest</b><span>Bulk download, checksum, and a stable id per page. Original never modified; every derived record points to <code>source_id + page</code>.</span></div>
+      <div class="sg"><b>3 Rules first</b><span>Dates, places, pagination, empty pages: deterministic code. Fast, testable, helps with the 2-hour target.</span></div>
+      <div class="sg"><b>4 Apertus step</b><span>8B for what rules cannot do: title per dossier, normalising old spelling, entity typing, short summaries. Output in a fixed JSON schema, with the input span kept.</span></div>
+      <div class="sg"><b>5 Log</b><span>An edit log per record: field, before, after, rule or model, reason.</span></div>
+      <div class="sg"><b>6 App</b><span>Dossier Q&amp;A with page citations, or an MCP server over the dataset (see "Swiss open data for AI assistants" on the challenge page).</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4 ================= -->
+<section class="pane" data-id="c4">
+  <div class="eyebrow">Chapter 4</div>
+  <h2 class="title">Apertus in five minutes</h2>
+  <p class="lede">Model facts from the Resources &amp; Tools page, plus a rule of thumb for 8B vs 70B.</p>
+
+  <h3>The model</h3>
+  <ul>
+    <li>Swiss open LLM from the Swiss AI Initiative (EPFL, ETH Zurich, CSCS). Weights, data pipeline and training recipes are open.</li>
+    <li>Two sizes, 8B and 70B; v1 (base and instruct) and v1.5 (the resources page describes it as multimodal with longer context). The challenge pages point to <code>swiss-ai/Apertus-v1.5-8B</code> and <code>-70B</code> on Hugging Face.</li>
+    <li>Technical report terms you may hear: xIELU activation, AdEMAMix optimiser, the "Goldfish objective" against verbatim memorisation, a legally compliant training-data pipeline with a public data-transparency repository.</li>
+  </ul>
+  <p class="small"><cite class="src">[Resources &amp; Tools: The model]</cite></p>
+
+  <h3>8B or 70B: a rule of thumb</h3>
+  <div class="tw"><table class="wrapfirst">
+    <tr><th>Use</th><th>8B</th><th>70B</th></tr>
+    <tr><td>Bulk extraction, classification with candidates, normalisation</td><td>Yes, fast and cheap</td><td>Only for the uncertain tail</td></tr>
+    <tr><td>Writing topic descriptions, gold labels, judging outputs</td><td>Weak</td><td>Yes, once, offline</td></tr>
+    <tr><td>Free-form answers with citations</td><td>Constrain hard (schema, short)</td><td>Better, but still verify citations in code</td></tr>
+    <tr><td>Running on a laptop</td><td>Yes (4-bit)</td><td>No</td></tr>
+  </table></div>
+
+  <div class="callout"><div class="t">Field note</div><p>In a local test with Apertus 8B (v1 instruct, 4-bit MLX, about 24 tokens per second), retrieval found the right passages, but the generation invented details, drifted and got citation numbers wrong. With 8B, do not trust free-text citations: return ids from the given context as JSON and check them in code. This was v1, not 1.5.</p></div>
+
+  <h3>Patterns to copy (from the resources page)</h3>
+  <div class="terms">
+    <div class="term"><b>Swiss Legal RAG Demo</b>Gradio plus Apertus 8B via HF Inference over the Federal Constitution and data protection act in four languages. No GPU, no vector DB, runs on a free HF Space. Template for C1 and C3 Q&amp;A.</div>
+    <div class="term"><b>Apertus Translate</b>The core team's multilingual tests with human and automatic metrics. Template for how to test a capability claim (C2 bias table).</div>
+    <div class="term"><b>Apertus Probe</b>Linear probes on internal activations predict hallucination. For an interpretability angle.</div>
+    <div class="term"><b>Ticino translation case</b>Fine-tuned 8B runs production translation for a canton. Public-sector framing.</div>
+    <div class="term"><b>Fine-tuning recipes</b>LoRA and full-parameter scripts; 8B fits a single 40 GB GPU. PEFT, TRL SFTTrainer, Alignment Handbook.</div>
+    <div class="term"><b>awesome-apertus</b>github.com/rnckp/awesome-apertus: the overview list.</div>
+  </div>
+
+  <div class="callout warn"><div class="t">Fine-tuning in two days (suggestion)</div><p>Rarely worth it here. The C2 page asks that "ad-hoc topics can be added without retraining"; for C1 and C3, schema-constrained prompting plus evaluation usually gets further in two days. Fine-tuning makes sense only with a clean labelled set and a measured gap to close.</p></div>
+</section>
+
+<!-- ================= 4a ================= -->
+<section class="pane" data-id="c9">
+  <div class="eyebrow">Chapter 4a</div>
+  <h2 class="title">One way to structure it</h2>
+  <p class="lede">The same six stages fit all three challenges: Apertus in one named step, everything else in plain code, and a test set that every change is measured against. A sketch, not the expected solution.</p>
+  <div class="archwrap"><svg class="arch" viewBox="0 0 860 196" role="img" aria-labelledby="tFW"><title id="tFW">Six stages from test set to evaluation</title>
+<defs><marker id="ahFW" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs>
+<rect class="b src" x="20.0" y="60" width="126.7" height="104" rx="9"/>
+<text class="bt" x="30.0" y="82">0 Test set</text>
+<text class="bs" x="30.0" y="102">expected output</text>
+<text class="bs" x="30.0" y="117">+ source per item</text>
+<text class="bs" x="30.0" y="132">before any tuning</text>
+<path class="ar" d="M147.7 112 H157.7" marker-end="url(#ahFW)"/>
+<rect class="b code" x="158.7" y="60" width="126.7" height="104" rx="9"/>
+<text class="bt" x="168.7" y="82">1 Ingest</text>
+<text class="bs" x="168.7" y="102">bulk files, one</text>
+<text class="bs" x="168.7" y="117">record per item</text>
+<text class="bs" x="168.7" y="132">+ stable source id</text>
+<path class="ar" d="M286.3 112 H296.3" marker-end="url(#ahFW)"/>
+<rect class="b code" x="297.3" y="60" width="126.7" height="104" rx="9"/>
+<text class="bt" x="307.3" y="82">2 Rules first</text>
+<text class="bs" x="307.3" y="102">dates, ids, dedupe</text>
+<text class="bs" x="307.3" y="117">keyword / BM25</text>
+<text class="bs" x="307.3" y="132">plain code</text>
+<path class="ar" d="M425.0 112 H435.0" marker-end="url(#ahFW)"/>
+<rect class="b ap" x="436.0" y="60" width="126.7" height="104" rx="9"/>
+<text class="bt" x="446.0" y="82">3 Apertus step</text>
+<text class="bs" x="446.0" y="102">extract, classify</text>
+<text class="bs" x="446.0" y="117">or answer as JSON</text>
+<text class="bs" x="446.0" y="132">8B bulk, 70B tail</text>
+<path class="ar" d="M563.7 112 H573.7" marker-end="url(#ahFW)"/>
+<rect class="b code" x="574.7" y="60" width="126.7" height="104" rx="9"/>
+<text class="bt" x="584.7" y="82">4 Check in code</text>
+<text class="bs" x="584.7" y="102">schema is valid,</text>
+<text class="bs" x="584.7" y="117">cited ids exist,</text>
+<text class="bs" x="584.7" y="132">else “no answer”</text>
+<path class="ar" d="M702.3 112 H712.3" marker-end="url(#ahFW)"/>
+<rect class="b out" x="713.3" y="60" width="126.7" height="104" rx="9"/>
+<text class="bt" x="723.3" y="82">5 Evaluate</text>
+<text class="bs" x="723.3" y="102">the challenge’s</text>
+<text class="bs" x="723.3" y="117">success criteria</text>
+<text class="bs" x="723.3" y="132">on a held-out set</text>
+<path class="lk" d="M776.7 58 V36 H83.3 V56" marker-end="url(#ahFW)"/>
+<text class="bl" x="430.0" y="30" text-anchor="middle">EVERY CHANGE IS MEASURED AGAIN ON THE SAME TEST SET</text>
+<text class="bl" x="20" y="186">Orange: where Apertus works. Grey: plain code. One change per run, one results row per run.</text>
+</svg></div>
+  <div class="lab-h">The six stages</div>
+  <div class="script"><div class="t">Stages <span class="tot">sketch</span></div>
+    <div class="sg"><b>0 Test set</b><span>20 to 50 items to start, each with the expected output and where it is in the source. Split dev / held-out. Written before any prompt tuning.</span></div>
+    <div class="sg"><b>1 Ingest</b><span>Bulk data in, one record per page, affair or answer row, each with a stable source id. The original is never changed.</span></div>
+    <div class="sg"><b>2 Rules first</b><span>Everything code can do reliably: dates, ids, URLs, deduplication, keyword or BM25 filtering. Fast and testable.</span></div>
+    <div class="sg"><b>3 Apertus step</b><span>The language work rules cannot do: extract, classify among candidates, normalise, or answer from given passages. Output in a fixed JSON schema. Apertus v1.5: 8B for bulk and iteration, 70B for the uncertain tail.</span></div>
+    <div class="sg"><b>4 Check in code</b><span>Validate the schema, check that cited ids and URLs exist in the input, otherwise return "no answer" instead of a guess.</span></div>
+    <div class="sg"><b>5 Evaluate</b><span>Measure against the challenge's own success criteria on the held-out set (row 5 below). Details in chapter 4b.</span></div>
+  </div>
+  <div class="lab-h">Per challenge</div>
+  <div class="tw"><table class="wrapfirst">
+<tr><th>Stage</th><th>C1 Navigator</th><th>C2 Parliament topics</th><th>C3 Archives</th></tr>
+<tr><td>0 Test set</td><td>Expected experts/units per query, in site terms, synonyms and lay terms</td><td>DVS list (30) and PolitMonitor (3,433) on files.openparldata.ch/hackapertus/</td><td>A University of Bern case study (Notion); the Stapfer SQL dump (27 tables) in the fileshare</td></tr>
+<tr><td>1 Ingest</td><td>Pages of the three sources, URL kept per record</td><td>Affairs from the bulk export, one record per affair</td><td>opendata.swiss bulk files, original kept, page or folio id</td></tr>
+<tr><td>2 Rules first</td><td>Clean HTML, join people with expertise, dedupe, BM25</td><td>Keyword or embedding prefilter to a few candidate topics</td><td>Dates, places, pagination, empty pages</td></tr>
+<tr><td>3 Apertus step</td><td>Extract fields, expand the query, write why each result matches</td><td>Pick among candidate topics, with confidence and passage</td><td>Titles, normalise old spelling, extract fields into JSON</td></tr>
+<tr><td>4 Check in code</td><td>Every result links to the page it came from</td><td>“None” allowed; label stays a suggestion</td><td>Edit log per record: before, after, why</td></tr>
+<tr><td>5 Evaluate (Notion success criteria)</td><td>At least 80% of expected experts/units appear in the top 10 results · 100% of results link to a public source page that supports the claim</td><td>Classification quality on a labelled sample · works across languages (at least de / fr / it) · feasible runtime for 300,000+ affairs</td><td>Processes 80%+ of documents with &lt;5% structural errors · completes within 2 hours for 1000+ page dataset on standard machine spec</td></tr>
+</table></div>
+  <p class="small"><cite class="src">[Row 5: Notion challenge pages, success criteria. Rows 0 to 4: sketch.]</cite></p>
+</section>
+
+<!-- ================= 4b ================= -->
+<section class="pane" data-id="c10">
+  <div class="eyebrow">Chapter 4b</div>
+  <h2 class="title">Evals from hour one</h2>
+  <p class="lede">Each challenge page lists success criteria (chapter 3). This chapter suggests one way to measure them during the two days.</p>
+
+  <h3>The loop</h3>
+  <div class="script"><div class="t">Eval loop <span class="tot">from hour one</span></div>
+    <div class="sg"><b>1 Gold set</b><span>Questions or items with the expected output and its source. Split into dev (tune on it) and held-out (touch once, Sunday night).</span></div>
+    <div class="sg"><b>2 Baseline</b><span>The simplest thing that runs end to end: BM25 only, or 8B with a plain prompt. Its number is the anchor of the whole report.</span></div>
+    <div class="sg"><b>3 Change one thing</b><span>Rerank, hybrid search, better prompt, 70B for the tail. One change per run.</span></div>
+    <div class="sg"><b>4 Re-run, log</b><span>Same script, same gold set, one row per run in a results file: date, change, metrics, tokens, seconds.</span></div>
+    <div class="sg"><b>5 Freeze</b><span>Final run on held-out. Those numbers go on the slide, not the best dev number.</span></div>
+  </div>
+
+  <h3>What to measure, per challenge</h3>
+  <div class="qc"><div class="q"><span class="tt">C1</span>Research &amp; Expertise Navigator</div><div class="lines">
+    <div class="l m"><b>Gold set</b><span>20 to 40 queries, each with the expected experts or units and the page that proves it. Write each query three ways: site term ("CGM"), synonym ("continuous glucose monitoring"), lay term ("Blutzuckermessung").</span></div>
+    <div class="l g"><b>Metrics</b><span>recall@10 (target ≥ 80 %) · MRR (is the best hit near the top) · synonym consistency: overlap of the top 10 across the three phrasings · traceability: share of results whose URL is in the candidate set and whose page contains the name (target 100 %, checked in code) · refusal on 5 nonsense queries.</span></div>
+    <div class="l w"><b>Fairness</b><span>Count hits per unit size, to check against the "Fair &amp; unbiased representation" guideline.</span></div>
+    <div class="l f"><b>Ask</b><span>"Show me your recall@10 for lay terms only."</span></div>
+  </div></div>
+
+  <div class="qc"><div class="q"><span class="tt">C2</span>Topic classification for parliaments</div><div class="lines">
+    <div class="l m"><b>Gold set</b><span>PolitMonitor «Digitalisierung» 3,433 affairs (1,448 federal) as the real set, DVS 30 as a sanity check (29 of them are in PolitMonitor). Curia Vista 70,008 federal affairs for the scheme mapping, with a mapping table (28 areas vs 165 APS topics).</span></div>
+    <div class="l g"><b>Metrics</b><span>Precision, recall, F1 per language (DE / FR / IT) and per level · macro-F1, because the areas are imbalanced · share of "none" (an affair may fit no topic) · calibration: is confidence 0.9 right 9 times out of 10 · seconds per affair × 326,000.</span></div>
+    <div class="l w"><b>Bias table</b><span>The same F1 split by language, region and party (the C2 page asks to "check for bias between languages, regions and parties").</span></div>
+    <div class="l f"><b>Ask</b><span>"Your F1 in French, not overall?"</span></div>
+  </div></div>
+
+  <div class="qc"><div class="q"><span class="tt">C3</span>Deciphering Archives</div><div class="lines">
+    <div class="l m"><b>Gold set</b><span>The Stapfer SQL dump: extract fields (salary, pupils, subjects, teacher) from the raw answer text and compare with the database. A ready-made gold set from 1799.</span></div>
+    <div class="l g"><b>Metrics</b><span>Field accuracy, exact and normalised (old spelling) · coverage: share of records processed (target ≥ 80 %) · structural error rate (target &lt; 5 %) · throughput (target &lt; 2 h per 1,000 pages) · provenance completeness: every derived field has source id + folio.</span></div>
+    <div class="l w"><b>Keep apart</b><span>Original transcription and normalised text side by side. Scoring the normalised text against itself proves nothing.</span></div>
+    <div class="l f"><b>Ask</b><span>"Which field is your worst, and why?"</span></div>
+  </div></div>
+
+  <h3>Model as judge: when and how</h3>
+  <ul>
+    <li><strong>When:</strong> only for free text that has no exact answer ("why this matches", titles, summaries). Labels, ids, fields and URLs are checked in code, never by a judge.</li>
+    <li><strong>Who:</strong> an open model, e.g. Apertus 70B judging 8B output. Other open-weights models are allowed as helpers; name the role in the report.</li>
+    <li><strong>How:</strong> fixed rubric (faithful to the passages? answers the question? right language?), score 1 to 5, temperature 0, the judge never sees which system produced the answer. Pairwise ("A or B better?") is more stable than absolute scores.</li>
+    <li><strong>Calibrate:</strong> a human scores 20 answers, the judge scores the same 20. Report the agreement. A judge nobody checked is an opinion.</li>
+  </ul>
+
+  <h3>Tools</h3>
+  <div class="tw"><table class="wrapfirst">
+    <tr><th>Tool</th><th>Good for</th><th>Pick it when</th></tr>
+    <tr><td>CSV + 50-line script</td><td>Gold set in a file, metrics printed, one results row per run</td><td>Default for two days. Nothing to install, reproducible with <code>make eval</code></td></tr>
+    <tr><td>promptfoo</td><td>Test cases in YAML, any OpenAI-style endpoint, side-by-side runs in a browser view</td><td>Comparing prompts or 8B vs 70B, and wanting a screenshot for the report</td></tr>
+    <tr><td>RAGAS · DeepEval</td><td>Ready RAG metrics in Python (faithfulness, relevance, context recall)</td><td>Q&amp;A apps (C1, C3 dossier Q&amp;A); point their judge at Apertus 70B</td></tr>
+    <tr><td>Langfuse</td><td>Traces of every call, datasets, scores; self-hostable</td><td>Debugging where a pipeline goes wrong; needs setup time</td></tr>
+    <tr><td>Mastra Studio</td><td>Agents, RAG, scorers and traces in one local UI</td><td>The team builds in TypeScript anyway. Not worth switching stacks for</td></tr>
+  </table></div>
+
+  <h3>The minimal harness</h3>
+  <p class="small">Retrieval recall@k for C1, or label F1 for C2, needs no framework. Shape of the script (gateway URL and key from the organisers, model name from their docs):</p>
+  <div class="codeblk">import csv, json, os, time
+from openai import OpenAI                     # works with any OpenAI-style gateway
+client = OpenAI(base_url=os.environ["GATEWAY_URL"], api_key=os.environ["GATEWAY_KEY"])
+
+gold = list(csv.DictReader(open("eval/gold_dev.csv")))   # query, expected_ids, source
+hits, toks, secs = 0, 0, 0.0
+for row in gold:
+    t = time.time()
+    found = retrieve(row["query"], k=10)                  # your pipeline, returns ids
+    hits += bool(set(found) &amp; set(row["expected_ids"].split("|")))
+    secs += time.time() - t
+print(json.dumps({"run": os.environ.get("RUN", "baseline"),
+                  "recall@10": round(hits / len(gold), 3),
+                  "sec_per_query": round(secs / len(gold), 2)}))   # append to results.jsonl</div>
+
+  <h3>The report slide</h3>
+  <div class="tw"><table>
+    <tr><th>Run (held-out)</th><th>Main metric</th><th>Faithful / traceable</th><th>Tokens per item</th><th>Seconds per item</th></tr>
+    <tr><td>Baseline</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>+ hybrid search</td><td></td><td></td><td></td><td></td></tr>
+    <tr><td>+ rerank / 70B tail</td><td></td><td></td><td></td><td></td></tr>
+  </table></div>
+
+  <div class="callout bad"><div class="t">Traps that sink the numbers</div><ul>
+    <li>Tuning the prompt on the same items that are reported. Held-out exists for this.</li>
+    <li>Gold answers leaking into the prompt or the index (e.g. the DVS list sitting in the corpus).</li>
+    <li>The model judging its own output. Use a different model or a human check.</li>
+    <li>One overall number on imbalanced data. Report macro-F1 and per language.</li>
+    <li>No "none" option. Forcing a label inflates false positives.</li>
+    <li>A cherry-picked demo query that the eval never saw. Show one from the gold set.</li>
+  </ul></div>
+
+  <div class="callout"><div class="t">Field note</div><p>In a second local test with the same questions and the same retrieved passages, Apertus 8B at 4-bit listed questions from the source instead of answering them; at 8-bit it gave the right answer with correct citations. Nothing else changed. A results table across runs makes such differences visible.</p></div>
+
+  <h3>Questions to ask about evals</h3>
+  <ol>
+    <li>"Where is your gold set, who wrote it, how many items, which split?"</li>
+    <li>"What is your baseline number, and what was the last change that moved it?"</li>
+    <li>"Show me one wrong answer. Is it retrieval or generation?"</li>
+    <li>"Which number goes on the slide, dev or held-out?"</li>
+    <li>"Can someone else run your eval in 15 minutes from the README?"</li>
+  </ol>
+</section>
+
+
+<!-- ================= 5 ================= -->
+<section class="pane" data-id="c5">
+  <div class="eyebrow">Chapter 5</div>
+  <h2 class="title">Mentor playbook: the 10-minute table visit</h2>
+  <p class="lede">A short visit per team: five questions, one decision written down, one follow-up time agreed.</p>
+
+  <h3>The five questions, in this order</h3>
+  <div class="step"><div class="no">1</div><div><strong>"Who uses this, and what do they do differently afterwards?"</strong><br><span class="small">Forces a user and a moment. The partner's own example beats an invented persona.</span></div></div>
+  <div class="step"><div class="no">2</div><div><strong>"What is the 30-second demo moment?"</strong><br><span class="small">If they cannot say it, they have no target. Write it on a sticky note on their screen.</span></div></div>
+  <div class="step"><div class="no">3</div><div><strong>"Where exactly does Apertus do something code cannot?"</strong><br><span class="small">Jury criterion 1, purposeful use of AI. One step, named.</span></div></div>
+  <div class="step"><div class="no">4</div><div><strong>"How will you know it works? Show me 20 test cases."</strong><br><span class="small">Jury criterion 2, technical rigour, and the challenge's success criteria. Gold set before features.</span></div></div>
+  <div class="step"><div class="no">5</div><div><strong>"What runs if the internet is gone, except the Apertus endpoint?"</strong><br><span class="small">Jury criterion 4, sovereign deployability. Find the closed API before Monday.</span></div></div>
+
+  <h3>Architecture calls worth making early</h3>
+  <ul>
+    <li><strong>One path end to end first</strong>, ugly. Then improve the weakest step. Never three half-built components.</li>
+    <li><strong>Structured output everywhere</strong>: JSON schema per LLM call, validated, retried once. Free text only in the final sentence the user reads.</li>
+    <li><strong>Cache every model call</strong> on disk by input hash. Saves the gateway, makes the demo reproducible and fast.</li>
+    <li><strong>Rules before models</strong>: dates, ids, URLs, deduplication in code.</li>
+    <li><strong>Eval script in the repo</strong>, one command, prints the metric the challenge names.</li>
+    <li><strong>Scope cut by Sunday 22:00</strong>: what is not working end to end by then goes to "next steps" in the report.</li>
+  </ul>
+
+  <h3>Red flags to call out early</h3>
+  <div class="tw"><table class="wrapfirst">
+    <tr><th>If you see</th><th>Say</th></tr>
+    <tr><td>OpenAI, Anthropic or Gemini key in <code>.env</code></td><td>Jury criterion 4 asks for "no dependency on foreign closed services".</td></tr>
+    <tr><td>No gold set at 16:00</td><td>"Stop coding for 30 minutes and label 20 cases together."</td></tr>
+    <tr><td>Beautiful UI, nothing behind it</td><td>The repo is public "so the judges can see your work". Wire one real path first.</td></tr>
+    <tr><td>Crawling or scraping in C3</td><td>The C3 page says "use public bulk open data, avoid crawling and scraping".</td></tr>
+    <tr><td>Model writes names or facts from memory (C1)</td><td>"Only from extracted fields, checked in code."</td></tr>
+    <tr><td>Fine-tuning plan on Sunday afternoon</td><td>"What is your number without fine-tuning? Measure that first."</td></tr>
+    <tr><td>Team of five all on the same file</td><td>"Split: data, model step, eval, demo and pitch."</td></tr>
+  </table></div>
+</section>
+
+<!-- ================= 6 ================= -->
+<section class="pane" data-id="c6">
+  <div class="eyebrow">Chapter 6</div>
+  <h2 class="title">Monday: pitch and submission</h2>
+  <p class="lede">The deadline is 14:30 with no extension, and a draft is not a submission. Everything below fits in one check at 13:30.</p>
+
+  <h3>Submission check (Monday 13:30)</h3>
+  <ol>
+    <li>Repo made from the organisers' template, <strong>public</strong>, README with one-command setup.</li>
+    <li>No closed-API keys in the code or history.</li>
+    <li>Demo video ≤ 2:00, URL works in a private window.</li>
+    <li>ZIP: deck PDF ≤ 10 slides, technical report PDF ≤ 6 pages (template in repo) with the eval table and the role of any non-Apertus model.</li>
+    <li>Authenticity box ticked, <strong>"Submit project" clicked</strong>, status checked by a second team member.</li>
+  </ol>
+
+  <h3>7-minute partner pitch</h3>
+  <div class="script"><div class="t">Suggested structure <span class="tot">7:00</span></div>
+    <div class="sg"><b>0:00 to 0:45</b><span>The partner's problem in their own example ("glucose sensors" / DVS digitalisation list / Stapfer sheet).</span></div>
+    <div class="sg"><b>0:45 to 3:30</b><span>Live demo: one real input to one real output, then one hard case and one honest "no answer".</span></div>
+    <div class="sg"><b>3:30 to 4:30</b><span>Eval: one slide, the challenge's own success criteria with the team's numbers.</span></div>
+    <div class="sg"><b>4:30 to 5:30</b><span>Architecture and sovereignty: where Apertus works, 8B or 70B and why, runs on Docker or Swiss cloud.</span></div>
+    <div class="sg"><b>5:30 to 6:30</b><span>Cost and adoption: full-corpus estimate, how the partner runs it next month.</span></div>
+    <div class="sg"><b>6:30 to 7:00</b><span>Next steps and the ask.</span></div>
+  </div>
+  <p>The 5-minute final cuts the architecture slide and shortens the demo to the one moment. Laptop connected and tested before the slot; deck as PDF. <cite class="src">[Pitching — how to]</cite></p>
+
+  <h3>Q&amp;A prep for every team</h3>
+  <ul>
+    <li>"Why not just use GPT?" → sovereignty, cost, open weights, data provenance.</li>
+    <li>"How do you know it doesn't hallucinate?" → the citation check and the eval number.</li>
+    <li>"What does it cost for the full dataset?" → the back-of-envelope line.</li>
+    <li>"Who maintains it?" → config, README, handover path.</li>
+  </ul>
+</section>
+
+<!-- ================= 8 ================= -->
+<section class="pane" data-id="c8">
+  <div class="eyebrow">Chapter 7</div>
+  <h2 class="title">Glossary</h2>
+  <p class="lede">Every term in this guide, in one line.</p>
+  <div class="glctl"><input id="glq" type="search" placeholder="Filter terms" aria-label="Filter glossary"><span id="glc"></span></div>
+  <dl class="gl" id="gl">
+    <div class="gi"><dt>Apertus</dt><dd>The Swiss open LLM (8B, 70B) from the Swiss AI Initiative; open weights, data and recipes.</dd></div>
+    <div class="gi"><dt>CSCS</dt><dd>Swiss National Supercomputing Centre; provides Apertus inference to all teams via API.</dd></div>
+    <div class="gi"><dt>sprintd</dt><dd>The hackathon platform: registration, challenge matching, team finding, submission.</dd></div>
+    <div class="gi"><dt>8B / 70B</dt><dd>Model sizes in billions of parameters; 8B is fast and cheap, 70B is stronger and slower.</dd></div>
+    <div class="gi"><dt>RAG</dt><dd>Retrieval-augmented generation: fetch relevant text first, then let the model answer from it.</dd></div>
+    <div class="gi"><dt>BM25</dt><dd>Classic keyword ranking; fast, transparent, no model needed.</dd></div>
+    <div class="gi"><dt>Embedding</dt><dd>A vector that represents meaning, so similar texts are close even with different words.</dd></div>
+    <div class="gi"><dt>Hybrid search</dt><dd>Keyword plus embedding retrieval, combined.</dd></div>
+    <div class="gi"><dt>Query expansion</dt><dd>Adding synonyms and related terms to a query before searching ("CGM" for "glucose sensors").</dd></div>
+    <div class="gi"><dt>Recall@10</dt><dd>Share of the expected results that appear in the top 10. C1 target: 80%.</dd></div>
+    <div class="gi"><dt>Precision / recall / F1</dt><dd>Share of found items that are right / share of right items found / their harmonic mean.</dd></div>
+    <div class="gi"><dt>Gold set</dt><dd>Hand-labelled test cases with the expected answer; the basis of every eval number.</dd></div>
+    <div class="gi"><dt>Zero-shot classification</dt><dd>Assigning labels the model was never trained on, from label descriptions alone. C2's "no retraining".</dd></div>
+    <div class="gi"><dt>Cascade</dt><dd>Cheap filter first, small model next, big model only on hard cases.</dd></div>
+    <div class="gi"><dt>LLM-as-judge</dt><dd>Using a model to grade outputs; allowed here with other open-weights models if declared.</dd></div>
+    <div class="gi"><dt>Structured output</dt><dd>Model answers in a fixed JSON schema that code can validate.</dd></div>
+    <div class="gi"><dt>LoRA</dt><dd>Low-rank adaptation: cheap fine-tuning that trains small add-on matrices instead of the full model.</dd></div>
+    <div class="gi"><dt>Air-gapped</dt><dd>Runs with no internet connection at all.</dd></div>
+    <div class="gi"><dt>Sovereign deployability</dt><dd>Runs on-prem or on Swiss cloud with no dependency on foreign closed services. Jury criterion 4.</dd></div>
+    <div class="gi"><dt>nDSG</dt><dd>Swiss revised Federal Act on Data Protection.</dd></div>
+    <div class="gi"><dt>OpenParlData</dt><dd>Open API aggregating data from 90 Swiss parliaments (C2 owner).</dd></div>
+    <div class="gi"><dt>APS</dt><dd>Année Politique Suisse: a two-level topic scheme for Swiss politics, C2's standard scheme example.</dd></div>
+    <div class="gi"><dt>DVS</dt><dd>Digital Administration Switzerland; C2's validation use case (digitalisation affairs).</dd></div>
+    <div class="gi"><dt>Stapfer-Enquête</dt><dd>1799 school survey of the Helvetic Republic, ~2,400 handwritten sheets (C3 dataset).</dd></div>
+    <div class="gi"><dt>RDF / linked data</dt><dd>Data as subject-predicate-object triples with global ids, so records link across sources.</dd></div>
+    <div class="gi"><dt>Entity linking</dt><dd>Mapping a name in text to a unique id (a person, place or institution).</dd></div>
+    <div class="gi"><dt>Provenance</dt><dd>The documented trail from an output back to its original source and every change made on the way.</dd></div>
+    <div class="gi"><dt>MCP</dt><dd>Model Context Protocol: a standard way for AI assistants to call tools and data sources. A C3 downstream option.</dd></div>
+    <div class="gi"><dt>Goldfish objective</dt><dd>Apertus training trick that reduces verbatim memorisation of training text.</dd></div>
+    <div class="gi"><dt>Human in the loop</dt><dd>A person reviews and can correct the model's suggestions. Named in the C2 ethics guidelines.</dd></div>
+  </dl>
+  <div class="glnone" id="glnone">No term matches.</div>
+</section>
+
+<footer class="credit"><div><b>Mike Romano, mentor notes, free to share with Hack Apertus mentors and jurors.</b><br>Criteria and rules quoted from the Hack Apertus Notion, as of 18.10.2026. Architecture sketches, eval approach and mentoring method are my own and marked as such.</div><a class="madeby" href="https://www.twelve-balloons.com" target="_blank" rel="noopener"><span>Made by</span><svg class="tbmark" role="img" aria-label="Twelve Balloons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2457 629">
+<g transform="translate(0.000000,629.000000) scale(0.100000,-0.100000)"
+fill="#C9B98A" stroke="none">
+<path d="M1925 3754 c-673 -105 -722 -1035 -73 -1369 l75 -39 17 -67 c17 -63
+17 -68 0 -100 -30 -58 -23 -140 20 -244 79 -187 80 -214 7 -297 -144 -164
+-145 -200 -7 -238 76 -22 100 -13 94 35 -2 25 -10 32 -43 43 -21 7 -41 15 -43
+17 -2 2 21 33 52 69 102 120 112 168 65 296 -84 232 -80 218 -69 259 5 21 17
+44 25 51 8 7 15 19 15 26 0 8 4 14 9 14 5 0 17 31 26 69 l18 68 61 30 c180 89
+345 262 420 441 32 76 32 74 -5 128 -112 164 -186 441 -164 619 8 58 -1 68
+-111 123 -109 55 -276 83 -389 66z"/>
+</g>
+<g transform="translate(0.000000,629.000000) scale(0.100000,-0.100000)"
+fill="#9CB8A0" stroke="none">
+<path d="M3064 4286 c-676 -129 -865 -979 -335 -1506 92 -92 236 -194 326
+-230 30 -12 53 -25 52 -29 -3 -10 35 -145 44 -157 6 -7 2 -27 -8 -50 -30 -70
+-22 -152 29 -304 75 -220 74 -233 -28 -374 -110 -153 -108 -194 8 -232 82 -27
+111 -19 106 28 -3 28 -9 35 -48 49 -54 21 -55 19 19 119 105 141 110 207 35
+420 -65 186 -63 265 10 334 19 17 65 147 59 166 -1 3 44 29 100 57 172 88 339
+240 434 396 l35 57 -31 35 c-251 287 -348 706 -255 1108 18 78 -345 153 -552
+113z"/>
+</g>
+<g transform="translate(0.000000,629.000000) scale(0.100000,-0.100000)"
+fill="#E89B52" stroke="none">
+<path d="M4395 4890 c-894 -160 -1106 -1368 -351 -1999 138 -115 362 -251 415
+-251 12 0 13 -2 3 -8 -9 -6 -10 -16 -3 -38 6 -16 19 -62 31 -101 14 -48 26
+-73 35 -73 19 0 19 -2 -1 -48 -31 -70 -22 -169 29 -327 74 -230 73 -246 -36
+-408 -104 -154 -100 -188 24 -233 76 -28 102 -20 97 29 -3 28 -8 34 -50 47
+-59 19 -60 16 8 112 118 169 126 237 49 463 -67 199 -57 364 22 365 19 0 25
+11 43 73 12 39 25 85 31 101 7 22 6 32 -3 38 -10 6 -9 8 3 8 25 0 174 76 253
+129 471 318 699 816 602 1314 -112 575 -614 913 -1201 807z"/>
+</g>
+<g transform="translate(0.000000,629.000000) scale(0.100000,-0.100000)"
+fill="#FFFFFF" stroke="none">
+<path d="M10950 3465 l0 -715 190 0 190 0 0 715 0 715 -190 0 -190 0 0 -715z"/>
+<path d="M17190 3465 l0 -715 185 0 185 0 0 715 0 715 -185 0 -185 0 0 -715z"/>
+<path d="M17790 3465 l0 -715 190 0 190 0 -2 713 -3 712 -187 3 -188 2 0 -715z"/>
+<path d="M6642 3948 l3 -153 208 -3 207 -2 0 -520 0 -520 190 0 190 0 0 520 0
+520 176 -2 177 -3 182 -515 182 -515 184 0 184 0 95 267 c52 148 98 268 101
+268 3 0 48 -121 99 -270 l93 -270 181 0 182 0 182 513 c100 282 182 518 182
+525 0 10 -39 12 -162 10 l-163 -3 -105 -302 c-58 -167 -107 -303 -110 -303 -3
+0 -52 137 -109 305 l-104 305 -158 0 -158 0 -19 -52 c-10 -29 -59 -167 -107
+-306 -49 -138 -92 -249 -96 -245 -4 5 -51 142 -105 306 l-99 297 -142 0 -143
+0 0 150 0 150 -610 0 -611 0 3 -152z"/>
+<path d="M14530 3425 l0 -676 458 3 c497 4 509 6 632 65 245 119 259 462 24
+602 l-60 36 55 50 c174 159 132 431 -82 534 -109 52 -133 55 -594 59 l-433 3
+0 -676z m757 372 c96 -51 80 -187 -25 -217 -20 -5 -108 -10 -194 -10 l-158 0
+0 126 0 126 173 -4 c138 -3 178 -7 204 -21z m57 -522 c53 -25 78 -68 73 -123
+-10 -98 -74 -122 -329 -122 l-178 0 0 136 0 137 198 -5 c165 -4 203 -7 236
+-23z"/>
+<path d="M10148 3809 c-618 -70 -671 -895 -68 -1056 210 -56 497 2 612 124
+l26 28 -97 103 -97 103 -51 -34 c-130 -88 -327 -70 -404 36 -51 71 -70 67 346
+67 l375 0 0 93 c0 353 -270 578 -642 536z m177 -284 c47 -20 115 -102 115
+-140 0 -3 -93 -5 -206 -5 l-205 0 6 23 c36 117 168 173 290 122z"/>
+<path d="M13150 3810 c-620 -71 -683 -899 -81 -1055 208 -54 440 -16 588 96
+69 51 69 48 -45 162 l-98 97 -34 -25 c-151 -112 -450 -52 -450 90 0 3 168 5
+374 5 l374 0 6 23 c9 36 6 106 -8 189 -50 278 -313 453 -626 418z m182 -291
+c42 -21 83 -71 93 -111 l7 -28 -206 0 -206 0 15 38 c47 113 181 159 297 101z"/>
+<path d="M16375 3813 c-159 -11 -405 -86 -405 -125 0 -17 121 -249 128 -246
+216 114 413 112 473 -4 35 -69 37 -68 -138 -68 -361 -1 -511 -98 -506 -328 5
+-279 440 -426 650 -220 l43 42 0 -57 0 -57 175 0 175 0 0 308 c0 434 -15 509
+-119 613 -104 103 -280 156 -476 142z m215 -685 c0 -79 -58 -140 -144 -152
+-83 -12 -156 30 -156 91 0 81 40 102 193 103 l107 0 0 -42z"/>
+<path d="M18835 3810 c-625 -65 -699 -894 -94 -1057 314 -84 646 70 741 345
+137 396 -193 759 -647 712z m191 -325 c172 -112 120 -417 -76 -450 -197 -33
+-321 228 -193 403 55 75 191 99 269 47z"/>
+<path d="M20115 3810 c-625 -65 -699 -894 -94 -1057 314 -84 646 70 741 345
+137 396 -193 759 -647 712z m191 -325 c172 -112 120 -417 -76 -450 -197 -33
+-321 228 -193 403 55 75 191 99 269 47z"/>
+<path d="M21552 3809 c-67 -8 -156 -44 -209 -84 l-32 -25 -3 47 -3 48 -177 3
+-178 2 0 -525 0 -525 184 0 185 0 3 293 c4 392 31 449 209 449 139 0 153 -39
+157 -429 l3 -313 185 0 184 0 0 346 c0 397 -6 444 -70 543 -85 131 -249 194
+-438 170z"/>
+<path d="M22640 3810 c-259 -24 -414 -155 -414 -350 0 -195 100 -271 420 -319
+180 -27 213 -45 179 -97 -45 -70 -304 -50 -476 37 l-37 18 -55 -127 c-64 -145
+-65 -136 32 -173 448 -167 895 -25 895 286 0 187 -102 266 -404 314 -196 32
+-234 53 -188 105 48 54 234 54 363 0 33 -14 66 -26 74 -27 17 -2 127 241 115
+253 -52 51 -333 95 -504 80z"/>
+<path d="M11423 3778 c2 -13 95 -243 207 -513 111 -269 204 -496 207 -502 4
+-10 53 -13 198 -13 l193 0 26 63 c15 34 112 269 216 522 l189 460 -176 3
+c-119 2 -179 -1 -183 -8 -4 -6 -62 -146 -130 -311 -68 -165 -126 -296 -130
+-292 -4 4 -60 144 -125 311 l-118 302 -190 0 -189 0 5 -22z"/>
+</g>
+</svg>
+</a></footer>
+<template id="tbsq">data:image/jpeg;base64,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</template>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<div class="scrim" id="scrim"></div>
+
+<script>
+(function(){
+  const CH = [
+    {id:'c0', n:'0', t:'At a glance', d:'Clock, run of show, people'},
+    {id:'c1', n:'1', t:'How Hack Apertus works', d:'Format, resources, submission, prizes'},
+    {id:'c2', n:'2', t:'Jury and criteria', d:'Jury, criteria from Notion, suggested questions'},
+    {id:'c3', n:'3', t:'The three challenges', d:'From Notion, plus one possible architecture each'},
+    {id:'c4', n:'4', t:'Apertus in five minutes', d:'8B vs 70B, patterns to copy, my lab lesson'},
+    {id:'c9',  n:'4a', t:'One way to structure it', d:'Six stages that fit all three challenges'},
+    {id:'c10', n:'4b', t:'Evals from hour one', d:'Gold sets, metrics per challenge, judge, harness'},
+    {id:'c5', n:'5', t:'The 10-minute table visit', d:'Five questions, architecture calls, red flags'},
+    {id:'c6', n:'6', t:'Monday: pitch and submit', d:'13:30 check, 7-minute structure, Q&A prep'},
+    {id:'c8', n:'7', t:'Glossary', d:'Every term in one line'},
+  ];
+  const isCh = id => /^c\d+$/.test(id);
+  const LS = {tab:'hackApertusShare.tab', ctab:'hackApertusShare.ctab'};
+  const load=(k,fb)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):fb;}catch(e){return fb;}};
+  const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}};
+  let cur = load(LS.tab,'c0'); const h=(location.hash||'').slice(1); if(CH.some(c=>c.id===h)) cur=h;
+  if(!CH.some(c=>c.id===cur)) cur='c0';
+
+  function closeDrawer(){document.body.classList.remove('navopen');const t=document.getElementById('navtoggle');if(t&&window.matchMedia('(max-width:900px)').matches)t.setAttribute('aria-expanded','false');}
+  const nav=document.getElementById('nav');
+  const grp=t=>{const d=document.createElement('div');d.className='grp';d.textContent=t;nav.appendChild(d);};
+  const mk=c=>{const b=document.createElement('button');b.type='button';b.dataset.id=c.id;
+    b.title=c.t;b.innerHTML=`<span class="n">${c.n}</span><span class="lbl">${c.t}</span>`;
+    b.addEventListener('click',()=>show(c.id));nav.appendChild(b);};
+  grp('Chapters'); CH.filter(c=>isCh(c.id)).forEach(mk);
+  {const f=document.createElement('div');f.className='tbfoot';const i=document.createElement('img');i.src=document.getElementById('tbsq').innerHTML.trim();i.alt='Twelve Balloons';i.title='Twelve Balloons';f.appendChild(i);nav.appendChild(f);}
+
+  const og=document.getElementById('ovgrid');
+  CH.filter(c=>c.id!=='c0').forEach(c=>{const b=document.createElement('button');b.type='button';b.className='cell';
+    b.innerHTML=`<div class="cn">${c.n?'Chapter '+c.n:'Tool'}</div><div class="ct">${c.t}</div><div class="cd">${c.d}</div>`;
+    b.addEventListener('click',()=>show(c.id));og.appendChild(b);});
+
+  document.querySelectorAll('.pane').forEach(p=>{const id=p.dataset.id;const i=CH.findIndex(c=>c.id===id);
+    const f=document.createElement('div');f.className='pfoot';
+    const nb=document.createElement('div');nb.className='navbtns';
+    const pv=document.createElement('button');pv.type='button';pv.innerHTML='<svg class="ic"><use href="#i-left"/></svg> Back';pv.disabled=i<=0;pv.addEventListener('click',()=>show(CH[i-1].id));
+    const nx=document.createElement('button');nx.type='button';nx.innerHTML='Next <svg class="ic"><use href="#i-right"/></svg>';nx.disabled=i>=CH.length-1;nx.addEventListener('click',()=>show(CH[i+1].id));
+    nb.append(pv,nx);f.appendChild(nb);p.appendChild(f);});
+
+  function show(id){cur=id;save(LS.tab,id);
+    document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('active',p.dataset.id===id));
+    nav.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.id===id));
+    history.replaceState(null,'','#'+id); window.scrollTo({top:0,behavior:'auto'});
+    const cc0=CH.find(c=>c.id===id); document.getElementById('curch').textContent=cc0?(cc0.n+' · '+cc0.t):''; closeDrawer();
+    const a=nav.querySelector('button.active'); if(a&&nav.scrollWidth>nav.clientWidth+1){const br=nav.getBoundingClientRect(),r=a.getBoundingClientRect(); if(r.left<br.left||r.right>br.right) nav.scrollLeft+=r.left-br.left-12;}}
+
+  /* challenge tabs */
+  const ct=document.getElementById('ctabs'); let cc=load(LS.ctab,'C1');
+  function showC(c){cc=c;save(LS.ctab,c);ct.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.c===c));
+    document.querySelectorAll('.ctab').forEach(t=>t.classList.toggle('active',t.dataset.c===c));}
+  ct.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>showC(b.dataset.c))); showC(cc);
+
+  /* clock + now/next across two days */
+  const ZF=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Zurich',hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  const rows=Array.from(document.querySelectorAll('#tl tr[data-s]'));
+  const key=(d,t)=>d.replace(/-/g,'')+t.replace(':','');
+  const fmt=m=>m>=60?Math.floor(m/60)+' h '+(m%60)+' min':m+' min';
+  function tick(){const z={};ZF.formatToParts(new Date()).forEach(p=>z[p.type]=p.value);
+    const hm=z.hour+':'+z.minute, d=z.year+'-'+z.month+'-'+z.day;
+    document.getElementById('hclock').textContent=hm; document.getElementById('clock').textContent=hm+':'+z.second;
+    document.getElementById('clockdate').textContent=d+' · Europe/Zurich';
+    const k=key(d,hm); let now=null,next=null; rows.forEach(r=>r.classList.remove('now','next'));
+    for(const r of rows){const s=key(r.dataset.d,r.dataset.s),e=key(r.dataset.d,r.dataset.e); if(s<=k&&k<e&&!now) now=r; if(s>k&&!next) next=r;}
+    const nnN=document.getElementById('nnNow'), nnX=document.getElementById('nnNext');
+    const mins=(r,f)=>{const [H,M]=r.dataset[f].split(':').map(Number);const [h,m]=hm.split(':').map(Number);return (H*60+M)-(h*60+m);};
+    if(now){now.classList.add('now');nnN.innerHTML=`<b>${now.dataset.s} to ${now.dataset.e}</b> · ${now.dataset.short}`+(now.dataset.d===d?` <span class="when">ends in ${fmt(Math.max(0,mins(now,'e')))}</span>`:'');}
+    else if(k<key(rows[0].dataset.d,rows[0].dataset.s)) nnN.innerHTML='<b>Before the event</b> · read chapters 3 and 5';
+    else if(!next) nnN.innerHTML='<b>Event over</b>';
+    else nnN.innerHTML='<b>Overnight</b> · venue open, no sleeping on site';
+    if(next){next.classList.add('next');nnX.innerHTML=`<b>${next.dataset.d===d?'':'Mo '}${next.dataset.s}</b> · ${next.dataset.short}`+(next.dataset.d===d?` <span class="when">in ${fmt(mins(next,'s'))}</span>`:'');}
+    else nnX.innerHTML='Nothing scheduled';}
+  tick(); setInterval(tick,1000);
+
+  /* glossary filter */
+  const gq=document.getElementById('glq'), gis=Array.from(document.querySelectorAll('#gl .gi'));
+  function gf(){const q=gq.value.trim().toLowerCase();let n=0;gis.forEach(g=>{const on=!q||g.textContent.toLowerCase().includes(q);g.classList.toggle('hide',!on);if(on)n++;});
+    document.getElementById('glc').textContent=n+' of '+gis.length; document.getElementById('glnone').style.display=n?'none':'block';}
+  gq.addEventListener('input',gf); gf();
+
+  function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600);}
+  const tg=document.getElementById('navtoggle'); const mob=window.matchMedia('(max-width:900px)');
+  const setNav=c=>{document.body.classList.toggle('navc',c);if(!mob.matches)tg.setAttribute('aria-expanded',String(!c));};
+  setNav(load('hackApertusShare.navc',false));
+  tg.addEventListener('click',()=>{if(mob.matches){const o=!document.body.classList.contains('navopen');document.body.classList.toggle('navopen',o);tg.setAttribute('aria-expanded',String(o));}else{const c=!document.body.classList.contains('navc');setNav(c);save('hackApertusShare.navc',c);}});
+  document.getElementById('scrim').addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+  mob.addEventListener('change',()=>{closeDrawer();tg.setAttribute('aria-expanded',String(!document.body.classList.contains('navc')));});
+  show(cur);
+})();
+</script>
+</body>
+</html>
